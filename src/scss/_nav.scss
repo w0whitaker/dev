@@ -9,6 +9,10 @@ nav {
     line-height: u.navbar('text');
     color: t.color('near-white');
     padding: min(u.navbar('squareBox'), u.navbar('landscapeBox')) 0;
+    &.active {
+      box-shadow: inset 0px calc(u.navbar('text') - (2 * u.navbar('text'))) 0px
+        0px t.color('shadow');
+    }
   }
   ul {
     width: 100%;
