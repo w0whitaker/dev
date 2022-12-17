@@ -10,6 +10,11 @@ const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const markdownIt = require('markdown-it');
 // const outdent = require("outdent");
 
+/** imports from config **/
+// const {getAllProjects} = require('./config/collections/index.js');
+
+
+
 require('dotenv').config();
 
 const imageShortcode = async (
