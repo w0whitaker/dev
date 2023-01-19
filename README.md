@@ -32,4 +32,3 @@ eleventyConfig.addCollection("projects", function(collection) {
 3. touch foo/foo.json
 4. add frontmatter to foo.json
 5. add content to /foo (.njk or .md)
-6.
