@@ -4,12 +4,12 @@
   "description": "This is the portfolio site for William Whitaker.",
   "main": "index.js",
   "scripts": {
-    "clean": "_site",
+    "clean": "rimraf _site",
     "watch:sass": "sass --watch src/scss:_site/css",
     "build:sass": "sass src/scss:_site/css",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
-    "start": "npm-run-all build:sass --parallel watch:*",
+    "start": "npm-run-all --sequential clean build:sass --parallel watch:*",
     "build:eleventy": "npx @11ty/eleventy",
     "build": "npm-run-all build:sass build:eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"

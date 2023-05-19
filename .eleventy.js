@@ -3,7 +3,6 @@ const snippet = require("./src/js/shortcodes.js");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const classNames = require("classnames");
-const svgSprite = require("eleventy-plugin-svg-sprite");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const footnotes = require("eleventy-plugin-footnotes");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
@@ -95,9 +94,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(footnotes);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(svgSprite, {
-    path: "./src/images/svg",
-  });
 
   // Custom collections
   eleventyConfig.addCollection("pages", function (collection) {
