@@ -35,34 +35,48 @@ eleventyConfig.addCollection("projects", function(collection) {
 6.
 
 
-## current structure
+## file structure
 
 ```markdown
 .
 ├── config
-│   ├── collections
+│   ├── collections ✔︎
 │   │   └── index.js
-│   └── utils
+│   └── utils ✔︎
 │       └── index.js
 └── src
-    ├── _data
+    ├── _data ✔︎
     │   └── meta.js
     ├── _includes
-    │   ├── footer.njk
-    │   ├── header.njk
-    │   ├── logo.njk
-    │   └── sitenav.njk
-    ├── _layouts
-    │   ├── base.njk
-    │   ├── layout.njk
-    │   ├── page.njk
-    │   ├── post.njk
-    │   └── project.njk
-    ├── fonts
+		│	  └── partials ←
+    │   		├── footer.njk ✔︎
+    │   		├── header.njk ✔︎
+    │   		├── logo.njk ✘
+    │   		└── sitenav.njk ✔︎
+		│		└──	layouts ←
+		│				├── base.njk
+		│				├── page.njk
+		│				├── post.njk
+		│				└── project.njk
+		├── layouts ✘
+		│			├── base.njk
+		│			├── layout.njk
+		│			├── page.njk
+		│			├── post.njk
+		│			└── project.njk
+		├── assets ←
+		│		└── css ←
+		│				├── main.css
+		│				└── reset.css
+		│		└── js ←
+		│				├── index.js
+    │   		├── markdownCustom.js
+    │   		└── shortcodes.js
+    ├── fonts ✘
     │   ├── Alata-Regular.ttf
     │   ├── Quattrocento-Bold.ttf
     │   └── Quattrocento-Regular.ttf
-    ├── images
+    ├── images ✘
     │   ├── art.png
     │   ├── dog.jpeg
     │   ├── epg.png
@@ -79,19 +93,19 @@ eleventyConfig.addCollection("projects", function(collection) {
     │   │   └── stack-overflow.svg
     │   └── wedding.png
     ├── index.md
-    ├── js
+    ├── js ✘
     │   ├── index.js
     │   ├── markdownCustom.js
     │   └── shortcodes.js
-    ├── pages
+    ├── pages ✔︎
     │   ├── blog.njk
     │   ├── contact.njk
     │   ├── pages.json
     │   └── projects.njk
-    ├── posts
+    ├── posts ✔︎
     │   ├── epg-post.md
     │   └── posts.json
-    ├── projects
+    ├── projects ✔︎
     │   ├── ephemeral-pattern-generator.md
     │   ├── first-site.md
     │   ├── human-service-forum.md
@@ -101,7 +115,7 @@ eleventyConfig.addCollection("projects", function(collection) {
     │   ├── projects.json
     │   ├── wedding-site.md
     │   └── william-whitaker-dot-art.md
-    ├── scss
+    ├── scss ✘
     │   ├── _base.scss
     │   ├── _dev.scss
     │   ├── _footer.scss
@@ -118,5 +132,5 @@ eleventyConfig.addCollection("projects", function(collection) {
     │   ├── _typography.scss
     │   ├── _utilities.scss
     │   └── style.scss
-    └── style.css
+    └── style.css ✘
 ```
