@@ -15,6 +15,9 @@ const { isoDate, humanDate, md } = require("./config/filters/index.js");
 require("dotenv").config();
 
 module.exports = function (eleventyConfig) {
+  // Watch targets
+  eleventyConfig.addWatchTarget("./src/assets/css/main.css");
+
   // Load environment variables
   eleventyConfig.addGlobalData("env", process.env);
 
