@@ -2,7 +2,9 @@
 layout: page.njk
 ---
 
-<h2>{{ title }}</h2>
-<div class="container">
-  <article>{{ content | safe }}</article>
-</div>
+<article>
+  <h2>{{ title }}</h2>
+  <time datetime="{{ collections.posts[0].data.page.date | isoDate }}">{{ collections.posts[0].data.page.date | humanDate }}</time><br>
+  {{ content | md | safe }}
+  {% footnotes %}
+</article>

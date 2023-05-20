@@ -1,27 +1,26 @@
 // const markdownIt = require('markdown-it');
-const markdownItCustom = require('./src/js/markdownCustom.js');
-const snippet = require('./src/js/shortcodes.js');
-const Image = require('@11ty/eleventy-img');
-const path = require('path');
-const classNames = require('classnames');
-const svgSprite = require('eleventy-plugin-svg-sprite');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const footnotes = require('eleventy-plugin-footnotes');
-const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const snippet = require("./src/js/shortcodes.js");
+const Image = require("@11ty/eleventy-img");
+const path = require("path");
+const classNames = require("classnames");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const footnotes = require("eleventy-plugin-footnotes");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const markdownIt = require("markdown-it");
 // const outdent = require("outdent");
 
-require('dotenv').config();
+require("dotenv").config();
 
 const imageShortcode = async (
   relativeSrc,
   alt,
   className,
   widths = [200, 400, 800, 1280],
-  baseFormat = 'jpeg',
-  optimizedFormats = ['webp'],
-  sizes = '100vw'
+  baseFormat = "jpeg",
+  optimizedFormats = ["webp"],
+  sizes = "100%"
 ) => {
-  const fullSrc = path.join('src', relativeSrc);
+  const fullSrc = path.join("src", relativeSrc);
   const { dir: imgDir } = path.parse(relativeSrc);
   const ImageWidths = {
     ORIGINAL: null,
@@ -30,7 +29,7 @@ const imageShortcode = async (
   const imageMetadata = await Image(fullSrc, {
     widths: [ImageWidths.ORIGINAL, ImageWidths.PLACEHOLDER, ...widths],
     formats: [...optimizedFormats, baseFormat],
-    outputDir: path.join('_site', imgDir),
+    outputDir: path.join("_site", imgDir),
     urlPath: imgDir,
   });
   const formatSizes = Object.entries(imageMetadata).reduce(
@@ -51,7 +50,7 @@ const imageShortcode = async (
     {}
   );
 
-  const picture = `<picture class="${classNames('lazy-picture', className)}">
+  const picture = `<picture class="${classNames("lazy-picture", className)}">
   ${Object.values(imageMetadata)
     .map((formatEntries) => {
       const { format: formatName, sourceType } = formatEntries[0];
@@ -60,11 +59,11 @@ const imageShortcode = async (
       const actualSrcset = formatEntries
         .filter((image) => image.width !== ImageWidths.PLACEHOLDER)
         .map((image) => image.srcset)
-        .join(', ');
+        .join(", ");
 
       return `<source type="${sourceType}" srcset="${placeholderSrcset}" data-srcset="${actualSrcset}" data-sizes="${sizes}">`;
     })
-    .join('\n')}
+    .join("\n")}
     <img
       src="${formatSizes[baseFormat].placeholder.url}"
       data-src="${formatSizes[baseFormat].largest.url}"
@@ -85,56 +84,58 @@ function sortByNumber(a, b) {
 
 module.exports = function (eleventyConfig) {
   // Load environment variables
-  eleventyConfig.addGlobalData('env', process.env);
+  eleventyConfig.addGlobalData("env", process.env);
 
-  // Watch CSS files for changes
-  eleventyConfig.setBrowserSyncConfig({
-    files: './_site/css/**/*.css',
-  });
   // Copy `src/style.css` to `_site/style.css`
-  eleventyConfig.addPassthroughCopy('src/style.css');
+  eleventyConfig.addPassthroughCopy("src/style.css");
+  eleventyConfig.addPassthroughCopy({ "src/fonts/**.*": "css/fonts" });
 
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(footnotes);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(svgSprite, {
-    path: './src/images/svg',
-  });
 
   // Custom collections
-  eleventyConfig.addCollection('pages', function (collection) {
+  eleventyConfig.addCollection("pages", function (collection) {
     const pages = collection
-      .getFilteredByGlob('src/pages/*.njk')
+      .getFilteredByGlob("src/pages/*.njk")
       .sort(sortByNumber);
     return pages;
   });
 
-  eleventyConfig.addCollection('projects', function (collection) {
-    const projects = collection.getFilteredByTag('projects').sort(sortByNumber);
+  eleventyConfig.addCollection("projects", function (collection) {
+    const projects = collection.getFilteredByTag("projects").sort(sortByNumber);
     return projects;
   });
 
-  eleventyConfig.setLibrary('md', markdownItCustom);
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_separator: "<!-- more -->",
+  });
 
-  eleventyConfig.addFilter('isoDate', function (value) {
+  // Parse Markdown properly in excerpts
+  eleventyConfig.addFilter("md", function (content = "") {
+    return markdownIt({ html: true }).render(content);
+  });
+
+  eleventyConfig.addFilter("isoDate", function (value) {
     return value.toISOString();
   });
 
-  eleventyConfig.addFilter('humanDate', function (value) {
+  eleventyConfig.addFilter("humanDate", function (value) {
     let options = {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
+      month: "long",
+      day: "numeric",
+      year: "numeric",
     };
-    let date = new Intl.DateTimeFormat('en-US', options).format(value);
+    let date = new Intl.DateTimeFormat("en-US", options).format(value);
     return date;
   });
 
   // Image shortcode https://www.aleksandrhovhannisyan.com/blog/eleventy-image-lazy-loading/
-  eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
-  eleventyConfig.addPairedShortcode('snippet', function (content) {
+  eleventyConfig.addPairedShortcode("snippet", function (content) {
     return snippet(content);
   });
 
@@ -142,11 +143,11 @@ module.exports = function (eleventyConfig) {
   return {
     passthroughFileCopy: true,
     dir: {
-      input: 'src',
-      includes: '_includes',
-      layouts: '_layouts',
-      data: '_data',
-      output: '_site',
+      input: "src",
+      includes: "_includes",
+      layouts: "_layouts",
+      data: "_data",
+      output: "_site",
     },
   };
 };

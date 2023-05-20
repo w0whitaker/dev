@@ -3,12 +3,10 @@ title: projects
 order: 1
 ---
 
-<h2>projects</h2>
 <ul>
   {% for project in collections.projects %}
   <li>
     <article>
-      <!-- i'm inside projects.njk (a page template) -->
       <header>
         <h3>
           <a href="{{ project.data.link }}">{{ project.data.title }}</a>

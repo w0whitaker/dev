@@ -1,5 +1,5 @@
-{% svgsprite %}
-<footer>
+{% set currentUrl = page.url %}
+<footer{% if currentUrl != '/' %} class="page-main"{% endif %}>
   <div class="container">
     <ul>
       <div class="container">
@@ -7,35 +7,35 @@
         <li>
           <div class="container footer-links">
             <a href="https://github.com/w0whitaker" class="sm-square">
-              <div class="container">{% svg "github", "social-icon" %}</div>
+              <div class="container"></div>
             </a>
           </div>
         </li>
         <li>
           <div class="container footer-links">
             <a href="https://codepen.io/w0whitaker" class="sm-square">
-              <div class="container">{% svg "codepen", "social-icon" %}</div>
+              <div class="container"></div>
             </a>
           </div>
         </li>
         <li>
           <div class="container footer-links">
             <a href="https://www.linkedin.com/in/w0whitaker/" class="sm-square">
-              <div class="container">{% svg "linkedin", "social-icon" %}</div>
+              <div class="container"></div>
             </a>
           </div>
         </li>
         <li>
           <div class="container footer-links">
             <a href="https://dev.to/w0whitaker" class="sm-square">
-              <div class="container">{% svg "dev", "social-icon" %}</div>
+              <div class="container"></div>
             </a>
           </div>
         </li>
         <li>
           <div class="container footer-links">
             <a href="https://stackoverflow.com/users/4699931/brazilla-ray" class="sm-square">
-              <div class="container">{% svg "stack-overflow", "social-icon" %}</div>
+              <div class="container"></div>
             </a>
           </div>
         </li>
