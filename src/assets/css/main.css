@@ -5,3 +5,13 @@
 body {
 	background-color: yellowgreen;
 }
+
+main {
+	border: 2px solid hotpink;
+	border-right-width: 2ch;
+	border-radius: 0.5ch;
+	border-top-right-radius: 1ch;
+	border-bottom-right-radius: 1ch;
+	padding-inline: 1ch;
+	padding-block: 1rem;
+}
