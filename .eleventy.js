@@ -1,24 +1,18 @@
-// const markdownIt = require('markdown-it');
-const Image = require("@11ty/eleventy-img");
-const path = require("path");
-const classNames = require("classnames");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const footnotes = require("eleventy-plugin-footnotes");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const markdownIt = require("markdown-it");
 
 // module import collections
-const { getAllProjects } = require("./config/collections/index.js");
-
+const {
+  getAllProjects,
+  getAllPages,
+} = require("./config/collections/index.js");
 // module import shortcodes
 const { snippet, image } = require("./config/shortcodes/index.js");
+// module import filters
+const { isoDate, humanDate, md } = require("./config/filters/index.js");
 
 require("dotenv").config();
-
-// https://github.com/11ty/eleventy/issues/981#issuecomment-593397677
-function sortByNumber(a, b) {
-  return Number(a.data.order) - Number(b.data.order);
-}
 
 module.exports = function (eleventyConfig) {
   // Load environment variables
@@ -33,50 +27,28 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   // Custom collections
-  eleventyConfig.addCollection("pages", function (collection) {
-    const pages = collection
-      .getFilteredByGlob("src/pages/*.njk")
-      .sort(sortByNumber);
-    return pages;
-  });
-
+  eleventyConfig.addCollection("pages", getAllPages);
   eleventyConfig.addCollection("projects", getAllProjects);
+
+  // Custom filters
+  eleventyConfig.addFilter("md", md);
+  eleventyConfig.addFilter("isoDate", isoDate);
+  eleventyConfig.addFilter("humanDate", humanDate);
+
+  // Custom shortcodes
+  eleventyConfig.addNunjucksAsyncShortcode("image", image);
+  eleventyConfig.addPairedShortcode("snippet", snippet);
+
+  // Layout aliases
+  eleventyConfig.addLayoutAlias("base", "base.njk");
+  eleventyConfig.addLayoutAlias("page", "page.njk");
+  eleventyConfig.addLayoutAlias("post", "post.njk");
+  eleventyConfig.addLayoutAlias("project", "project.njk");
 
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
     excerpt_separator: "<!-- more -->",
   });
-
-  // Parse Markdown properly in excerpts
-  eleventyConfig.addFilter("md", function (content = "") {
-    return markdownIt({ html: true }).render(content);
-  });
-
-  eleventyConfig.addFilter("isoDate", function (value) {
-    return value.toISOString();
-  });
-
-  eleventyConfig.addFilter("humanDate", function (value) {
-    let options = {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    };
-    let date = new Intl.DateTimeFormat("en-US", options).format(value);
-    return date;
-  });
-
-  // Image shortcode https://www.aleksandrhovhannisyan.com/blog/eleventy-image-lazy-loading/
-  eleventyConfig.addNunjucksAsyncShortcode("image", image);
-
-  eleventyConfig.addPairedShortcode("snippet", function (content) {
-    return snippet(content);
-  });
-
-  eleventyConfig.addLayoutAlias("base", "base.njk");
-  eleventyConfig.addLayoutAlias("page", "page.njk");
-  eleventyConfig.addLayoutAlias("post", "post.njk");
-  eleventyConfig.addLayoutAlias("project", "project.njk");
 
   // Set custom directories for input, output, includes, and data
   return {

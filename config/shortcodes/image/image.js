@@ -1,5 +1,6 @@
 const path = require("path");
 
+// Image shortcode https://www.aleksandrhovhannisyan.com/blog/eleventy-image-lazy-loading/
 const image = async (
   relativeSrc,
   alt,
