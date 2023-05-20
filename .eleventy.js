@@ -7,8 +7,10 @@ const footnotes = require("eleventy-plugin-footnotes");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 
-// module import shortcodes
+// module import collections
+const { getAllProjects } = require("./config/collections/index.js");
 
+// module import shortcodes
 const { snippet, image } = require("./config/shortcodes/index.js");
 
 require("dotenv").config();
@@ -24,7 +26,6 @@ module.exports = function (eleventyConfig) {
 
   // Copy `src/assets/css/main.css` to `_site/assets/css/main.css`
   eleventyConfig.addPassthroughCopy("src/assets/css/main.css");
-  eleventyConfig.addPassthroughCopy({ "src/fonts/**.*": "css/fonts" });
 
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -39,10 +40,7 @@ module.exports = function (eleventyConfig) {
     return pages;
   });
 
-  eleventyConfig.addCollection("projects", function (collection) {
-    const projects = collection.getFilteredByTag("projects").sort(sortByNumber);
-    return projects;
-  });
+  eleventyConfig.addCollection("projects", getAllProjects);
 
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,

@@ -4,10 +4,7 @@
 }**/
 
 const sortByNumber = (a, b) => {
-	return Number(a.data.order) - Number.(b.data.order);
-}
-
-
-module.exports = {
-	sortByNumber
+  return Number(a.data.order) - Number(b.data.order);
 };
+
+module.exports = sortByNumber;
