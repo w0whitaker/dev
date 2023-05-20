@@ -33,3 +33,107 @@ eleventyConfig.addCollection("projects", function(collection) {
 4. add frontmatter to foo.json
 5. add content to /foo (.njk or .md)
 6.
+
+
+## file structure
+
+```markdown
+.
+├── config
+│   ├── collections ✔︎
+│   │   └── index.js
+│   └── utils ✔︎
+│       └── index.js
+└── src
+    ├── _data ✔︎
+    │   └── meta.js
+    ├── _includes
+		│	  └── partials ←
+    │   		├── footer.njk ✔︎
+    │   		├── header.njk ✔︎
+    │   		├── logo.njk ✘
+    │   		└── sitenav.njk ✔︎
+		│		└──	layouts ←
+		│				├── base.njk
+		│				├── page.njk
+		│				├── post.njk
+		│				└── project.njk
+		├── layouts ✘
+		│			├── base.njk
+		│			├── layout.njk
+		│			├── page.njk
+		│			├── post.njk
+		│			└── project.njk
+		├── assets ←
+		│		└── css ←
+		│				├── main.css
+		│				└── _reset.css
+		│		└── js ←
+		│				├── index.js
+    │   		├── markdownCustom.js
+    │   		└── shortcodes.js
+    ├── fonts ✘
+    │   ├── Alata-Regular.ttf
+    │   ├── Quattrocento-Bold.ttf
+    │   └── Quattrocento-Regular.ttf
+    ├── images ✘
+    │   ├── art.png
+    │   ├── dog.jpeg
+    │   ├── epg.png
+    │   ├── first-site.png
+    │   ├── hsf.png
+    │   ├── pieton.png
+    │   ├── pomodoro.png
+    │   ├── self.jpg
+    │   ├── svg
+    │   │   ├── codepen.svg
+    │   │   ├── dev.svg
+    │   │   ├── github.svg
+    │   │   ├── linkedin.svg
+    │   │   └── stack-overflow.svg
+    │   └── wedding.png
+    ├── index.md
+    ├── js ✘
+    │   ├── index.js
+    │   ├── markdownCustom.js
+    │   └── shortcodes.js
+    ├── pages ✔︎
+    │   ├── blog.njk
+    │   ├── contact.njk
+    │   ├── pages.json
+    │   └── projects.njk
+    ├── posts ✔︎
+    │   ├── epg-post.md
+    │   └── posts.json
+    ├── projects ✔︎
+    │   ├── ephemeral-pattern-generator.md
+    │   ├── first-site.md
+    │   ├── human-service-forum.md
+    │   ├── mote.md
+    │   ├── pieton.md
+    │   ├── pomodoro-timer.md
+    │   ├── projects.json
+    │   ├── wedding-site.md
+    │   └── william-whitaker-dot-art.md
+		├── public ←
+		│		├── images
+    │   └── fonts
+    ├── scss ✘
+    │   ├── _base.scss
+    │   ├── _dev.scss
+    │   ├── _footer.scss
+    │   ├── _header.scss
+    │   ├── _images.scss
+    │   ├── _layout.scss
+    │   ├── _modules.scss
+    │   ├── _nav.scss
+    │   ├── _prism.scss
+    │   ├── _reset.scss
+    │   ├── _snippets.scss
+    │   ├── _state.scss
+    │   ├── _theme.scss
+    │   ├── _typography.scss
+    │   ├── _utilities.scss
+    │   └── style.scss
+    └── style.css ✘
+```

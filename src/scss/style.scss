@@ -1,10 +1,38 @@
+
+//SMACSS migration
+
+// 1. Base
+//    - defaults
+@use '_base';
+// 2. Layout
+//	- divide page into sections
+//    - 'l-whatever', 'layout-whatever', 'grid-whatever'
+//@use '_layout';
+// 3. Module
+//    - reusable, modular
+//@use '_modules';
+// 4. State
+//    - how things look in a particular state
+//    - 'is-whatever'
+//@use '_state';
+// 5. Theme
+//    - like state
+//    - 'theme-whatever'
+//@use '_theme';
+:root {
+	--primary: #3d5509;
+}
+
+
+
+
 // @use '_dev'; // disable for production
-@use '_prism';
-@use '_reset';
-@use '_typography';
-@use '_layout';
-@use '_header';
-@use '_nav';
-@use '_images';
-@use '_snippets';
-@use '_footer';
+//@use '_prism';
+//@use '_reset';
+//@use '_typography';
+//@use '_layout';
+//@use '_header';
+//@use '_nav';
+//@use '_images';
+//@use '_snippets';
+//@use '_footer';

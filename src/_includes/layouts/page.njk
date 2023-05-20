@@ -1,0 +1,11 @@
+---
+layout: base
+---
+{% include 'partials/header.njk' %}
+
+<main>
+	<h2>"{{ pageTitle }}."</h2>
+	{{ content | safe }}
+</main>
+
+{% include 'partials/footer.njk' %}
