@@ -1,24 +1,15 @@
-{% set currentUrl = page.url %}
-
 <nav>
-    <div class="container">
-      <ul>
-        <div class="container">
-          {% for link in collections.pages %}
-            <li id="{{ link.data.title | lower }}" class="big-box">
-            {% if link.data.title === "contact" %}
-              <a href="mailto:{{ env.EMAIL_ADDRESS }}">{{ link.data.title }}</a>
-            {% else %}
-              <a href="{{ link.url }}" {% if currentUrl === link.url %}class="active"{% endif %}>{{ link.data.title }}</a>
-            {% endif %}
-          </li>
-          {%- endfor %}
-          {% if currentUrl != '/' %}
-            <li id="home" class="big-box">
-              <a href="/">home</a>
-            </li>
-          {% endif %}
-        </div>
-      </ul>
-    </div>
+{% set activePage = page.url | url %}
+	<div class="flex flex-col gap-2">
+		<span>other pages on this site: </span>
+		<ul>
+		{% for page in collections.pages %}
+			{% if page.url != activePage %}
+				<li>
+					<a href="{{ page.url }}">"{{ page.fileSlug }}."</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+		</ul>
+	</div>
 </nav>
