@@ -1,5 +1,5 @@
 // const markdownIt = require('markdown-it');
-const snippet = require("./src/js/shortcodes.js");
+const snippet = require("./src/assets/js/shortcodes.js");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const classNames = require("classnames");
@@ -139,13 +139,18 @@ module.exports = function (eleventyConfig) {
     return snippet(content);
   });
 
+  eleventyConfig.addLayoutAlias("base", "base.njk");
+  eleventyConfig.addLayoutAlias("page", "page.njk");
+  eleventyConfig.addLayoutAlias("post", "post.njk");
+  eleventyConfig.addLayoutAlias("project", "project.njk");
+
   // Set custom directories for input, output, includes, and data
   return {
     passthroughFileCopy: true,
     dir: {
       input: "src",
       includes: "_includes",
-      layouts: "_layouts",
+      layouts: "_includes/layouts",
       data: "_data",
       output: "_site",
     },

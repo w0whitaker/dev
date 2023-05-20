@@ -67,7 +67,7 @@ eleventyConfig.addCollection("projects", function(collection) {
 		├── assets ←
 		│		└── css ←
 		│				├── main.css
-		│				└── reset.css
+		│				└── _reset.css
 		│		└── js ←
 		│				├── index.js
     │   		├── markdownCustom.js
@@ -115,6 +115,9 @@ eleventyConfig.addCollection("projects", function(collection) {
     │   ├── projects.json
     │   ├── wedding-site.md
     │   └── william-whitaker-dot-art.md
+		├── public ←
+		│		├── images
+    │   └── fonts
     ├── scss ✘
     │   ├── _base.scss
     │   ├── _dev.scss
