@@ -4,10 +4,10 @@
 	{% else %}
 		{% set activePage = ["/", page.fileSlug, "/"] | join  %}
 	{% endif %}
-	<div class="layout:[ flex flex-col gap-2 ]">
-		<span>other pages on this site:</span>
+	<div class="layout:[ flex gap-4 ]">
+		<span class="basis-1/3 shrink leading-tight">other pages on this site:</span>
 
-		<ul>
+		<ul class="space-y-2">
 		{% for item in navigation.pages %}
 			{% if  item.url != activePage %}
 				<li class="typography:[ text-step-0 ]">
