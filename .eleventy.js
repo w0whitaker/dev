@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
 
   // Copy `src/assets/css/main.css` to `_site/assets/css/main.css`
   eleventyConfig.addPassthroughCopy("src/assets/css/main.css");
+  eleventyConfig.addPassthroughCopy("public");
 
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);

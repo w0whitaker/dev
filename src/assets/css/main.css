@@ -21,5 +21,5 @@ main {
 	border-top-right-radius: 1ch;
 	border-bottom-right-radius: 1ch;
 	padding-inline: 1ch;
-	padding-block: 1rem;
+	padding-block-start: 1rem;
 }
