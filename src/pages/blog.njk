@@ -4,6 +4,7 @@ pageTitle: "blog"
 ---
 <ul>
   {% for post in collections.posts %}
+	{% if post.data.published == true %}
   <li>
     <article>
       <h3>
@@ -14,5 +15,6 @@ pageTitle: "blog"
       <p><a href="{{ post.url }}">more...</a></p>
     </article>
   </li>
+	{% endif %}
   {% endfor %}
 </ul>
