@@ -1,14 +1,16 @@
 ---
 layout: base
 ---
-{% include 'partials/header.njk' %}
-
-<main>
-	<div class="layout:[ flex flex-col gap-2 ]">
-	{% include 'partials/page-name.njk' %}
-	{% include 'partials/sitenav.njk' %}
-	{{ content | safe }}
+<div class="layout:[ flex flex-col min-h-screen ]">
+	{% include 'partials/header.njk' %}
+	<div class="layout:[ flex-1 flex flex-col sm:flex-row ]">
+		<main class="flex-1 mt-6">
+			<div class="layout:[ flex flex-col gap-2 ]">
+			{% include 'partials/page-name.njk' %}
+			{% include 'partials/sitenav.njk' %}
+			{{ content | safe }}
+			</div>
+		</main>
 	</div>
-</main>
-
-{% include 'partials/footer.njk' %}
+	{% include 'partials/footer.njk' %}
+</div>
