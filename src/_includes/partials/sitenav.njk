@@ -1,12 +1,12 @@
 <nav>
 {% set activePage = page.url | url %}
-	<div class="flex flex-col gap-2">
+	<div class="layout:[ flex flex-col gap-2 ]">
 		<span>other pages on this site: </span>
 		<ul>
 		{% for page in collections.pages %}
 			{% if page.url != activePage %}
-				<li>
-					<a href="{{ page.url }}">"{{ page.fileSlug }}."</a>
+				<li class="typography:[ text-step-0 ]">
+					<a href="{{ page.url }}" class=" aesthetic:[ underline underline-offset-4 decoration-sky-600 hover:decoration-wavy ]">"{{ page.fileSlug }}."</a>
 				</li>
 			{% endif %}
 		{% endfor %}
