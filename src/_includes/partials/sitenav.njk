@@ -4,14 +4,14 @@
 	{% else %}
 		{% set activePage = ["/", page.fileSlug, "/"] | join  %}
 	{% endif %}
-	<div class="layout:[ flex gap-4 ]">
-		<span class="basis-1/3 shrink leading-tight">other pages on this site:</span>
+	<div class="layout:[ flex gap-10 items-center ]">
+		<span class="layout:[ basis-1/3 shrink ] typography:[ leading-none font-bold ]">other pages on this site:</span>
 
 		<ul class="space-y-2">
 		{% for item in navigation.pages %}
 			{% if  item.url != activePage %}
 				<li class="typography:[ text-step-0 ]">
-					<a href="{{ item.url }}" class=" aesthetic:[ underline underline-offset-6 decoration-4 decoration-sky-800 hover:decoration-wavy ]">"{{ item.text }}"</a>
+					<a href="{{ item.url }}" class=" typography:[ font-display ] aesthetic:[ underline underline-offset-8 decoration-4 decoration-black hover:decoration-wavy hover:decoration-2 ]">"{{ item.text }}"</a>
 				</li>
 			{% endif %}
 		{% endfor %}
