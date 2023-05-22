@@ -6,7 +6,7 @@ pageTitle: "projects"
   {% for project in collections.projects %}
   <li>
     <article>
-      <h3>
+      <h3 class="typography:[ font-display ]">
         <a href="{{ project.url }}">{{ project.data.title }}</a>
       </h3>
       <time datetime="{{ project.date | isoDate }}">{{ project.date | humanDate }}</time>
