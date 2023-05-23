@@ -7,7 +7,7 @@
     "start": "npm-run-all clean -p dev:*",
     "clean": "rimraf _site",
     "dev:eleventy": "npx @11ty/eleventy --serve --incremental --watch",
-		"dev:css": "tailwindcss -i ./src/assets/css/main.css -o ./_site/assets/css/main.css --watch --postcss",
+    "dev:css": "tailwindcss -i ./src/assets/css/main.css -o ./_site/assets/css/main.css --watch --postcss",
     "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
     "build:eleventy": "npx @11ty/eleventy",
     "build": "npm-run-all build:sass build:eleventy",
@@ -44,8 +44,13 @@
     "npm-run-all": "^4.1.5",
     "outdent": "^0.8.0",
     "postcss": "^8.4.23",
+    "prettier": "2.8.8",
     "rimraf": "^5.0.1",
     "sass": "^1.50.1",
+    "stylelint": "^15.6.2",
+    "stylelint-config-recommended": "^12.0.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-tailwindcss": "^0.0.7",
     "tailwindcss": "^3.3.2"
   }
 }

@@ -1,20 +1,20 @@
 module.exports = {
   pages: [
     {
-      text: "home.",
-      url: "/",
+      text: 'home.',
+      url: '/',
     },
     {
-      text: "blog.",
-      url: "/blog/",
+      text: 'blog.',
+      url: '/blog/',
     },
     {
-      text: "projects.",
-      url: "/projects/",
+      text: 'projects.',
+      url: '/projects/',
     },
     {
-      text: "contact.",
-      url: "/contact/",
+      text: 'contact.',
+      url: '/contact/',
     },
   ],
 };
