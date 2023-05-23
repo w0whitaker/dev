@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	background-color: #fffff0;
-	color: #00000f;
-}
-
 main {
 	border: 2px solid #00000f;
 	border-right-width: 2ch;

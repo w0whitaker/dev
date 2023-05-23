@@ -1,5 +1,6 @@
 /** @format */
 
+const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
@@ -17,14 +18,16 @@ const { isoDate, humanDate, md } = require('./config/filters/index.js');
 require('dotenv').config();
 
 module.exports = function (eleventyConfig) {
+  // Plugins
+  eleventyConfig.addPlugin(EleventyVitePlugin);
+
   // Watch targets
-  eleventyConfig.addWatchTarget('./src/assets/css/main.css');
+  eleventyConfig.addWatchTarget('./src/**/*');
 
   // Load environment variables
   eleventyConfig.addGlobalData('env', process.env);
 
-  // Copy `src/assets/css/main.css` to `_site/assets/css/main.css`
-  eleventyConfig.addPassthroughCopy('src/assets/css/main.css');
+  eleventyConfig.addPassthroughCopy('src/assets');
   eleventyConfig.addPassthroughCopy('public');
 
   // Plugins
