@@ -3,10 +3,10 @@ layout: base
 ---
 <div class="layout:[ flex flex-col min-h-screen justify-items-end ]">
 	{% include 'partials/header.njk' %}
-	<div class="layout:[ flex-1 flex flex-col sm:flex-row ] spacing:[ px-4 ]">
-		<main class="flex flex-1 mt-6 bg-amber-400">
+	<div class="layout:[ flex-1 flex flex-col sm:flex-row ]">
+		<main class="layout:[ flex flex-1 ] aesthetic:[ bg-amber-400 ]">
 			<div class="layout:[ flex flex-col gap-2 w-full ]">
-				<div class="flex-1 flex flex-col gap-4">
+				<div class="layout:[ flex-1 flex flex-col gap-4 ]">
 					{% include 'partials/page-name.njk' %}
 					{% include 'partials/sitenav.njk' %}
 				</div>
