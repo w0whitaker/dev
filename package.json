@@ -4,12 +4,14 @@
   "description": "This is the portfolio site for William Whitaker.",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all clean -p dev:*",
     "clean": "rimraf _site",
+    "start": "npm-run-all clean -p dev:*",
+    "build": "run-s clean build:*",
     "dev:eleventy": "npx @11ty/eleventy --serve --incremental --watch",
-    "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
+		"dev:css": "tailwindcss -i ./src/assets/css/main.css -o ./_site/assets/css/main.css --watch --postcss",
     "build:eleventy": "npx @11ty/eleventy",
-    "build": "npm-run-all build:sass build:eleventy",
+		"build:css": "tailwindcss -i ./src/assets/css/main.css -o ./_site/assets/css/main.css --postcss",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

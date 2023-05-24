@@ -18,19 +18,13 @@ const { isoDate, humanDate, md } = require('./config/filters/index.js');
 require('dotenv').config();
 
 module.exports = function (eleventyConfig) {
-  // Plugins
-  eleventyConfig.addPlugin(EleventyVitePlugin);
-
-  // Watch targets
-  eleventyConfig.addWatchTarget('./src/**/*');
-
   // Load environment variables
   eleventyConfig.addGlobalData('env', process.env);
 
-  eleventyConfig.addPassthroughCopy('src/assets');
-  eleventyConfig.addPassthroughCopy('public');
+  eleventyConfig.addPassthroughCopy('./src/assets');
 
   // Plugins
+  eleventyConfig.addPlugin(EleventyVitePlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(footnotes);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -61,13 +55,15 @@ module.exports = function (eleventyConfig) {
 
   // Set custom directories for input, output, includes, and data
   return {
-    passthroughFileCopy: true,
     dir: {
+      data: '_data',
       input: 'src',
       includes: '_includes',
       layouts: '_includes/layouts',
-      data: '_data',
       output: '_site',
     },
+    passthroughFileCopy: true,
+    templateFormats: ['html', 'njk', 'md'],
+    htmlTemplateEngine: 'njk',
   };
 };
