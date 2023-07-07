@@ -14,7 +14,7 @@ const {
   getAllPages,
 } = require('./config/collections/index.js');
 // module import shortcodes
-const { snippet } = require('./config/shortcodes/index.js');
+const { image, snippet } = require('./config/shortcodes/index.js');
 // module import filters
 const { isoDate, humanDate, md } = require('./config/filters/index.js');
 
@@ -56,7 +56,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('humanDate', humanDate);
 
   // Custom shortcodes
-  //eleventyConfig.addNunjucksAsyncShortcode('image', image);
+  eleventyConfig.addNunjucksAsyncShortcode('image', image);
   eleventyConfig.addPairedShortcode('snippet', snippet);
 
   // Layout aliases
