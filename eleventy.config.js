@@ -1,9 +1,12 @@
 /** @format */
 
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
+const eleventyWebcPlugin = require('@11ty/eleventy-plugin-webc');
+const { eleventyImagePlugin } = require('@11ty/eleventy-img');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const { EleventyRenderPlugin } = require('@11ty/eleventy');
 
 // module import collections
 const {
@@ -11,7 +14,7 @@ const {
   getAllPages,
 } = require('./config/collections/index.js');
 // module import shortcodes
-const { snippet, image } = require('./config/shortcodes/index.js');
+const { snippet } = require('./config/shortcodes/index.js');
 // module import filters
 const { isoDate, humanDate, md } = require('./config/filters/index.js');
 
@@ -19,7 +22,7 @@ require('dotenv').config();
 
 module.exports = function (eleventyConfig) {
   // Load environment variables
-  eleventyConfig.addGlobalData('env', process.env);
+  // eleventyConfig.addGlobalData('env', process.env);
 
   eleventyConfig.addPassthroughCopy('./src/assets');
 
@@ -28,6 +31,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(footnotes);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(eleventyWebcPlugin, {
+    components: ['npm:@11ty/eleventy-img/*.webc'],
+  });
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(eleventyImagePlugin, {
+    formats: ['webp', 'jpeg'],
+    urlPath: '/images/',
+    outputDir: './_site/images/',
+    width: [270, 830, 1150, 1390, 1760, 1910, 2048],
+    defaultAttributes: {
+      loading: 'lazy',
+      decoding: 'async',
+    },
+  });
 
   // Custom collections
   eleventyConfig.addCollection('pages', getAllPages);
@@ -39,7 +56,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('humanDate', humanDate);
 
   // Custom shortcodes
-  eleventyConfig.addNunjucksAsyncShortcode('image', image);
+  //eleventyConfig.addNunjucksAsyncShortcode('image', image);
   eleventyConfig.addPairedShortcode('snippet', snippet);
 
   // Layout aliases
@@ -64,6 +81,6 @@ module.exports = function (eleventyConfig) {
     },
     passthroughFileCopy: true,
     templateFormats: ['html', 'njk', 'md'],
-    htmlTemplateEngine: 'njk',
+    htmlTemplateEngine: ['njk', 'webc'],
   };
 };
