@@ -1,15 +1,18 @@
 ---
-title: projects
+layout: "page"
+pageTitle: "projects"
 ---
-
-<main>
-  <h2>projects</h2>
 <ul>
   {% for project in collections.projects %}
   <li>
-    <a href="{{ project.url }}">{{ project.data.title }}</a>
-    <p>{{ project.data.excerpt | md | safe }}</p>
+    <article>
+      <h3>
+        <a href="{{ project.url }}">{{ project.data.title }}</a>
+      </h3>
+      <time datetime="{{ project.date | isoDate }}">{{ project.date | humanDate }}</time>
+      <p>{{ project.data.page.excerpt | md | safe }}</p>
+      <p><a href="{{ project.url }}">more...</a></p>
+    </article>
   </li>
   {% endfor %}
 </ul>
-</main>

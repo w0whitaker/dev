@@ -1,0 +1,5 @@
+# Ignore builds
+_site/
+
+# Ignore node
+node_modules/

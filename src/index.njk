@@ -1,17 +1,6 @@
 ---
-layout: page.njk
-title: home
-pagination:
-  data: collections.posts
-  size: 2
-  alias: posts
+layout: "page"
+pageTitle: "home"
+permalink: "/"
 ---
-<h2>posts</h2>
-<ul>
-  {% for post in posts %}
-  <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
-    <p>{{ post.data.excerpt }}</p>
-  </li>
-  {% endfor %}
-</ul>
+<div class="overflow-hidden self-center"><img src="/images/circle.svg" alt="" class="-mb-4 w-48"></div>

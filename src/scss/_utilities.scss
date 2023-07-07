@@ -1,0 +1,211 @@
+@use 'sass:map';
+
+$vars: (
+  'rootTextSize': 16px,
+  'minTextSize': 1.5rem,
+  'maxTextSize': 2.25rem,
+  'fluidTextSize': 2vw,
+  'relativeTextSize': 1rem,
+  'viewport-full': 100vw,
+  'visible-full': 100%,
+);
+
+%pl1 {
+  padding-left: 1rem;
+}
+
+%pl-standard {
+  padding-left: 8.333325vw;
+}
+
+%db {
+  display: block;
+}
+
+// typography functions
+
+@function oneThird($width) {
+  @return calc($width / 3);
+}
+
+@function preferredTextSize($fluid, $relative) {
+  @return calc($fluid + $relative);
+}
+
+// header stuff
+@function h1TextSize($min, $pref, $max) {
+  $min: calc($min + 0.125rem);
+  $pref: calc($pref + 0.5rem);
+  $max: calc($max + 3rem);
+  @return clamp($min, $pref, $max);
+}
+
+@function h2TextSize($min, $pref, $max) {
+  $min: calc($min * 0.8);
+  $pref: calc($pref * 0.8);
+  @return clamp($min, $pref, $max);
+}
+
+$header-values: (
+  'text-h1':
+    h1TextSize(
+      map.get($vars, 'minTextSize'),
+      preferredTextSize(
+        map.get($vars, 'fluidTextSize'),
+        map.get($vars, 'relativeTextSize')
+      ),
+      map.get($vars, 'maxTextSize')
+    ),
+  'text-h2':
+    h2TextSize(
+      map.get($vars, 'minTextSize'),
+      preferredTextSize(
+        map.get($vars, 'fluidTextSize'),
+        map.get($vars, 'relativeTextSize')
+      ),
+      map.get($vars, 'maxTextSize')
+    ),
+);
+
+$header: map-merge($vars, $header-values);
+
+@function header($key) {
+  @return map-get($header, $key);
+}
+
+// navbar stuff
+
+/*
+ * nav button sizing
+ * p = text padding
+ * t = line-height (not font-size!)
+ * x = 2p + t
+ * p = x - t / 2
+ */
+
+@function navTextSize($min, $pref, $max) {
+  @return clamp($min, $pref, $max);
+}
+
+@function squarePadding($width, $text) {
+  $height: $width;
+  @return calc(($height - $text) / 2);
+}
+
+@function maxPadding($text) {
+  @return calc($text + 2rem);
+}
+
+$navbar-values: (
+  'text':
+    navTextSize(
+      map.get($vars, 'minTextSize'),
+      preferredTextSize(
+        map.get($vars, 'fluidTextSize'),
+        map.get($vars, 'relativeTextSize')
+      ),
+      map.get($vars, 'maxTextSize')
+    ),
+  'boxWidth': oneThird(map.get($vars, 'visible-full')),
+  'squareBox':
+    squarePadding(
+      /* $height(aka $width) */ oneThird(map.get($vars, 'viewport-full')),
+      /* $text */
+        navTextSize(
+          map.get($vars, 'minTextSize'),
+          preferredTextSize(
+            map.get($vars, 'fluidTextSize'),
+            map.get($vars, 'relativeTextSize')
+          ),
+          map.get($vars, 'maxTextSize')
+        )
+    ),
+  'landscapeBox': maxPadding(map.get($vars, 'minTextSize')),
+);
+
+$navbar: map-merge($vars, $navbar-values);
+
+@function navbar($key) {
+  @return map-get($navbar, $key);
+}
+
+@mixin nav-link {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Alata';
+}
+
+// main section stuff
+@function mainTextSize($min, $pref, $max) {
+  @return clamp($min, $pref, $max);
+}
+
+@function bigPad($width, $text) {
+  @return min(calc((($width * 0.375) - $text) * 0.5), 4.5rem);
+}
+
+@function medPad($width, $text) {
+  @return min(calc((($width * 0.375) - $text) * 0.5), 3rem);
+}
+
+@function smallPad($width, $text) {
+  @return min(calc((($width * 0.375) - $text) * 0.5), 1.5rem);
+}
+
+@function vSmallPad($width, $text) {
+  @return min(calc(($width * 0.375) - $text) * 0.125);
+}
+
+$main-values: (
+  'big-pad':
+    bigPad(
+      map.get($vars, 'viewport-full'),
+      mainTextSize(
+        map.get($vars, 'minTextSize'),
+        preferredTextSize(
+          map.get($vars, 'fluidTextSize'),
+          map.get($vars, 'relativeTextSize')
+        ),
+        map.get($vars, 'maxTextSize')
+      )
+    ),
+  'med-pad':
+    medPad(
+      map.get($vars, 'viewport-full'),
+      mainTextSize(
+        map.get($vars, 'minTextSize'),
+        preferredTextSize(
+          map.get($vars, 'fluidTextSize'),
+          map.get($vars, 'relativeTextSize')
+        ),
+        map.get($vars, 'maxTextSize')
+      )
+    ),
+  'small-pad': 24px,
+  'vSmall-pad': 12px,
+  'text-h2':
+    mainTextSize(
+      map.get($vars, 'minTextSize'),
+      preferredTextSize(
+        map.get($vars, 'fluidTextSize'),
+        map.get($vars, 'relativeTextSize')
+      ),
+      map.get($vars, 'maxTextSize')
+    ),
+  'text-body':
+    mainTextSize(
+      calc(map.get($vars, 'minTextSize') * 0.9),
+      preferredTextSize(
+        map.get($vars, 'fluidTextSize'),
+        calc(map.get($vars, 'relativeTextSize') * 0.9)
+      ),
+      1.5rem
+    ),
+);
+
+$main: map-merge($vars, $main-values);
+
+@function main($key) {
+  @return map-get($main, $key);
+}

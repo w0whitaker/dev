@@ -1,7 +1,6 @@
 {
-  "layout": "post.njk",
+  "layout": "post",
+	"pageTitle": "{{ pageTitle }}",
   "permalink": "/{{ page.fileSlug }}.html",
-  "tags": [
-    "posts"
-  ]
+  "tags": ["posts"]
 }

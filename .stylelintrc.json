@@ -1,0 +1,11 @@
+{
+	"extends": [
+		"stylelint-config-recommended",
+		"stylelint-config-tailwindcss"
+	],
+	"rules": {
+		"declaration-property-unit-allowed-list": {
+			"font-size": ["rem", "em"]
+		}
+	}
+}
