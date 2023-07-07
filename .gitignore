@@ -109,3 +109,5 @@ _site/
 # editor
 *.*-project
 *.*-workspace
+config/settings/imagePlugin/imagePluginSettings.js
+config/settings/index.js
