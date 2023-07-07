@@ -71,7 +71,7 @@ main {
       }
       picture {
         padding-top: u.main('med-pad');
-        max-width: calc(u.main('visible-full') - u.main('maxTextSize'));
+        max-width: calc(u.main('visible-half') - u.main('maxTextSize'));
         filter: drop-shadow(5px 5px 5px t.color('shadow'));
       }
 

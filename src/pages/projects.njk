@@ -14,7 +14,7 @@ order: 1
         <p>{{ project.data.excerpt }}</p>
       </header>
       {% if project.data.screenshot %}
-        {% image project.data.screenshot, project.data.alt %}
+        {% image project.data.screenshot, project.data.alt, "project-img" %}
       {% endif %}
       {{ project.templateContent | safe }}
     </article>
