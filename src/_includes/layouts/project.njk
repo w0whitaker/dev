@@ -1,6 +1,11 @@
 ---
 layout: page
 ---
+{% set currentProject = collections.projects | getCollectionItem %}
+
 <article>
+  {% if currentProject.data.screenshot %}
+    <img src="{{ currentProject.data.screenshot }}" alt="screenshot of {{ currentProject.data.title }}">
+  {% endif %}
 	{{ content | safe }}
 </article>
