@@ -1,5 +1,6 @@
 @import url('./_reset.css');
 @import url('./_typography.css');
+@import url('./_images.css');
 
 @tailwind base;
 @tailwind components;

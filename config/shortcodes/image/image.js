@@ -1,3 +1,5 @@
+/** @format */
+
 // Requires
 const Image = require('@11ty/eleventy-img');
 const outdent = require('outdent');
@@ -9,13 +11,13 @@ const stringifyAttributes = require('./stringify-attributes.js');
 const image = async (
   src,
   alt,
-  className = undefined,
+  className = ['project-screenshot'],
   // images will be generated at these widths (px)
   widths = [270, 830, 1150, 1390, 1760, 1910, 2048],
   // images will be generated in these formats - in order listed
   formats = ['webp', 'jpeg'],
   // need to understand this better
-  sizes = '(min-width: 1820px) 1600px, (min-width: 640px) calc(92.24vw - 60px), calc(99.06vw - 25px)'
+  sizes = '(min-width: 1820px) 1600px, (min-width: 640px) calc(92.24vw - 60px), calc(99.06vw - 25px)',
 ) => {
   const imageMetadata = await Image(src, {
     widths: [...widths, null],
