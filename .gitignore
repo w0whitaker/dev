@@ -111,3 +111,5 @@ _site/
 *.*-workspace
 config/settings/imagePlugin/imagePluginSettings.js
 config/settings/index.js
+
+dump/
