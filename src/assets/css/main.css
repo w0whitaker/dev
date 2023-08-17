@@ -9,7 +9,11 @@
 :root {
   --primary: #603813;
   --secondary: #c69c6d;
-  --highlight: #ff931e;
+  --tertiary: #ff931e;
+  --highlight: #ffccb3;
+}
+body {
+  background-color: var(--highlight);
 }
 
 #page-wrapper {
@@ -18,20 +22,25 @@
     "header-left header-right"
     "sidebar main-content"
     "footer ....";
-  grid-template-columns: repeat(8, 8rem);
-  grid-template-rows: repeat(8, 8rem);
+  grid-template-columns: repeat(8, 6rem);
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 0.25rem;
+  width: fit-content;
   margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .box {
   padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 #header-left {
   grid-area: header-left;
   grid-column: 1 / span 3;
   grid-row: 1 / span 3;
-  background-color: var(--highlight);
+  background-color: var(--tertiary);
 }
 
 #header-right {
@@ -39,6 +48,7 @@
   grid-column: 4 / -1;
   grid-row: 1;
   background-color: var(--primary);
+  color: var(--highlight);
 }
 
 #sidebar {
@@ -46,6 +56,7 @@
   grid-column: 1 / span 3;
   grid-row: 4 / span 3;
   background-color: var(--primary);
+  color: var(--highlight);
 }
 
 #main-content {
@@ -60,4 +71,5 @@
   grid-column: 1 / -1;
   grid-row: 7;
   background-color: var(--primary);
+  color: var(--highlight);
 }
