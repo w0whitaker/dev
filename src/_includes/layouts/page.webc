@@ -7,23 +7,23 @@ layout: base.webc
 </script>
 
 <div id="page-wrapper">
-  <header id="header-left">
+  <header id="header-left" class="box">
     <h1><a href="/" @html="title"></a></h1>
     <p @html="description"></p>
   </header>
-  <nav id="header-right">
+  <nav id="header-right" class="box">
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
     </ul>
   </nav>
   <main>
-    <div id="sidebar">
+    <div id="sidebar" class="box">
       <p>recent posts</p>
     </div>
-    <div id="content" @raw="content"></div>
+    <div id="content" @raw="content" class="box"></div>
   </main>
-  <footer id="footer">
+  <footer id="footer" class="box">
     <ul>
       <li>
         <a href="https://github.com/w0whitaker">github</a>
