@@ -17,11 +17,10 @@ layout: base.webc
       <li><a href="/about">About</a></li>
     </ul>
   </nav>
-  <main>
-    <div id="sidebar" class="box">
-      <p>recent posts</p>
-    </div>
-    <div id="content" @raw="content" class="box"></div>
+  <div id="sidebar" class="box">
+    <p>recent posts</p>
+  </div>
+  <main id="main-content" @raw="content" class="box">
   </main>
   <footer id="footer" class="box">
     <ul>
