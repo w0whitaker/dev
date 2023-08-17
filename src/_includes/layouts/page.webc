@@ -6,8 +6,14 @@ layout: base.webc
   const description = meta.siteDescription;
 </script>
 
-<header>
+<header id="header-left">
   <h1><a href="/" @html="title"></a></h1>
   <p @html="description"></p>
 </header>
+<nav id="header-right">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</nav>
 <main @raw="content"></main>
