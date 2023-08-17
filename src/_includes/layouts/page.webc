@@ -16,7 +16,12 @@ layout: base.webc
     <li><a href="/about">About</a></li>
   </ul>
 </nav>
-<main @raw="content"></main>
+<main>
+  <div id="sidebar">
+    <p>recent posts</p>
+  </div>
+  <div id="content" @raw="content"></div>
+</main>
 <footer>
   <ul>
     <li>
