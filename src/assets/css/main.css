@@ -16,3 +16,7 @@
   grid-template-rows: repeat(8, 8rem);
   margin-top: 1rem;
 }
+
+.box {
+  padding: 1rem;
+}
