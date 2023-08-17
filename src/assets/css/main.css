@@ -6,3 +6,13 @@
 @tailwind components;
 @tailwind utilities;
 
+#page-wrapper {
+  display: grid;
+  grid-template-areas:
+    "header-left header-right"
+    "sidebar main-content"
+    "footer";
+  grid-template-columns: repeat(8, 8rem);
+  grid-template-rows: repeat(8, 8rem);
+  margin-top: 1rem;
+}
