@@ -1,4 +1,13 @@
 ---
 layout: base.webc
 ---
+<script webc:setup>
+  const title = meta.siteName;
+  const description = meta.siteDescription;
+</script>
+
+<header>
+  <h1><a href="/" @html="title"></a></h1>
+  <p @html="description"></p>
+</header>
 <main @raw="content"></main>
