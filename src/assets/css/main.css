@@ -44,20 +44,20 @@
 #sidebar {
   grid-area: sidebar;
   grid-column: 1 / span 3;
-  grid-row: 4 / span 4;
+  grid-row: 4 / span 3;
   background-color: var(--primary);
 }
 
 #main-content {
   grid-area: main-content;
   grid-column: 4 / -1;
-  grid-row: 2 / span 6;
+  grid-row: 2 / span 5;
   background-color: var(--secondary);
 }
 
 #footer {
   grid-area: footer;
   grid-column: 1 / -1;
-  grid-row: -2;
+  grid-row: 7;
   background-color: var(--primary);
 }
