@@ -30,7 +30,7 @@
 #header-left {
   grid-area: header-left;
   grid-column: 1 / span 3;
-  grid-row: 1 / span 4;
+  grid-row: 1 / span 3;
   background-color: var(--highlight);
 }
 
