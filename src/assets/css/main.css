@@ -6,6 +6,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #603813;
+  --secondary: #c69c6d;
+  --highlight: #ff931e;
+}
+
 #page-wrapper {
   display: grid;
   grid-template-areas:
@@ -19,4 +25,39 @@
 
 .box {
   padding: 1rem;
+}
+
+#header-left {
+  grid-area: header-left;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 4;
+  background-color: var(--highlight);
+}
+
+#header-right {
+  grid-area: header-right;
+  grid-column: 4 / -1;
+  grid-row: 1;
+  background-color: var(--primary);
+}
+
+#sidebar {
+  grid-area: sidebar;
+  grid-column: 1 / span 3;
+  grid-row: 4 / span 4;
+  background-color: var(--primary);
+}
+
+#main-content {
+  grid-area: main-content;
+  grid-column: 4 / -1;
+  grid-row: 2 / span 6;
+  background-color: var(--secondary);
+}
+
+#footer {
+  grid-area: footer;
+  grid-column: 1 / -1;
+  grid-row: -2;
+  background-color: var(--primary);
 }
