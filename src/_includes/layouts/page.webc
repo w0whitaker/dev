@@ -17,3 +17,14 @@ layout: base.webc
   </ul>
 </nav>
 <main @raw="content"></main>
+<footer>
+  <ul>
+    <li>
+      <a href="https://github.com/w0whitaker">github</a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/william-whitaker/">linkedin</a>
+    </li>
+  </ul>
+  <p>copyright 2023</p>
+</footer>
