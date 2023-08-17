@@ -6,30 +6,32 @@ layout: base.webc
   const description = meta.siteDescription;
 </script>
 
-<header id="header-left">
-  <h1><a href="/" @html="title"></a></h1>
-  <p @html="description"></p>
-</header>
-<nav id="header-right">
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-  </ul>
-</nav>
-<main>
-  <div id="sidebar">
-    <p>recent posts</p>
-  </div>
-  <div id="content" @raw="content"></div>
-</main>
-<footer>
-  <ul>
-    <li>
-      <a href="https://github.com/w0whitaker">github</a>
-    </li>
-    <li>
-      <a href="https://www.linkedin.com/in/william-whitaker/">linkedin</a>
-    </li>
-  </ul>
-  <p>copyright 2023</p>
-</footer>
+<div id="page-wrapper">
+  <header id="header-left">
+    <h1><a href="/" @html="title"></a></h1>
+    <p @html="description"></p>
+  </header>
+  <nav id="header-right">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div id="sidebar">
+      <p>recent posts</p>
+    </div>
+    <div id="content" @raw="content"></div>
+  </main>
+  <footer id="footer">
+    <ul>
+      <li>
+        <a href="https://github.com/w0whitaker">github</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/william-whitaker/">linkedin</a>
+      </li>
+    </ul>
+    <p>copyright 2023</p>
+  </footer>
+</div>
