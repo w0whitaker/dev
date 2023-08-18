@@ -11,6 +11,7 @@
   --secondary: #c69c6d;
   --tertiary: #ff931e;
   --highlight: #ffccb3;
+  --dark: #391d00;
 }
 body {
   background-color: var(--highlight);
@@ -40,6 +41,7 @@ body {
   grid-area: header-left;
   grid-column: 1 / span 3;
   grid-row: 1 / span 3;
+  color: var(--primary);
   background-color: var(--tertiary);
 }
 
