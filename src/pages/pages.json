@@ -1,5 +1,5 @@
 {
-  "layout": "page",
+  "layout": "page.webc",
   "permalink": "/{{ page.fileSlug }}/",
   "tags": ["pages"]
 }

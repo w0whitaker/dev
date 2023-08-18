@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link webc:keep rel="stylesheet" href="../../assets/css/main.css" />
+  <title>William Wker | front-end developer</title>
+</head>
+
+<body @raw="content"></body>
+
+</html>

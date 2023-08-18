@@ -32,7 +32,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(footnotes);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(eleventyWebcPlugin, {
-    components: ['npm:@11ty/eleventy-img/*.webc'],
+    components: [
+      'npm:@11ty/eleventy-img/*.webc',
+      '_includes/components/*.webc',
+    ],
   });
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(eleventyImagePlugin, {
