@@ -113,3 +113,6 @@ config/settings/imagePlugin/imagePluginSettings.js
 config/settings/index.js
 
 dump/
+
+# binaries
+*.ttf
