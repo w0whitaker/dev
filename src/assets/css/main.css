@@ -20,16 +20,25 @@ body {
 #page-wrapper {
   display: grid;
   grid-template-areas:
-    "header-left header-right"
-    "sidebar main-content"
-    "footer ....";
-  grid-template-columns: repeat(8, 6rem);
-  grid-template-rows: repeat(8, 1fr);
-  grid-gap: 0.25rem;
-  width: fit-content;
-  margin-top: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+    "header-region"
+    "main-region"
+    "footer-region";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-gap: 0.5rem;
+  margin: 1rem;
+}
+
+#header-region {
+  grid-area: header-region;
+}
+
+#main-region {
+  grid-area: main-region;
+}
+
+#footer-region {
+  grid-area: footer-region;
 }
 
 .box {
