@@ -1,0 +1,12 @@
+---
+layout: page
+---
+{% set currentProject = collections.projects | getCollectionItem %}
+{% set altExt = "screenshot of {{ currentProject.data.title }}" %}
+
+<article>
+  {% if currentProject.data.screenshot %}
+    {% image currentProject.data.screenshot, altExt %}
+  {% endif %}
+	{{ content | safe }}
+</article>

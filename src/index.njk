@@ -1,36 +1,6 @@
 ---
-layout: page.njk
-title: home
-ogImage: https://v1.screenshot.11ty.dev/https%3A%2F%2Fwilliamwhitaker.dev/opengraph/
-ogDesc: Hi I'm William and this is my website
-pagination:
-  data: collections.posts
-  size: 2
-  alias: posts
-templateEngineOverride: njk, md
+layout: "page"
+pageTitle: "home"
+permalink: "/"
 ---
-<article>
-  <h2>about me</h2>
-{% snippet %}
-
-Hi! I'm a front-end developer who wants to help make the web the creative, inclusive space it was always meant to be.
-
-{# {% image "/images/self.jpg", "a picture of me", "snippet-image" %} #}
-
-{% endsnippet %}
-</article>
-
-<article>
-  <h2>recent posts</h2>
-{% snippet %}
-{% if posts %}
-{% for post in posts %}
-- ### [{{ post.data.title }}]({{ post.url }})<br>
-    <time datetime="{{ post.date | isoDate }}">{{ post.date | humanDate }}</time><br>
-    <p>{{ post.data.excerpt }}</p>
-{% endfor %}
-{% else %}
-No posts yet!
-{% endif %}
-{% endsnippet %}
-</article>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam quae perspiciatis, maxime ab fugit id! Consectetur tempora pariatur facere distinctio iste. Autem, saepe rem. Aperiam corporis nobis totam iusto!</p>

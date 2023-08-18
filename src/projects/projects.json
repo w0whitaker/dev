@@ -1,4 +1,4 @@
 {
-  "tags": ["projects"],
-  "permalink": false
+  "layout": "project",
+  "tags": ["projects"]
 }

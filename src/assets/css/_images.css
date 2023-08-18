@@ -1,0 +1,16 @@
+.project-screenshot {
+  max-width: 30ch;
+  border-style: solid;
+  border-color: black;
+  border-top-width: 0.25em;
+  border-right-width: 0.25ch;
+  border-bottom-width: 0.25em;
+  border-left-width: 0.25ch;
+  background-color: #eaeaea;
+}
+
+.project-screenshot,
+.project-screenshot img {
+  border-radius: 25px;
+  padding: 0.25em;
+}

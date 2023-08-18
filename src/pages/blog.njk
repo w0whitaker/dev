@@ -1,9 +1,10 @@
 ---
-title: blog
-order: 2
+layout: "page"
+pageTitle: "blog"
 ---
 <ul>
   {% for post in collections.posts %}
+	{% if post.data.published == true %}
   <li>
     <article>
       <h3>
@@ -14,5 +15,6 @@ order: 2
       <p><a href="{{ post.url }}">more...</a></p>
     </article>
   </li>
+	{% endif %}
   {% endfor %}
 </ul>

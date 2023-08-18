@@ -2,7 +2,7 @@
 title: 'pieton'
 excerpt: "Walking is cool, don't let anyone tell you otherwise."
 link: 'https://w0whitaker.github.io/pieton/'
-screenshot: '/images/pieton.png'
+screenshot: './src/assets/images/pieton.png'
 alt: 'A grid showing the colors that make up the pieton color scheme.'
 order: 3
 ---

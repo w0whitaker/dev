@@ -2,7 +2,7 @@
 title: 'pomodoro timer'
 excerpt: 'A simple timer made with Nuxt, using Vuex to manage state.'
 link: 'https://brazilla-ray-pomodoro.netlify.app/'
-screenshot: '/images/pomodoro.png'
+screenshot: './src/assets/images/pomodoro.png'
 alt: 'A big red timer, looks a bit like a tomato.'
 order: 4
 ---

@@ -2,7 +2,7 @@
 title: 'wedding site'
 excerpt: 'A website I made to handle RSVPs to our wedding, as well as to add needless levels of stress.'
 link: 'https://w0whitaker.github.io/wedding-site/'
-screenshot: '/images/wedding.png'
+screenshot: './src/assets/images/wedding.png'
 alt: 'The homepage of our wedding site, with an RSVP form.'
 order: 6
 ---

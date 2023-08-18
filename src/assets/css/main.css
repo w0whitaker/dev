@@ -1,0 +1,17 @@
+@import url('./_reset.css');
+@import url('./_typography.css');
+@import url('./_images.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+	border: 2px solid #00000f;
+	border-right-width: 2ch;
+	border-radius: 0.5ch;
+	border-top-right-radius: 1ch;
+	border-bottom-right-radius: 1ch;
+	padding-inline: 1ch;
+	padding-block-start: 1rem;
+}

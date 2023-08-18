@@ -1,0 +1,20 @@
+<nav>
+	{% if pageTitle === 'home' %}
+    {% set activePage = "/" %}
+	{% else %}
+		{% set activePage = ["/", page.fileSlug, "/"] | join  %}
+	{% endif %}
+	<div class="layout:[ flex flex-wrap items-end ]">
+		<span class="layout:[ flex-1 basis-2/3 ] typography:[ leading-none font-bold ]">other pages on this site:</span>
+
+		<ul class="layout:[ flex flex-nowrap gap-2 items-end ] spacing:[ space-y-2 ]">
+		{% for item in navigation.pages %}
+			{% if  item.url != activePage %}
+				<li class="typography:[ text-step-0 ]">
+					<a href="{{ item.url }}" class=" typography:[ font-display ] aesthetic:[ underline underline-offset-8 decoration-4 decoration-black hover:decoration-wavy hover:decoration-2 ]">"{{ item.text }}"</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+		</ul>
+	</div>
+</nav>

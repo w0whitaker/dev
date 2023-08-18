@@ -2,7 +2,7 @@
 title: 'william whitaker dot art'
 excerpt: 'A custom WordPress theme for showcasing my paintings.'
 link: 'https://williamwhitaker.art'
-screenshot: '/images/art.png'
+screenshot: './src/assets/images/art.png'
 alt: 'A list view of some of my paintings.'
 order: 5
 ---
