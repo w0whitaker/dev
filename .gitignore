@@ -116,3 +116,5 @@ dump/
 
 # binaries
 *.ttf
+*.png
+*.jpg
