@@ -1,4 +1,5 @@
 @import url('./_reset.css');
+@import url('./_grid.css');
 @import url('./_typography.css');
 @import url('./_images.css');
 
@@ -17,33 +18,20 @@ body {
   background-color: var(--highlight);
 }
 
-#page-wrapper {
-  display: grid;
-  grid-template-areas:
-    "header-region"
-    "main-region"
-    "footer-region";
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
-  grid-gap: 0.5rem;
-  margin: 1rem;
-}
-
-#header-region {
-  grid-area: header-region;
-}
-
-#main-region {
-  grid-area: main-region;
-}
-
-#footer-region {
-  grid-area: footer-region;
-}
-
 .box {
   padding: 1rem;
   border-radius: 0.5rem;
+}
+#header-region {
+  background-color: var(--tertiary);
+}
+
+#main-region {
+  background-color: var(--secondary);
+}
+
+#footer-region {
+  background-color: var(--primary);
 }
 
 #header-left {

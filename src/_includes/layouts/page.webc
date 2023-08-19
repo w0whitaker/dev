@@ -6,7 +6,7 @@ layout: base.webc
   const description = meta.siteDescription;
 </script>
 
-<div id="page-wrapper">
+<div id="page-wrapper" class="u-container u-grid">
   <div id="header-region">
     <header class="box">
       <h1><a href="/" @html="title"></a></h1>
