@@ -1,0 +1,8 @@
+# Ignore builds
+_site/
+
+# Ignore node
+node_modules/
+
+# Ignore markdown files
+*.md

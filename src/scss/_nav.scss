@@ -1,66 +1,69 @@
+/** @format */
+
 @use 'theme' as t;
 @use 'utilities' as u;
 
 nav {
-  width: 100%;
-  a {
-    @include u.nav-link;
-    font-size: u.navbar('text');
-    line-height: u.navbar('text');
-    color: t.color('near-white');
-    padding: min(u.navbar('squareBox'), u.navbar('landscapeBox')) 0;
-    &.active {
-      box-shadow: inset 0px calc(u.navbar('text') - (2 * u.navbar('text'))) 0px
-        0px t.color('shadow');
-    }
-  }
-  ul {
     width: 100%;
-    padding: 0;
-  }
-  li {
-    flex: 1 0 u.navbar('boxWidth');
-    max-width: calc(100% / 3);
-    &:nth-child(1) {
-      background: t.color('primary');
+    a {
+        @include u.nav-link;
+        font-size: u.navbar('text');
+        line-height: u.navbar('text');
+        color: t.color('near-white');
+        padding: min(u.navbar('squareBox'), u.navbar('landscapeBox')) 0;
+        &.active {
+            box-shadow: inset 0px
+                calc(u.navbar('text') - (2 * u.navbar('text'))) 0px 0px
+                t.color('shadow');
+        }
     }
-    &:nth-child(2) {
-      background: t.color('primary-alt');
+    ul {
+        width: 100%;
+        padding: 0;
     }
-    &:nth-child(3) {
-      background: t.color('secondary');
-    }
-    &#home {
-      background: t.color('near-black');
-      position: relative;
-      &::after {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        content: '';
-        width: min(100%, 8rem);
-        height: 100%;
-        background: t.color('near-black');
-        clip-path: polygon(
-          100% 0%,
-          0% 50%,
-          0% 100%,
-          0% 50%,
-          100% 100%,
-          100% 100%,
-          100% 0%
-        );
-        @media screen and (min-width: 768px) {
-          width: calc(100vw / 6);
+    li {
+        flex: 1 0 u.navbar('boxWidth');
+        max-width: calc(100% / 3);
+        &:nth-child(1) {
+            background: t.color('primary');
+        }
+        &:nth-child(2) {
+            background: t.color('primary-alt');
+        }
+        &:nth-child(3) {
+            background: t.color('secondary');
+        }
+        &#home {
+            background: t.color('near-black');
+            position: relative;
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                content: '';
+                width: min(100%, 8rem);
+                height: 100%;
+                background: t.color('near-black');
+                clip-path: polygon(
+                    100% 0%,
+                    0% 50%,
+                    0% 100%,
+                    0% 50%,
+                    100% 100%,
+                    100% 100%,
+                    100% 0%
+                );
+                @media screen and (min-width: 768px) {
+                    width: calc(100vw / 6);
+                }
+                @media screen and (min-width: 1024px) {
+                    height: 0;
+                    width: 0;
+                }
+            }
         }
         @media screen and (min-width: 1024px) {
-          height: 0;
-          width: 0;
+            flex: 1 0 calc(100% / 4);
         }
-      }
     }
-    @media screen and (min-width: 1024px) {
-      flex: 1 0 calc(100% / 4);
-    }
-  }
 }
