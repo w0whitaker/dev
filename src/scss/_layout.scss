@@ -5,13 +5,15 @@
 
 body {
     background-color: t.color('background');
+
     &.page-main {
         > .container {
             height: 100%;
             display: grid;
             grid-auto-rows: 1fr 1fr 2fr 0 1fr;
         }
-        @media screen and (min-width: 768px) {
+
+        @media screen and (width >= 768px) {
             grid-auto-rows: 1fr 2fr 0 1fr;
         }
     }
@@ -20,6 +22,7 @@ body {
 // start main
 main {
     width: 100%;
+
     section,
     article {
         max-width: 100%;
@@ -27,7 +30,7 @@ main {
         overflow: auto;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (width >= 768px) {
         /*
      * grid kicks in at 768px wide
      * columns will be: left-gutter | column-1 |{if screen is wider than   *1440px: center-gutter | column-2 |} right-gutter
@@ -35,42 +38,52 @@ main {
         > .container {
             display: grid;
             grid-template-columns: [left-gutter] 8.333325vw [column-1] 1fr [right-gutter] 8.333325vw [end];
-            @media screen and (min-width: 1440px) {
+
+            @media screen and (width >= 1440px) {
                 margin: u.main('small-pad') 0 4.1666625vw;
                 grid-template-columns: [left-gutter] 8.333325vw [column-1] 1fr [center-gutter] 8.333325vw [column-2] 1fr [right-gutter] 8.333325vw;
                 grid-auto-rows: 1fr;
             }
         }
+
         article {
             display: grid;
             grid-column: column-1;
-            @media screen and (min-width: 1440px) {
+
+            @media screen and (width >= 1440px) {
                 grid-template-rows: 8.333325vw 1fr;
+
                 &:first-of-type {
                     grid-column: column-1;
                 }
+
                 &:nth-of-type(2) {
                     grid-column: column-2;
                 }
             }
+
             &:only-child {
                 grid-column: column-1 / right-gutter;
             }
         }
     }
+
     // main content if we're not on the home page
     &.page-main {
         article {
             padding: u.main('big-pad') 0 u.main('med-pad');
+
             :is(h2, h3, h4, h5, h6, table, p, picture, time, ol) {
                 padding: u.main('vSmall-pad') u.main('small-pad');
             }
+
             h3 {
-                @media screen and (min-width: 1024px) {
+                @media screen and (width >= 1024px) {
                     margin-bottom: 0;
                     align-self: end;
                 }
             }
+
             picture {
                 padding-top: u.main('med-pad');
                 max-width: calc(u.main('visible-half') - u.main('maxTextSize'));
@@ -93,7 +106,8 @@ main {
                 }
             }
         }
-        @media screen and (min-width: 768px) {
+
+        @media screen and (width >= 768px) {
             > .container {
                 ul {
                     &:only-child {
@@ -102,16 +116,19 @@ main {
                 }
             }
         }
-        @media screen and (min-width: 1024px) {
+
+        @media screen and (width >= 1024px) {
             flex: 0 1 calc(100% / 4);
         }
     }
 }
+
 // end main
 
 :is(h2:not(header h2), h5, h6) {
     padding: u.main('big-pad') u.main('small-pad') u.main('med-pad');
-    @media screen and (min-width: 768px) {
+
+    @media screen and (width >= 768px) {
         flex-basis: 100%;
     }
 }
@@ -119,12 +136,15 @@ main {
 .container {
     display: flex;
     flex-wrap: wrap;
+
     h2:not(header h2) {
         border-bottom: 0.125rem solid t.color(text);
-        @media screen and (min-width: 768px) {
+
+        @media screen and (width >= 768px) {
             padding-left: 0;
         }
-        @media screen and (min-width: 1024px) {
+
+        @media screen and (width >= 1024px) {
             margin-bottom: 0;
             align-self: end;
         }
@@ -138,18 +158,21 @@ time {
 
 pre[class*='language-'] {
     max-width: 100vw;
-    @media screen and (min-width: 768px) {
+
+    @media screen and (width >= 768px) {
         margin: u.main('vSmall-pad') u.main('small-pad');
     }
 }
 
 .sm-square {
     @extend %db;
+
     padding: 0.5rem;
 }
 
 .big-box {
     @extend %db;
+
     text-align: center;
 }
 

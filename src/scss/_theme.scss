@@ -7,7 +7,7 @@
 $base-colors: (
     'blue': #0071bb,
     'blue-dark': #1d185c,
-    'blue-light': #aaffff,
+    'blue-light': #aff,
     'red': #e51a24,
     'red-dark': #971707,
     'red-light': #ff6395,
@@ -17,12 +17,10 @@ $base-colors: (
     'near-black': #00000f,
     'near-white': #fffff0,
     'gray': #a0a0a0,
-    'gray-dark': #555555,
+    'gray-dark': #555,
     'gray-light': #d8d8d8,
 ) !default;
-
 $green: color.adjust(map.get($base-colors, 'blue'), $hue: -120);
-
 $color-theme: (
     'primary': map.get($base-colors, 'blue'),
     'primary-alt': map.get($base-colors, 'blue-dark'),
@@ -32,7 +30,6 @@ $color-theme: (
     'background': map.get($base-colors, 'near-white'),
     'shadow': color.adjust(map.get($base-colors, 'near-black'), $alpha: -0.5),
 ) !default;
-
 $colors: map-merge($base-colors, $color-theme);
 
 @function color($key) {

@@ -2,17 +2,16 @@
 
 @use '_theme' as t;
 @use '_utilities' as u;
-
-@import url('https://fonts.googleapis.com/css2?family=Alata&family=Quattrocento:wght@400;700&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Alata&family=Quattrocento:wght@400;700&display=swap';
 
 body,
 .Footnotes__list {
-    font-family: 'Quattrocento', serif;
+    font-family: Quattrocento, serif;
     font-size: 1rem;
 }
 
 :is(h1, h2, h3, h4, h5, h6, footer) {
-    font-family: 'Alata', sans-serif;
+    font-family: Alata, sans-serif;
 }
 
 h2,
@@ -35,6 +34,7 @@ blockquote {
         text-underline-offset: 0.5rem;
         color: t.color(primary);
     }
+
     p {
         font-size: u.main('text-body');
     }
