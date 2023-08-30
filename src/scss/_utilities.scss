@@ -27,16 +27,16 @@ $vars: (
 
 // typography functions
 
-@function oneThird($width) {
+@function onethird($width) {
     @return calc($width / 3);
 }
 
-@function preferredTextSize($fluid, $relative) {
+@function preferredtextsize($fluid, $relative) {
     @return calc($fluid + $relative);
 }
 
 // header stuff
-@function h1TextSize($min, $pref, $max) {
+@function h1textsize($min, $pref, $max) {
     $min: calc($min + 0.125rem);
     $pref: calc($pref + 0.5rem);
     $max: calc($max + 3rem);
@@ -44,7 +44,7 @@ $vars: (
     @return clamp($min, $pref, $max);
 }
 
-@function h2TextSize($min, $pref, $max) {
+@function h2textsize($min, $pref, $max) {
     $min: calc($min * 0.8);
     $pref: calc($pref * 0.8);
 
@@ -87,17 +87,17 @@ $header: map-merge($vars, $header-values);
  * p = x - t / 2
  */
 
-@function navTextSize($min, $pref, $max) {
+@function navtextsize($min, $pref, $max) {
     @return clamp($min, $pref, $max);
 }
 
-@function squarePadding($width, $text) {
+@function squarepadding($width, $text) {
     $height: $width;
 
     @return calc(($height - $text) / 2);
 }
 
-@function maxPadding($text) {
+@function maxpadding($text) {
     @return calc($text + 2rem);
 }
 
@@ -141,23 +141,23 @@ $navbar: map-merge($vars, $navbar-values);
 }
 
 // main section stuff
-@function mainTextSize($min, $pref, $max) {
+@function maintextsize($min, $pref, $max) {
     @return clamp($min, $pref, $max);
 }
 
-@function bigPad($width, $text) {
+@function bigpad($width, $text) {
     @return min(calc((($width * 0.375) - $text) * 0.5), 4.5rem);
 }
 
-@function medPad($width, $text) {
+@function medpad($width, $text) {
     @return min(calc((($width * 0.375) - $text) * 0.5), 3rem);
 }
 
-@function smallPad($width, $text) {
+@function smallpad($width, $text) {
     @return min(calc((($width * 0.375) - $text) * 0.5), 1.5rem);
 }
 
-@function vSmallPad($width, $text) {
+@function vsmallpad($width, $text) {
     @return min(calc(($width * 0.375) - $text) * 0.125);
 }
 
