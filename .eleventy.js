@@ -1,6 +1,8 @@
 /** @format */
 
-// const markdownIt = require('markdown-it');
+const postcss = require('postcss');
+const postcssImport = require('postcss-import');
+
 const snippet = require('./src/js/shortcodes.js');
 const Image = require('@11ty/eleventy-img');
 const path = require('path');
@@ -9,7 +11,6 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const markdownIt = require('markdown-it');
-// const outdent = require("outdent");
 
 require('dotenv').config();
 
@@ -89,8 +90,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addGlobalData('env', process.env);
 
     // Copy `src/style.css` to `_site/style.css`
-    eleventyConfig.addPassthroughCopy('src/style.css');
-    eleventyConfig.addPassthroughCopy({ 'src/fonts/**.*': 'css/fonts' });
+    // eleventyConfig.addPassthroughCopy('src/style.css');
+    // eleventyConfig.addPassthroughCopy({ 'src/fonts/**.*': 'css/fonts' });
 
     // Plugins
     eleventyConfig.addPlugin(syntaxHighlight);
@@ -141,6 +142,24 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPairedShortcode('snippet', function (content) {
         return snippet(content);
+    });
+
+    eleventyConfig.addTemplateFormats('css');
+    eleventyConfig.addExtension('css', {
+        outputFileExtension: 'css',
+        compile: async (content, path) => {
+            if (path !== './src/assets/css/style.css') {
+                return;
+            }
+
+            return async () => {
+                let output = await postcss([postcssImport]).process(content, {
+                    from: path,
+                });
+
+                return output.css;
+            };
+        },
     });
 
     // Set custom directories for input, output, includes, and data
