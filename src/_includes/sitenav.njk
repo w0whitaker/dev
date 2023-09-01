@@ -1,7 +1,7 @@
 {% set currentUrl = page.url %}
 
 <nav>
-    <ul role="list">
+    <ul role="list" class="flex-row">
         {% for link in collections.pages %}
         <li id="{{ link.data.title | lower }}">
             {% if link.data.title === "contact" %}
