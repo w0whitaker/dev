@@ -64,8 +64,3 @@
     max-width: 65ch;
     margin-inline: auto;
   }
-  
-  section > p:first-child {
-    font-style: italic;
-    text-wrap: balance;
-  }
