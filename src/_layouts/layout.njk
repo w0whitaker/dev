@@ -16,10 +16,7 @@ title: typical
     <title>{{ title }}</title>
   </head>
   <body{% if currentUrl != '/' %} class="page-main"{% endif %}>
-    <div class="container">
-      {{ content | safe }}
-      {% include 'footer.njk' %}
-    </div>
+    {{ content | safe }}
+    {% include 'footer.njk' %}
   </body>
-  <script>{% include "src/js/index.js" %}</script>
 </html>
