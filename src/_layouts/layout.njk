@@ -15,7 +15,7 @@ title: typical
     <link rel="stylesheet" href="assets/css/style.css">
     <title>{{ title }}</title>
   </head>
-  <body{% if currentUrl != '/' %} class="page-main"{% endif %}>
+  <body class="flow">
     {{ content | safe }}
     {% include 'footer.njk' %}
   </body>
