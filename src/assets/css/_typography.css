@@ -70,3 +70,9 @@
     font-weight: 700;
     text-underline-offset: calc(var(--step--1) / 2);
   }
+  
+  header > h1:hover {
+    color: var(--primary, magenta);
+    text-decoration: underline;
+    text-underline-offset: calc(var(--step--1) / 2);
+  }
