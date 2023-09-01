@@ -64,3 +64,9 @@
     max-width: 65ch;
     margin-inline: auto;
   }
+  
+  a {
+    color: var(--primary, magenta);
+    font-weight: 700;
+    text-underline-offset: calc(var(--step--1) / 2);
+  }
