@@ -6,6 +6,6 @@ layout: layout.njk
 {% include 'header.njk' %}
 {% include 'sitenav.njk' %}
 
-<main{% if currentUrl != '/' %} class="page-main"{% endif %}>
-  <div class="container">{{ content | safe }}</div>
+<main>
+    {{ content | safe }}
 </main>
