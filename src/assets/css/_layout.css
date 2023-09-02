@@ -23,7 +23,7 @@ ol {
 }
 
 .flow > * + * {
-    margin-block-start: var(--space-2xs);
+    margin-block-start: var(--space-m);
 }
 
 .flex-row {
@@ -31,3 +31,21 @@ ol {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    margin: -1rem;
+  }
+  
+  .container > * {
+    flex-grow: 1;
+    flex-basis: calc((40rem - 100%) * 999);
+    margin: 1rem;
+  }
+  
+  .container > :nth-last-child(n+5),
+  .container > :nth-last-child(n+5) ~ * {
+    flex-basis: 100%;
+  }
