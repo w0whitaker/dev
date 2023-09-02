@@ -45,6 +45,7 @@
   h1 {
     font-size: var(--step-3);
     max-width: 20ch;
+    color: var(--primary, magenta);
   }
   
   h2 {
@@ -71,8 +72,6 @@
     text-underline-offset: calc(var(--step--1) / 2);
   }
   
-  header > h1:hover {
-    color: var(--primary, magenta);
-    text-decoration: underline;
-    text-underline-offset: calc(var(--step--1) / 2);
+  a:hover {
+    text-decoration-style: wavy;
   }
