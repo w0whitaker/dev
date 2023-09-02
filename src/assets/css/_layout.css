@@ -1,3 +1,17 @@
+* {
+    max-inline-size: 60ch;
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-inline-size: none;
+}
+
 body {
     padding: var(--space-m);
 }

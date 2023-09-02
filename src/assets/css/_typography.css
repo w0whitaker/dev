@@ -55,16 +55,6 @@
     font-size: var(--step-1);
   }
   
-  h2,
-  h3 {
-    max-width: 28ch;
-  }
-  
-  article {
-    max-width: 65ch;
-    margin-inline: auto;
-  }
-  
   a {
     color: var(--primary, magenta);
     font-weight: 700;
