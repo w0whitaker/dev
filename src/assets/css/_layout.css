@@ -22,14 +22,14 @@ ol {
     margin: 0;
 }
 
-.flow > * + * {
-    margin-block-start: var(--space-m);
-}
-
-.flex-row {
+nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.flow > * + * {
+    margin-block-start: var(--space-m);
 }
 
 .container {
