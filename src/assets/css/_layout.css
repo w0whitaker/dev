@@ -22,10 +22,18 @@ ol {
     margin: 0;
 }
 
+header h1 {
+    display: inline-flex;
+}
+
 nav ul {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+nav li {
+    display: inline-block;
 }
 
 .flow > * + * {
@@ -36,16 +44,14 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     align-items: end;
-    margin: -1rem;
-  }
+}
   
-  .container > * {
-    flex-grow: 1;
-    flex-basis: calc((40rem - 100%) * 999);
-    margin: 1rem;
-  }
-  
-  .container > :nth-last-child(n+5),
-  .container > :nth-last-child(n+5) ~ * {
-    flex-basis: 100%;
-  }
+.container > * {
+flex-grow: 1;
+flex-basis: calc((40rem - 100%) * 999);
+}
+
+.container > :nth-last-child(n+5),
+.container > :nth-last-child(n+5) ~ * {
+flex-basis: 100%;
+}
