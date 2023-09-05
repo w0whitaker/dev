@@ -1,8 +1,7 @@
 {
-    "name": "wwdev",
+    "name": "williamwhitaker.dev",
     "version": "1.0.0",
-    "description": "This is the portfolio site for William Whitaker.",
-    "main": "index.js",
+    "description": "This is the development portfolio site for William Whitaker.",
     "scripts": {
         "clean": "rimraf _site",
         "watch:eleventy": "npx @11ty/eleventy --serve",
@@ -20,11 +19,11 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/w0whitaker/wwdev/issues"
     },
-    "homepage": "https://github.com/w0whitaker/wwdev#readme",
+    "homepage": "https://williamwhitaker.dev",
     "dependencies": {
         "@11ty/eleventy": "^2.0.1",
         "classnames": "^2.3.1",
