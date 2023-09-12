@@ -26,7 +26,8 @@ header h1 {
     display: inline-flex;
 }
 
-nav ul {
+nav ul,
+footer ul {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
