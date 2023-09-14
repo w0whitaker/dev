@@ -5,7 +5,7 @@ ogImage: https://v1.screenshot.11ty.dev/https%3A%2F%2Fwilliamwhitaker.dev/opengr
 ogDesc: Hi I'm William and this is my website
 pagination:
   data: collections.posts
-  size: 2
+  size: 5
   alias: posts
 templateEngineOverride: njk, md
 ---
@@ -27,8 +27,7 @@ I'm William. Among other [things](https://williamwhitaker.art), I'm a front-end 
     <h3>
         <a href="{{ post.url }}">{{ post.data.title }}</a>
     </h3>
-    <time datetime="{{ post.date | isoDate }}">{{ post.date | humanDate }}</time>
-    <p>{{ post.data.exerpt }}</p>
+    <p>{{ post.data.teaser }}</p>
 </div>
 {% endfor %}
 {% else %}
