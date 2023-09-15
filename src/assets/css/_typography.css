@@ -79,6 +79,6 @@
     font-size: var(--step--2);
   }
   
-  footer {
-    font-size: var(--step--2);
+  footer > ul{
+    font-size: var(--step-0);
   }
