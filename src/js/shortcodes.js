@@ -5,7 +5,7 @@ const outdent = require('outdent');
 
 const snippet = (content) => {
     return markdownIt({ html: true }).render(
-        outdent`<section>${content}</section>`,
+        outdent`<section class="flow">${content}</section>`,
     );
 };
 
