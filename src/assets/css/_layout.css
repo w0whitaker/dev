@@ -38,6 +38,17 @@ nav li {
     display: inline-block;
 }
 
+pre code {
+    display: block;
+    white-space: pre;
+    overflow-x: scroll;
+    max-width: 100%;
+    min-width: 100px;
+    padding: 0;
+    background-color: var(--dark, black);
+    color: var(--light, white);
+}
+
 .flow > * + * {
     margin-block-start: var(--space-m);
 }
