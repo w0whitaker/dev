@@ -3,19 +3,16 @@ title: projects
 order: 1
 ---
 
-<ul>
+<ul role="list" class="flow">
   {% for project in collections.projects %}
   <li>
-    <article>
+    <article class="flow">
       <header>
         <h3>
           <a href="{{ project.data.link }}">{{ project.data.title }}</a>
         </h3>
-        <p>{{ project.data.excerpt }}</p>
+        <p class="diminutive">{{ project.data.excerpt }}</p>
       </header>
-      {% if project.data.screenshot %}
-        {% image project.data.screenshot, project.data.alt, "project-img" %}
-      {% endif %}
       {{ project.templateContent | safe }}
     </article>
   </li>

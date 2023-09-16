@@ -1,0 +1,70 @@
+* {
+    max-inline-size: 60ch;
+}
+
+html,
+body,
+div {
+  max-inline-size: none;
+}
+
+body {
+    padding: var(--space-m);
+}
+
+body > * {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+header h1 {
+    display: inline-flex;
+}
+
+nav ul,
+footer ul {
+    display: flex;
+    gap: var(--space-m);
+    flex-flow: row wrap;
+}
+
+nav li {
+    display: inline-block;
+}
+
+pre code {
+    display: block;
+    white-space: pre;
+    overflow-x: scroll;
+    max-width: 100%;
+    min-width: 100px;
+    padding: 0;
+    background-color: var(--dark, black);
+    color: var(--light, white);
+}
+
+.flow > * + * {
+    margin-block-start: var(--space-m);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+}
+  
+.container > * {
+flex-grow: 1;
+flex-basis: calc((40rem - 100%) * 999);
+}
+
+.container > :nth-last-child(n+5),
+.container > :nth-last-child(n+5) ~ * {
+flex-basis: 100%;
+}

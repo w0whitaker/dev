@@ -1,8 +1,3 @@
----
-title: typical
----
-{% set currentUrl = page.url %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,14 +7,12 @@ title: typical
     <meta name="image" property="og:image" content="{{ ogImage }}">
     <meta name="description" property="og:description" content="{{ ogDesc }}">
     <meta name="author" content="William Whitaker">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>{{ title }}</title>
   </head>
-  <body{% if currentUrl != '/' %} class="page-main"{% endif %}>
-    <div class="container">
-      {{ content | safe }}
-      {% include 'footer.njk' %}
-    </div>
+  <body class="flow">
+    {% include 'header.njk' %}
+    {{ content | safe }}
+    {% include 'footer.njk' %}
   </body>
-  <script>{% include "src/js/index.js" %}</script>
 </html>

@@ -2,9 +2,15 @@
 layout: page.njk
 ---
 
-<article>
-  <h2>{{ title }}</h2>
-  <time datetime="{{ collections.posts[0].data.page.date | isoDate }}">{{ collections.posts[0].data.page.date | humanDate }}</time><br>
+<article class="flow">
+  <hgroup>
+      <h2>{{ title }}</h2>
+      <p>
+          <time datetime="{{ collections.posts[0].data.page.date | isoDate }}">{{ collections.posts[0].data.page.date | humanDate }}</time>
+      </p>
+  </hgroup>
+  <section class="flow">
   {{ content | md | safe }}
+  </section>
   {% footnotes %}
 </article>

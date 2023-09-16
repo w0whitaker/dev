@@ -5,30 +5,30 @@ ogImage: https://v1.screenshot.11ty.dev/https%3A%2F%2Fwilliamwhitaker.dev/opengr
 ogDesc: Hi I'm William and this is my website
 pagination:
   data: collections.posts
-  size: 2
+  size: 5
   alias: posts
 templateEngineOverride: njk, md
 ---
-<article>
+<article class="flow">
   <h2>about me</h2>
 {% snippet %}
 
 Among other [things](https://williamwhitaker.art), I'm a front-end developer. My focus is the space where visual design, accessible content, and code meet.  
-&#8287;  
-
-I create delightful experiences for users that help individuals and organizaions communicate with their audiences, whoever and wherever they may be.
 
 {% endsnippet %}
 </article>
 
-<article>
+<article class="flow">
   <h2>recent posts</h2>
 {% snippet %}
 {% if posts %}
 {% for post in posts %}
-- ### [{{ post.data.title }}]({{ post.url }})<br>
-    <time datetime="{{ post.date | isoDate }}">{{ post.date | humanDate }}</time><br>
-    <p>{{ post.data.excerpt }}</p>
+<div class="flow">
+    <h3>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </h3>
+    <p>{{ post.data.teaser }}</p>
+</div>
 {% endfor %}
 {% else %}
 No posts yet!
