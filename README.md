@@ -3,6 +3,7 @@
 ## branches
 1. main
 2. develop
+_Rapid changes across scopes._
 3. feat
 4. style
 5. chore
