@@ -2,6 +2,7 @@
 
 const postcss = require('postcss');
 const postcssImport = require('postcss-import');
+const postcssClean = require('postcss-clean');
 
 const snippet = require('./src/js/shortcodes.js');
 const Image = require('@11ty/eleventy-img');
@@ -153,7 +154,10 @@ module.exports = function (eleventyConfig) {
             }
 
             return async () => {
-                let output = await postcss([postcssImport]).process(content, {
+                let output = await postcss([
+                    postcssImport,
+                    postcssClean,
+                ]).process(content, {
                     from: path,
                 });
 
