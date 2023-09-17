@@ -4,7 +4,6 @@ const postcss = require('postcss');
 const postcssImport = require('postcss-import');
 const postcssClean = require('postcss-clean');
 
-const snippet = require('./src/assets/js/shortcodes.js');
 // const imagety = require('@11ty/eleventy-img');
 // const path = require('path');
 // const classNames = require('classnames');
@@ -21,6 +20,12 @@ const {
     getAllPages,
 } = require('./config/collections/index.js');
 
+// module import filters
+const { isoDate, humanDate, md } = require('./config/filters/index.js');
+
+// module import shortcodes
+const { image, snippet } = require('./config/shortcodes/index.js');
+
 module.exports = function (eleventyConfig) {
     // Load environment variables
     eleventyConfig.addGlobalData('env', process.env);
@@ -34,32 +39,18 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection('pages', getAllPages);
     eleventyConfig.addCollection('projects', getAllProjects);
 
+    // Custom filters
+    eleventyConfig.addFilter('md', md);
+    eleventyConfig.addFilter('isoDate', isoDate);
+    eleventyConfig.addFilter('humanDate', humanDate);
+
+    // Custom shortcodes
+    eleventyConfig.addNunjucksAsyncShortcode('image', image);
+    eleventyConfig.addPairedShortcode('snippet', snippet);
+
     eleventyConfig.setFrontMatterParsingOptions({
         excerpt: true,
         excerpt_separator: '<!-- more -->',
-    });
-
-    // Parse Markdown properly in excerpts
-    eleventyConfig.addFilter('md', function (content = '') {
-        return markdownIt({ html: true }).render(content);
-    });
-
-    eleventyConfig.addFilter('isoDate', function (value) {
-        return value.toISOString();
-    });
-
-    eleventyConfig.addFilter('humanDate', function (value) {
-        let options = {
-            month: 'long',
-            day: 'numeric',
-            year: 'numeric',
-        };
-        let date = new Intl.DateTimeFormat('en-US', options).format(value);
-        return date;
-    });
-
-    eleventyConfig.addPairedShortcode('snippet', function (content) {
-        return snippet(content);
     });
 
     eleventyConfig.addTemplateFormats('css');
