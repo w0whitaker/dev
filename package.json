@@ -1,6 +1,6 @@
 {
     "name": "williamwhitaker.dev",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "This is the development portfolio site for William Whitaker.",
     "scripts": {
         "clean": "rimraf _site",
