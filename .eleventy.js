@@ -4,7 +4,7 @@ const postcss = require('postcss');
 const postcssImport = require('postcss-import');
 const postcssClean = require('postcss-clean');
 
-const snippet = require('./src/js/shortcodes.js');
+const snippet = require('./src/assets/js/shortcodes.js');
 // const imagety = require('@11ty/eleventy-img');
 // const path = require('path');
 // const classNames = require('classnames');
