@@ -4,10 +4,8 @@ const postcss = require('postcss');
 const postcssImport = require('postcss-import');
 const postcssClean = require('postcss-clean');
 const imagety = require('@11ty/eleventy-img');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const markdownIt = require('markdown-it');
 
 require('dotenv').config();
 
@@ -28,7 +26,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addGlobalData('env', process.env);
 
     // Plugins
-    eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(footnotes);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
