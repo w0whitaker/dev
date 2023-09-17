@@ -15,10 +15,11 @@ const markdownIt = require('markdown-it');
 
 require('dotenv').config();
 
-// https://github.com/11ty/eleventy/issues/981#issuecomment-593397677
-function sortByNumber(a, b) {
-    return Number(a.data.order) - Number(b.data.order);
-}
+// module import collections
+const {
+    getAllProjects,
+    getAllPages,
+} = require('./config/collections/index.js');
 
 module.exports = function (eleventyConfig) {
     // Load environment variables
@@ -30,19 +31,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
     // Custom collections
-    eleventyConfig.addCollection('pages', function (collection) {
-        const pages = collection
-            .getFilteredByGlob('src/pages/*.njk')
-            .sort(sortByNumber);
-        return pages;
-    });
-
-    eleventyConfig.addCollection('projects', function (collection) {
-        const projects = collection
-            .getFilteredByTag('projects')
-            .sort(sortByNumber);
-        return projects;
-    });
+    eleventyConfig.addCollection('pages', getAllPages);
+    eleventyConfig.addCollection('projects', getAllProjects);
 
     eleventyConfig.setFrontMatterParsingOptions({
         excerpt: true,
