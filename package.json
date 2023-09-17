@@ -1,6 +1,6 @@
 {
     "name": "williamwhitaker.dev",
-    "version": "0.3.0",
+    "version": "0.1.0",
     "description": "This is the development portfolio site for William Whitaker.",
     "scripts": {
         "clean": "rimraf _site",
@@ -12,7 +12,9 @@
         "prepare": "husky install",
         "commitlint": "commitlint --edit",
         "commit": "commit",
-        "minor": "npm version minor"
+        "minor": "npm version minor",
+        "major": "npm version major",
+        "patch": "npm version patch"
     },
     "repository": {
         "type": "git",
