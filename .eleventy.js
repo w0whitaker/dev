@@ -1,8 +1,5 @@
 /** @format */
 
-const postcss = require('postcss');
-const postcssImport = require('postcss-import');
-const postcssClean = require('postcss-clean');
 const imagety = require('@11ty/eleventy-img');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
