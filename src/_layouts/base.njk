@@ -7,8 +7,9 @@
     <meta name="image" property="og:image" content="{{ ogImage }}">
     <meta name="description" property="og:description" content="{{ ogDesc }}">
     <meta name="author" content="William Whitaker">
-    <link rel="stylesheet" href="assets/css/style.css">
     <title>{{ title }}</title>
+    {% set css %}{% include 'critical-inline.css' %}{% endset %}
+    <style>{{ css | safe }}</style>
   </head>
   <body class="flow">
     {% include 'header.njk' %}
