@@ -1,8 +1,5 @@
 /** @format */
 
-const postcss = require('postcss');
-const postcssImport = require('postcss-import');
-const postcssClean = require('postcss-clean');
 const imagety = require('@11ty/eleventy-img');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
@@ -46,28 +43,6 @@ module.exports = function (eleventyConfig) {
         excerpt: true,
         excerpt_separator: '<!-- more -->',
     });
-
-    eleventyConfig.addTemplateFormats('css');
-    eleventyConfig.addExtension('css', {
-        outputFileExtension: 'css',
-        compile: async (content, path) => {
-            if (path !== './src/assets/css/style.css') {
-                return;
-            }
-
-            return async () => {
-                let output = await postcss([
-                    postcssImport,
-                    postcssClean,
-                ]).process(content, {
-                    from: path,
-                });
-
-                return output.css;
-            };
-        },
-    });
-
     // Set custom directories for input, output, includes, and data
     return {
         passthroughFileCopy: true,
