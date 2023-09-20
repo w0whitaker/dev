@@ -1,5 +1,10 @@
 /* stylelint disable custom-property-pattern */
 
+/* stylelint-disable no-duplicate-selectors */
+
+/* stylelint-disable no-descending-specificity */
+
+
 @import '_reset.css';
 @import '_typography.css';
 @import '_spacing.css';

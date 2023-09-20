@@ -20,7 +20,7 @@ node_modules/
 
 # 11ty output
 _site/
-src/_includes/critical-inline.css
+src/main.css
 
 # editor
 *.*-project
