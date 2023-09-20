@@ -40,6 +40,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addNunjucksAsyncShortcode('image', image);
     eleventyConfig.addPairedShortcode('snippet', snippet);
 
+    eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
+    eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
+    eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+    eleventyConfig.addLayoutAlias('project', 'layouts/project.njk');
+
     eleventyConfig.setFrontMatterParsingOptions({
         excerpt: true,
         excerpt_separator: '<!-- more -->',
@@ -50,7 +55,6 @@ module.exports = function (eleventyConfig) {
         dir: {
             input: 'src',
             includes: '_includes',
-            layouts: '_layouts',
             data: '_data',
             output: '_site',
         },
