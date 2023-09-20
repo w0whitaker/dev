@@ -12,8 +12,8 @@
     <style>{{ css | cssmin | safe }}</style>
   </head>
   <body class="flow">
-    {% include 'header.njk' %}
+    {% include 'partials/global/header.njk' %}
     {{ content | safe }}
-    {% include 'footer.njk' %}
+    {% include 'partials/global/footer.njk' %}
   </body>
 </html>
