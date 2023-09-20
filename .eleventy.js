@@ -13,7 +13,7 @@ const {
 } = require('./config/collections/index.js');
 
 // module import filters
-const { isoDate, humanDate, md } = require('./config/filters/index.js');
+const { isoDate, humanDate, md, cssmin } = require('./config/filters/index.js');
 
 // module import shortcodes
 const { image, snippet } = require('./config/shortcodes/index.js');
@@ -34,6 +34,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter('md', md);
     eleventyConfig.addFilter('isoDate', isoDate);
     eleventyConfig.addFilter('humanDate', humanDate);
+    eleventyConfig.addFilter('cssmin', cssmin);
 
     // Custom shortcodes
     eleventyConfig.addNunjucksAsyncShortcode('image', image);

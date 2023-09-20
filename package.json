@@ -6,7 +6,7 @@
     "scripts": {
         "clean": "rimraf _site",
         "dev:eleventy": "npx @11ty/eleventy --serve",
-        "dev:postcss": "postcss src/assets/css/style.css -o _site/main.css --watch --verbose",
+        "dev:postcss": "postcss src/assets/css/style.css -o src/main.css --watch --verbose",
         "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
         "start": "run-p dev:*",
         "build": "npx @11ty/eleventy",
@@ -31,6 +31,7 @@
     "homepage": "https://williamwhitaker.dev",
     "dependencies": {
         "@11ty/eleventy": "^2.0.1",
+        "clean-css": "^5.3.2",
         "critical": "^6.0.0",
         "dotenv": "^16.0.0",
         "eleventy-plugin-footnotes": "^0.11.0",
