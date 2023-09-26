@@ -37,7 +37,9 @@ const image = async (
             const sourceAttributes = stringifyAttributes({
                 type: sourceType,
                 // srcset needs to be a comma-separated attribute
-                srcset: images.map((image) => image.srcset).join(', '),
+                srcset: images
+                    .map((image) => image.srcset.replace('/images', 'images'))
+                    .join(', '),
                 sizes,
             });
 
@@ -54,7 +56,7 @@ const image = async (
     const largestUnoptimizedImg = getLargestImage(formats[1]);
 
     const imgAttributes = stringifyAttributes({
-        src: largestUnoptimizedImg.url,
+        src: largestUnoptimizedImg.url.replace('/images', 'images'),
         width: largestUnoptimizedImg.width,
         height: largestUnoptimizedImg.height,
         alt,
