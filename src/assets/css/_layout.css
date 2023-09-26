@@ -49,6 +49,10 @@ pre code {
     color: var(--light, white);
 }
 
+img {
+    height: auto;
+}
+
 .flow > * + * {
     margin-block-start: var(--space-m);
 }
@@ -67,4 +71,18 @@ flex-basis: calc((40rem - 100%) * 999);
 .container > :nth-last-child(n+5),
 .container > :nth-last-child(n+5) ~ * {
 flex-basis: 100%;
+}
+
+.logo-image {
+    width: 30vw;
+}
+
+.adjoining-duo {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.duo-l {
+    flex: 0 0 70%
 }
