@@ -1,12 +1,14 @@
 const humanDate = (value) => {
     const options = {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+        timeZone: "UTC",
     };
-    const date = new Intl.DateTimeFormat("en-US", options).format(value);
+    let date;
+    date = new Intl.DateTimeFormat("en-US", options).format(value);
     return date;
-  };
-  
-  module.exports = humanDate;
+};
+
+module.exports = humanDate;
   

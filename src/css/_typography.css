@@ -87,14 +87,12 @@
   blockquote {
     font-weight: 200;
     font-size: 0.875em;
-    padding-inline-start: var(--space-xs);
-    padding-inline-end: var(--space-xs);
+    padding-inline: var(--space-xs);
   }
   
   .diminutive {
     font-size: 0.875em;
     font-style: italic;
     padding-block-start: var(--space-xs);
-    padding-inline-start: var(--space-xs);
-    padding-inline-end: var(--space-xs);
+    padding-inline: var(--space-xs);
   }

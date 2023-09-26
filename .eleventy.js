@@ -1,6 +1,6 @@
 /** @format */
 
-const imagety = require('@11ty/eleventy-img');
+// const imagety = require('@11ty/eleventy-img');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
@@ -8,8 +8,8 @@ require('dotenv').config();
 
 // module import collections
 const {
-    getAllProjects,
-    getAllPages,
+	getAllProjects,
+	getAllPages,
 } = require('./config/collections/index.js');
 
 // module import filters
@@ -19,44 +19,53 @@ const { isoDate, humanDate, md, cssmin } = require('./config/filters/index.js');
 const { image, snippet } = require('./config/shortcodes/index.js');
 
 module.exports = function (eleventyConfig) {
-    // Load environment variables
-    eleventyConfig.addGlobalData('env', process.env);
+	// Load environment variables
+	eleventyConfig.addGlobalData('env', process.env);
 
-    // Plugins
-    eleventyConfig.addPlugin(footnotes);
-    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+	// Passthrough copy
+	eleventyConfig.addPassthroughCopy('src/css/**/*.css');
+	eleventyConfig.addPassthroughCopy('src/assets/images/**/*');
+	eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
 
-    // Custom collections
-    eleventyConfig.addCollection('pages', getAllPages);
-    eleventyConfig.addCollection('projects', getAllProjects);
+	// Plugins
+	eleventyConfig.addPlugin(footnotes);
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-    // Custom filters
-    eleventyConfig.addFilter('md', md);
-    eleventyConfig.addFilter('isoDate', isoDate);
-    eleventyConfig.addFilter('humanDate', humanDate);
-    eleventyConfig.addFilter('cssmin', cssmin);
+	// Custom collections
+	eleventyConfig.addCollection('pages', getAllPages);
+	eleventyConfig.addCollection('projects', getAllProjects);
 
-    // Custom shortcodes
-    eleventyConfig.addNunjucksAsyncShortcode('image', image);
-    eleventyConfig.addPairedShortcode('snippet', snippet);
+	// Custom filters
+	eleventyConfig.addFilter('md', md);
+	eleventyConfig.addFilter('isoDate', isoDate);
+	eleventyConfig.addFilter('humanDate', humanDate);
+	eleventyConfig.addFilter('cssmin', cssmin);
 
-    eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
-    eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
-    eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
-    eleventyConfig.addLayoutAlias('project', 'layouts/project.njk');
+	// Custom shortcodes
+	eleventyConfig.addNunjucksAsyncShortcode('image', image);
+	eleventyConfig.addPairedShortcode('snippet', snippet);
 
-    eleventyConfig.setFrontMatterParsingOptions({
-        excerpt: true,
-        excerpt_separator: '<!-- more -->',
-    });
-    // Set custom directories for input, output, includes, and data
-    return {
-        passthroughFileCopy: true,
-        dir: {
-            input: 'src',
-            includes: '_includes',
-            data: '_data',
-            output: '_site',
-        },
-    };
+	eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
+	eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
+	eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+	eleventyConfig.addLayoutAlias('project', 'layouts/project.njk');
+
+	eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		excerpt_separator: '<!-- more -->',
+	});
+
+	// Watch targets
+	eleventyConfig.addWatchTarget('./src/assets/**/*.css');
+
+	// Set custom directories for input, output, includes, and data
+	return {
+		passthroughFileCopy: true,
+		dir: {
+			input: 'src',
+			includes: '_includes',
+			data: '_data',
+			output: '_site',
+		},
+	};
 };

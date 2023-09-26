@@ -1,14 +1,15 @@
 {
     "name": "williamwhitaker.dev",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "This is the development portfolio site for William Whitaker.",
     "main": ".eleventy.js",
     "scripts": {
         "clean": "rimraf _site",
-        "dev:postcss": "postcss src/assets/css/bundle.css -o src/main.css --watch --verbose",
         "dev:eleventy": "npx @11ty/eleventy --serve",
-        "start": "run-s clean dev:*",
+        "dev:postcss": "npx postcss src/assets/css/bundle.css -o src/main.css --watch --verbose",
+        "start": "run-s clean dev:eleventy",
         "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
+        "build:style-dictionary": "style-dictionary build -c .style-dictionary.config.json",
         "build:postcss": "postcss src/assets/css/bundle.css -o src/main.css",
         "build:eleventy": "npx @11ty/eleventy",
         "build": "run-s clean build:*",
@@ -51,6 +52,7 @@
         "@commitlint/cli": "^17.7.1",
         "@commitlint/config-conventional": "^17.7.0",
         "@commitlint/prompt-cli": "^17.7.1",
+        "critical": "^6.0.0",
         "eslint": "^8.48.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-import": "^2.28.1",
@@ -61,6 +63,7 @@
         "outdent": "^0.8.0",
         "prettier": "^3.0.2",
         "rimraf": "^5.0.1",
+        "style-dictionary": "^3.9.0",
         "stylelint": "^15.10.3",
         "stylelint-config-standard": "^34.0.0"
     }
