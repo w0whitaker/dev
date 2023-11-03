@@ -2,6 +2,7 @@
 title: "I'm not good enough to make things that people will see, including me."
 teaser: "In which I grapple with the fact that I'm a little 
 put off by the possibility of making mistakes."
+date: 2023-11-03
 ---
 I woke up this morning at 2:30. Sometimes this happens, 
 it happened today because my CPAP mask was making lots 
