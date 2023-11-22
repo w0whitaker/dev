@@ -6,9 +6,10 @@
     "scripts": {
         "clean": "rimraf _site",
         "dev:eleventy": "npx @11ty/eleventy --serve",
-        "dev:postcss": "postcss src/assets/css/bundle.css -o src/main.css --watch --verbose",
-        "start": "run-s clean dev:*",
+        "dev:postcss": "npx postcss src/assets/css/bundle.css -o src/main.css --watch --verbose",
+        "start": "run-s clean dev:eleventy",
         "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
+        "build:style-dictionary": "style-dictionary build -c .style-dictionary.config.json",
         "build:postcss": "postcss src/assets/css/bundle.css -o src/main.css",
         "build:eleventy": "npx @11ty/eleventy",
         "build": "run-s clean build:*",
@@ -62,6 +63,7 @@
         "outdent": "^0.8.0",
         "prettier": "^3.0.2",
         "rimraf": "^5.0.1",
+        "style-dictionary": "^3.9.0",
         "stylelint": "^15.10.3",
         "stylelint-config-standard": "^34.0.0"
     }

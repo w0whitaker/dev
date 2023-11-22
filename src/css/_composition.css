@@ -1,0 +1,139 @@
+/* Composition */
+
+/* https://cube.fyi/composition.html
+Composition rules are for defining layouts, interactions, and flow/rhythm.
+Composition rules are not for aesthetic elements such as fonts, colors, borders, shadows, etc. 
+*/
+
+body {
+	--flow-space: var(--space-m,  1.5rem);
+
+	padding-block: var(--space-s, 1.5rem);
+	padding-inline: var(--space-xs,  1.5rem);
+}
+
+main {
+	--flow-space: var(--space-s,  1.5rem);
+	
+	padding-inline: var(--space-xs,  1.5rem);
+}
+
+article {
+	--flow-space: var(--space-xs, 1.5rem);
+}
+
+section {
+	--flow-space: var(--space-2xs, 1.5rem);
+	
+	padding-block: var(--space-xs,  1.5rem);
+}
+
+section:first-child {
+	padding-block: 0;
+}
+
+section *:not(h2,h3) {
+	padding-inline: var(--space-2xs,  1.5rem);
+}
+
+section a {
+	padding-inline: 0;
+}
+
+ul {
+	--flow-space: var(--space-3xs, 1.5rem);
+}
+
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1.5em);
+}
+
+.tight-box {
+	padding: var(--space-3xs);
+	border: 0 solid;
+	outline: var(--border-thin) solid transparent;
+	outline-offset: calc(var(--border-thin) * -1);
+	color: var(--color-dark);
+	background-color: var(--color-light);
+}
+
+.tight-box * {
+	color: inherit;
+}
+
+.tight-box.invert {
+	color: var(--color-light);
+	background-color: var(--color-dark);
+}
+
+.standard-box {
+	padding: var(--space-xs,  1.5rem);
+	border: 0 solid;
+	color: var(--color-dark);
+	background-color: var(--color-light);
+}
+
+.standard-box * {
+	color: inherit;
+}
+
+.standard-box.invert {
+	color: var(--color-light);
+	background-color: var(--color-dark);
+}
+
+.wide-box {
+	padding: var(--space-s,  1.5rem);
+	border: 4px solid var(--color-dark, black);
+	outline: var(--border-thin) solid transparent;
+	outline-offset: calc(var(--border-thin) * -1);
+	color: var(--color-dark);
+	background-color: var(--color-light);
+}
+
+.wide-box * {
+	color: inherit;
+}
+
+.wide-box.invert {
+	color: var(--color-light);
+	background-color: var(--color-dark);
+}
+
+.cover {
+	display: flex;
+	flex-direction: column;
+	min-block-size: 100vh;
+	padding: 0;
+}
+
+.cover > * {
+	margin-block: 1rem;
+}
+
+.cover > :first-child:not(main) {
+	margin-block-start: 0;
+}
+
+.cover > :last-child:not(main) {
+	margin-block-end: 0;
+}
+
+.cover > main {
+	margin-block: auto;
+}
+
+.center {
+	box-sizing: content-box;
+	margin-inline: auto;
+	max-inline-size: var(--measure, 60ch);
+}
+
+.intrinsic-center {
+	box-sizing: content-box;
+	margin-inline: auto;
+	max-inline-size: var(--measure, 60ch);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
