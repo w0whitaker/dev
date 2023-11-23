@@ -1,12 +1,7 @@
-/* stylelint disable custom-property-pattern */
+@import url('_reset.css');
+@import url('_layout.css');
+@import url('_colors.css');
 
-/* stylelint-disable no-duplicate-selectors */
+/* @import url('_typography.css'); */
 
-/* stylelint-disable no-descending-specificity */
-
-
-@import '_reset.css';
-@import '_typography.css';
-@import '_spacing.css';
-@import '_layout.css';
-@import '_colors.css';
+/* @import '_spacing.css'; */

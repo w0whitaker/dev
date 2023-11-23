@@ -49,6 +49,10 @@ module.exports = function (eleventyConfig) {
         excerpt: true,
         excerpt_separator: '<!-- more -->',
     });
+
+    // Watch targets
+    eleventyConfig.addWatchTarget('./src/assets/**/*.css');
+
     // Set custom directories for input, output, includes, and data
     return {
         passthroughFileCopy: true,
