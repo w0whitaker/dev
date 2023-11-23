@@ -12,7 +12,6 @@
     <style>{{ css | cssmin | safe }}</style>
   </head>
   <body class="flow">
-    {% include 'partials/global/header.njk' %}
     {{ content | safe }}
     {% include 'partials/global/footer.njk' %}
   </body>
