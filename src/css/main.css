@@ -1,3 +1,4 @@
+@import url('_variables.css');
 @import url('_reset.css');
 
 /* Composition */
@@ -6,4 +7,16 @@
 
 .flow > * + * {
   margin-block-start: var(--flow-space, 1em);
+}
+
+/* Utility */
+
+/* https://cube.fyi/utility.html */
+
+.font-base-system {
+  font-family: var(--font-base-system, sans-serif);
+}
+
+.font-base-sans {
+  font-family: var(--font-base-sans, sans-serif);
 }
