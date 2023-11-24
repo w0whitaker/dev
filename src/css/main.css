@@ -1,0 +1,9 @@
+@import url('_reset.css');
+
+/* Composition */
+
+/* https://cube.fyi/composition.html */
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}

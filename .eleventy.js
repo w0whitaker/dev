@@ -22,6 +22,10 @@ module.exports = function (eleventyConfig) {
     // Load environment variables
     eleventyConfig.addGlobalData('env', process.env);
 
+    // Passthrough copy
+    eleventyConfig.addPassthroughCopy('src/css/**/*.css');
+    eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
+
     // Plugins
     eleventyConfig.addPlugin(footnotes);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);

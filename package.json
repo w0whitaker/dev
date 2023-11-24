@@ -7,7 +7,7 @@
         "clean": "rimraf _site",
         "dev:eleventy": "npx @11ty/eleventy --serve",
         "dev:postcss": "npx postcss src/assets/css/bundle.css -o src/main.css --watch --verbose",
-        "start": "run-s clean && run-p dev:*",
+        "start": "run-s clean dev:eleventy",
         "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
         "build:postcss": "postcss src/assets/css/bundle.css -o src/main.css",
         "build:eleventy": "npx @11ty/eleventy",

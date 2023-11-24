@@ -8,8 +8,7 @@
     <meta name="description" property="og:description" content="{{ ogDesc }}">
     <meta name="author" content="William Whitaker">
     <title>{{ title }}</title>
-    {% set css %}{% include "src/main.css" %}{% endset %}
-    <style>{{ css | cssmin | safe }}</style>
+    <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
     {{ content | safe }}
