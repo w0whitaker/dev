@@ -1,9 +1,16 @@
 /**
  * Do not edit directly
- * Generated on Fri, 24 Nov 2023 23:34:40 GMT
+ * Generated on Fri, 24 Nov 2023 23:59:13 GMT
  */
 
 :root {
   --font-base-system: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-base-sans: "Optima";
+  --font-base-serif: "Baskerville";
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.2656rem, 1.1624rem + 0.5163vw, 1.5625rem);
+  --step-2: clamp(1.4238rem, 1.2396rem + 0.9207vw, 1.9531rem);
+  --step-3: clamp(1.6019rem, 1.3099rem + 1.4598vw, 2.4413rem);
+  --step-n2: clamp(0.8rem, 0.9196rem + -0.1543vw, 0.8888rem);
+  --step-n1: clamp(1rem, 1rem + 0vw, 1rem);
 }
