@@ -11,7 +11,7 @@
     {% set css %}{% include "src/main.css" %}{% endset %}
     <style>{{ css | cssmin | safe }}</style>
   </head>
-  <body class="flow">
+  <body>
     {{ content | safe }}
   </body>
 </html>
