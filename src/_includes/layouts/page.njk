@@ -1,7 +1,8 @@
 ---
 layout: base
 ---
-
+{% include 'partials/global/header.njk' %}
 <main class="flow">
 	{{ content | safe }}
+{% include 'partials/global/footer.njk' %}
 </main>
