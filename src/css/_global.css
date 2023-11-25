@@ -38,8 +38,8 @@ footer {
 	max-inline-size: none;
 }
 
-nav > * {
-	padding: 0;
+header {
+	--flex-gap: var(--spacing-m, 1.6875rem);
 }
 
 main {
