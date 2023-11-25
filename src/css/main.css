@@ -25,6 +25,32 @@
   font-family: var(--font-base-serif, serif);
 }
 
-.base-size {
+/* step -2: 14.22px → 12.80px */
+.font-mini {
+  font-size: var(--step-n2, 0.8rem);
+}
+
+/* step -1: 16.00px → 16.00px */
+.font-small {
+  font-size: var(--step-n1, 1rem);
+}
+
+/* step 0: 18.00px → 20.00px */
+.font-normal {
   font-size: var(--step-0, 1rem);
+}
+
+/* step 1: 20.25px → 25.00px */
+.font-medium {
+  font-size: var(--step-1, 1.2656rem);
+}
+
+/* step 2: 22.78px → 31.25px */
+.font-large {
+  font-size: var(--step-2, 1.4238rem);
+}
+
+/* step 3: 25.63px → 39.06px */
+.font-jumbo {
+    font-size: var(--step-3, 1.6019rem);
 }
