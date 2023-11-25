@@ -54,3 +54,11 @@
 .font-jumbo {
     font-size: var(--step-3, 1.6019rem);
 }
+
+.margin-inline-slim {
+    margin-inline: var(--spacing-s, 1.125rem);
+}
+
+.margin-inline-jumbo {
+    margin-inline: var(--spacing-3xl, 6.75rem);
+}
