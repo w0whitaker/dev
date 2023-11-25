@@ -62,3 +62,58 @@
 .margin-inline-jumbo {
     margin-inline: var(--spacing-3xl, 6.75rem);
 }
+
+.bg-light {
+  background-color: var(--color-base-light, #fffff0);
+}
+
+.bg-dark {
+  background-color: var(--color-base-dark, #00000f);
+}
+
+.bg-primary {
+  background-color: var(--color-base-primary, #0099f7);
+}
+
+.bg-secondary {
+  background-color: var(--color-base-secondary, #fd191a);
+}
+
+.bg-tertiary {
+  background-color: var(--color-base-tertiary, #0edd5a);
+}
+
+.fg-light {
+  color: var(--color-base-light, #fffff0);
+}
+
+.fg-dark {
+  color: var(--color-base-dark, #00000f);
+}
+
+.fg-primary {
+  color: var(--color-base-primary, #0099f7);
+}
+
+.fg-secondary {
+  color: var(--color-base-secondary, #fd191a);
+}
+
+.fg-tertiary {
+  color: var(--color-base-tertiary, #0edd5a);
+}
+
+/* Boxes */
+
+.exterior-box {
+    padding: var(--pair-m-l, 1.6875rem);
+}
+
+.corridor-box {
+    padding-block: var(--spacing-2xs, 0.5625rem);
+    padding-inline: var(--spacing-s, 1.125rem);
+}
+
+.room-box {
+    padding: var(--pair-xs-s, 0.875rem);
+}
