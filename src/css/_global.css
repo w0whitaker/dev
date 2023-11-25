@@ -1,5 +1,6 @@
 body {
 	--flow-space: var(--spacing-s, 1.125rem);
+	--exterior-box: var(--pair-m-l, 1.6875rem);
 	
 	font-family: var(--font-base-system, sans-serif);
 	font-size: var(--step-0, 1.125rem);
@@ -36,3 +37,27 @@ div,
 footer {
 	max-inline-size: none;
 }
+
+nav > * {
+	padding: 0;
+}
+
+main {
+	padding: var(--pair-xs-l, 1.6875rem);
+}
+
+article {
+	--flow-space: var(--spacing-xs, 0.9375rem);
+	
+	padding: var(--pair-xs-s, 0.875rem);
+}
+
+section {
+	padding: var(--pair-3xs-2xs, 0.3125rem);
+}
+
+:is(p, ul, aside, figure, blockquote, dl, table, form) {
+	padding-block: var(--spacing-2xs, 0.5625rem);
+	padding-inline: var(--spacing-s, 1.125rem);
+}
+
