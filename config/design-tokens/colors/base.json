@@ -1,22 +1,22 @@
 {
-    "description": "/* blah blah blah */",
-    "color": {
-        "base": {
-            "light": {
-                "value": "#fffff0"
-            },
-            "dark": {
-                "value": "#00000f"
-            },
-            "primary": {
-                "value": "#0099F7"
-            },
-            "secondary": {
-                "value": "#FD191A"
-            },
-            "tertiary": {
-                "value": "#0EDD5A"
-            }
-        }
-    }
+	"description": "/* blah blah blah */",
+	"color": {
+		"base": {
+			"light": {
+				"value": "#fffff0"
+			},
+			"dark": {
+				"value": "#00000f"
+			},
+			"primary": {
+				"value": "#0099F7"
+			},
+			"secondary": {
+				"value": "#FD191A"
+			},
+			"tertiary": {
+				"value": "#0EDD5A"
+			}
+		}
+	}
 }

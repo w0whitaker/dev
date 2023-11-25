@@ -8,8 +8,8 @@ require('dotenv').config();
 
 // module import collections
 const {
-    getAllProjects,
-    getAllPages,
+	getAllProjects,
+	getAllPages,
 } = require('./config/collections/index.js');
 
 // module import filters
@@ -19,52 +19,52 @@ const { isoDate, humanDate, md, cssmin } = require('./config/filters/index.js');
 const { image, snippet } = require('./config/shortcodes/index.js');
 
 module.exports = function (eleventyConfig) {
-    // Load environment variables
-    eleventyConfig.addGlobalData('env', process.env);
+	// Load environment variables
+	eleventyConfig.addGlobalData('env', process.env);
 
-    // Passthrough copy
-    eleventyConfig.addPassthroughCopy('src/css/**/*.css');
-    eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
+	// Passthrough copy
+	eleventyConfig.addPassthroughCopy('src/css/**/*.css');
+	eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
 
-    // Plugins
-    eleventyConfig.addPlugin(footnotes);
-    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+	// Plugins
+	eleventyConfig.addPlugin(footnotes);
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-    // Custom collections
-    eleventyConfig.addCollection('pages', getAllPages);
-    eleventyConfig.addCollection('projects', getAllProjects);
+	// Custom collections
+	eleventyConfig.addCollection('pages', getAllPages);
+	eleventyConfig.addCollection('projects', getAllProjects);
 
-    // Custom filters
-    eleventyConfig.addFilter('md', md);
-    eleventyConfig.addFilter('isoDate', isoDate);
-    eleventyConfig.addFilter('humanDate', humanDate);
-    eleventyConfig.addFilter('cssmin', cssmin);
+	// Custom filters
+	eleventyConfig.addFilter('md', md);
+	eleventyConfig.addFilter('isoDate', isoDate);
+	eleventyConfig.addFilter('humanDate', humanDate);
+	eleventyConfig.addFilter('cssmin', cssmin);
 
-    // Custom shortcodes
-    eleventyConfig.addNunjucksAsyncShortcode('image', image);
-    eleventyConfig.addPairedShortcode('snippet', snippet);
+	// Custom shortcodes
+	eleventyConfig.addNunjucksAsyncShortcode('image', image);
+	eleventyConfig.addPairedShortcode('snippet', snippet);
 
-    eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
-    eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
-    eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
-    eleventyConfig.addLayoutAlias('project', 'layouts/project.njk');
+	eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
+	eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
+	eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+	eleventyConfig.addLayoutAlias('project', 'layouts/project.njk');
 
-    eleventyConfig.setFrontMatterParsingOptions({
-        excerpt: true,
-        excerpt_separator: '<!-- more -->',
-    });
+	eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		excerpt_separator: '<!-- more -->',
+	});
 
-    // Watch targets
-    eleventyConfig.addWatchTarget('./src/assets/**/*.css');
+	// Watch targets
+	eleventyConfig.addWatchTarget('./src/assets/**/*.css');
 
-    // Set custom directories for input, output, includes, and data
-    return {
-        passthroughFileCopy: true,
-        dir: {
-            input: 'src',
-            includes: '_includes',
-            data: '_data',
-            output: '_site',
-        },
-    };
+	// Set custom directories for input, output, includes, and data
+	return {
+		passthroughFileCopy: true,
+		dir: {
+			input: 'src',
+			includes: '_includes',
+			data: '_data',
+			output: '_site',
+		},
+	};
 };
