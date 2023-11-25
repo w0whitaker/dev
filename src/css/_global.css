@@ -19,3 +19,16 @@ h3 {
 	font-size: var(--step-0, 1.125rem);
 	font-style: italic;
 }
+
+* {
+	max-inline-size: 60ch;
+}
+
+html,
+body,
+header,
+main,
+div,
+footer {
+	max-inline-size: none;
+}
