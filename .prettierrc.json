@@ -1,6 +1,6 @@
 {
-    "singleQuote": true,
-    "requirePragma": true,
-    "insertPragma": true,
-    "singleAttributePerLine": true
+	"singleQuote": true,
+	"requirePragma": true,
+	"insertPragma": true,
+	"singleAttributePerLine": true
 }

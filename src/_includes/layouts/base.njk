@@ -10,7 +10,9 @@
     <link rel="me" href="https://mastodon.social/@commendable">
     <title>{{ title }}</title>
     {% set css %}{% include "src/main.css" %}{% endset %}
-    <style>{{ css | cssmin | safe }}</style>
+    <style>
+      {{css | cssmin | safe}}
+    </style>
   </head>
   <body class="flow">
     {% include 'partials/global/header.njk' %}
