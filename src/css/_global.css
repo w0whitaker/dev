@@ -1,8 +1,8 @@
 body {
 	--flow-space: var(--spacing-s, 1.125rem);
-	--exterior-box: var(--pair-m-l, 1.6875rem);
-	
-	font-family: var(--font-base-system, sans-serif);
+
+	font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+	font-weight: normal;
 	font-size: var(--step-0, 1.125rem);
 	background-color: var(--color-base-light, #fffff0);
 	color: var(--color-base-dark, #00000f);
@@ -42,18 +42,12 @@ header {
 	--flex-gap: var(--spacing-m, 1.6875rem);
 }
 
-main {
-	padding: var(--pair-xs-l, 1.6875rem);
+main > * + * {
+	padding-inline-start: 1.5ch;
 }
 
 article {
 	--flow-space: var(--spacing-xs, 0.9375rem);
-	
-	padding: var(--pair-xs-s, 0.875rem);
-}
-
-section {
-	padding: var(--pair-3xs-2xs, 0.3125rem);
 }
 
 :is(p, ul, aside, figure, blockquote, dl, table, form) {
