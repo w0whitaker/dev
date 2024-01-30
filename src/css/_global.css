@@ -49,9 +49,3 @@ main > * + * {
 article {
 	--flow-space: var(--spacing-xs, 0.9375rem);
 }
-
-:is(p, ul, aside, figure, blockquote, dl, table, form) {
-	padding-block: var(--spacing-2xs, 0.5625rem);
-	padding-inline: var(--spacing-s, 1.125rem);
-}
-

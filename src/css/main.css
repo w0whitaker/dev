@@ -73,15 +73,23 @@
 	color: var(--color-base-tertiary, #0edd5a);
 }
 
+/* Block */
+
+/* Exception */
+
 /* Boxes */
 
 .exterior-box {
 	padding: var(--pair-m-l, 1.6875rem);
 }
 
+.floor-box {
+	padding: var(--pair-xs-s);
+}
+
 .corridor-box {
-	padding-block: var(--spacing-2xs, 0.5625rem);
-	padding-inline: var(--spacing-s, 1.125rem);
+	padding-block: var(--spacing-xs);
+	padding-inline: var(--spacing-3xs);
 }
 
 .room-box {
