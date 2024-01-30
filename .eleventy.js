@@ -1,6 +1,6 @@
 /** @format */
 
-const imagety = require('@11ty/eleventy-img');
+// const imagety = require('@11ty/eleventy-img');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
@@ -24,6 +24,7 @@ module.exports = function (eleventyConfig) {
 
 	// Passthrough copy
 	eleventyConfig.addPassthroughCopy('src/css/**/*.css');
+	eleventyConfig.addPassthroughCopy('src/assets/images/**/*');
 	eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
 
 	// Plugins
