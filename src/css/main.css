@@ -1,6 +1,7 @@
 @import url('_variables.css');
 @import url('_reset.css');
 @import url('_global.css');
+@import url('_spacing.css');
 
 /* Composition */
 
@@ -75,14 +76,14 @@
 /* Boxes */
 
 .exterior-box {
-		padding: var(--pair-m-l, 1.6875rem);
+	padding: var(--pair-m-l, 1.6875rem);
 }
 
 .corridor-box {
-		padding-block: var(--spacing-2xs, 0.5625rem);
-		padding-inline: var(--spacing-s, 1.125rem);
+	padding-block: var(--spacing-2xs, 0.5625rem);
+	padding-inline: var(--spacing-s, 1.125rem);
 }
 
 .room-box {
-		padding: var(--pair-xs-s, 0.875rem);
+	padding: var(--pair-xs-s, 0.875rem);
 }
