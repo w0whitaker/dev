@@ -9,11 +9,11 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	margin-block-start: var(--flow-space, 1.5em);
 }
 
-.exterior-box {
+.envelope-box {
 	padding: var(--pair-m-l, 1.6875rem);
 }
 
-.floor-box {
+.story-box {
 	padding: var(--pair-xs-s);
 }
 
