@@ -1,0 +1,27 @@
+/* Composition */
+
+/* https://cube.fyi/composition.html
+Composition rules are for defining layouts, interactions, and flow/rhythm.
+Composition rules are not for aesthetic elements such as fonts, colors, borders, shadows, etc. 
+*/
+
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1.5em);
+}
+
+.exterior-box {
+	padding: var(--pair-m-l, 1.6875rem);
+}
+
+.floor-box {
+	padding: var(--pair-xs-s);
+}
+
+.corridor-box {
+	padding-block: var(--spacing-xs);
+	padding-inline: var(--spacing-3xs);
+}
+
+.room-box {
+	padding: var(--pair-xs-s, 0.875rem);
+}
