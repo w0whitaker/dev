@@ -1,11 +1,7 @@
 body {
-	--flow-space: var(--spacing-s, 1.125rem);
-
 	font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
 	font-weight: normal;
 	font-size: var(--step-0, 1.125rem);
-	background-color: var(--color-base-light, #fffff0);
-	color: var(--color-base-dark, #00000f);
 }
 
 h1 {
@@ -36,16 +32,4 @@ main,
 div,
 footer {
 	max-inline-size: none;
-}
-
-header {
-	--flex-gap: var(--spacing-m, 1.6875rem);
-}
-
-main > * + * {
-	padding-inline-start: 1.5ch;
-}
-
-article {
-	--flow-space: var(--spacing-xs, 0.9375rem);
 }

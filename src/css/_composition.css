@@ -9,19 +9,65 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	margin-block-start: var(--flow-space, 1.5em);
 }
 
+/* Outermost to innermost */
+
 .envelope-box {
-	padding: var(--pair-m-l, 1.6875rem);
+	--color-light: #fffff0;
+	--color-dark: #00000f;
+	
+	padding: var(--space-3xs);
+	border: 0 solid;
+	outline: var(--border-thin) solid transparent;
+	outline-offset: calc(var(--border-thin) * -1);
+	color: var(--color-dark);
+	background-color: var(--color-light);
 }
 
-.story-box {
-	padding: var(--pair-xs-s);
+.envelope-box * {
+	color: inherit;
 }
 
-.corridor-box {
-	padding-block: var(--spacing-xs);
-	padding-inline: var(--spacing-3xs);
+.envelope-box.invert {
+	color: var(--color-light);
+	background-color: var(--color-dark);
+}
+
+.level-box {
+	--color-light: #fffff0;
+	--color-dark: #00000f;
+	
+	padding: var(--space-2xs);
+	border: var(--step-1) solid;
+	color: var(--color-dark);
+	background-color: var(--color-light);
+}
+
+.level-box * {
+	color: inherit;
+}
+
+.level-box.invert {
+	color: var(--color-light);
+	background-color: var(--color-dark);
 }
 
 .room-box {
-	padding: var(--pair-xs-s, 0.875rem);
+	--color-light: #fffff0;
+	--color-dark: #00000f;
+	
+	padding: var(--space-xs);
+	border: 0 solid;
+	outline: var(--border-thin) solid transparent;
+	outline-offset: calc(var(--border-thin) * -1);
+	color: var(--color-dark);
+	background-color: var(--color-light);
+}
+
+.room-box * {
+	color: inherit;
+}
+
+.room-box.invert {
+	color: var(--color-light);
+	background-color: var(--color-dark);
 }
