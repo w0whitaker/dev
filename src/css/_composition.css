@@ -5,11 +5,37 @@ Composition rules are for defining layouts, interactions, and flow/rhythm.
 Composition rules are not for aesthetic elements such as fonts, colors, borders, shadows, etc. 
 */
 
+body {
+	padding-block-end: var(--space-s, 1.5rem);
+	padding-inline: var(--space-2xs, 0.75rem);
+}
+
+main {
+	padding-inline: var(--space-xs, 1rem);
+}
+
+h1 {
+	padding-block: var(--space-2xs, 0.75rem);
+}
+
+section {
+	padding-block: var(--step-xs, 1rem);
+}
+
+section:first-child {
+	padding-block: 0;
+}
+
+section *:not(h2,h3) {
+	padding-inline: var(--space-2xs, 0.75rem);
+}
+
+section a {
+	padding-inline: 0;
+}
 .flow > * + * {
 	margin-block-start: var(--flow-space, 1.5em);
 }
-
-/* Outermost to innermost */
 
 .tight-box {
 	--color-light: #fffff0;

@@ -1,10 +1,7 @@
 @import url('_reset.css');
 @import url('_global.css');
 @import url('_spacing.css');
-@import url('_composition.css');
+/*@import url('_composition.css');*/
+@import url('_composition2.css');
 
 /* @import url('_variables.css'); */
-
-body {
-	background-color: #00000f;
-}
