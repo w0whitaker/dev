@@ -14,10 +14,6 @@ main {
 	padding-inline: var(--space-xs, 1rem);
 }
 
-h1 {
-	padding-block: var(--space-2xs, 0.75rem);
-}
-
 section {
 	padding-block: var(--step-xs, 1rem);
 }
@@ -33,14 +29,12 @@ section *:not(h2,h3) {
 section a {
 	padding-inline: 0;
 }
+
 .flow > * + * {
 	margin-block-start: var(--flow-space, 1.5em);
 }
 
 .tight-box {
-	--color-light: #fffff0;
-	--color-dark: #00000f;
-	
 	padding: var(--space-3xs);
 	border: 0 solid;
 	outline: var(--border-thin) solid transparent;
@@ -59,9 +53,6 @@ section a {
 }
 
 .standard-box {
-	--color-light: #fffff0;
-	--color-dark: #00000f;
-	
 	padding: var(--space-xs);
 	border: var(--step-1) solid;
 	color: var(--color-dark);
@@ -78,9 +69,6 @@ section a {
 }
 
 .wide-box {
-	--color-light: #fffff0;
-	--color-dark: #00000f;
-	
 	padding: var(--space-s);
 	border: 4px solid var(--color-dark);
 	outline: var(--border-thin) solid transparent;

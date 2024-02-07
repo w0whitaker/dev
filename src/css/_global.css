@@ -1,3 +1,9 @@
+:root {
+	--color-primary: #0099f7;
+	--color-light: #fffff0;
+	--color-dark: #00000f;
+}
+
 body {
 	font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
 	font-weight: normal;
