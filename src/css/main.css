@@ -4,3 +4,7 @@
 @import url('_composition.css');
 
 /* @import url('_variables.css'); */
+
+body {
+	background-color: #00000f;
+}
