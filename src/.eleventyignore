@@ -1,3 +1,7 @@
 projects/
+<<<<<<< HEAD
 pages/
 posts/_drafts/
+=======
+pages/
+>>>>>>> 54a6745 (remove postcss and style-dictionary from build script)
