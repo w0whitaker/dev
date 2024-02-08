@@ -24,7 +24,7 @@ module.exports = function (eleventyConfig) {
 
 	// Passthrough copy
 	eleventyConfig.addPassthroughCopy('src/css/**/*.css');
-	// eleventyConfig.addPassthroughCopy('src/assets/images/**/*');
+	eleventyConfig.addPassthroughCopy('src/assets/images/**/*');
 	eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
 
 	// Plugins
