@@ -1,15 +1,15 @@
 {% set currentUrl = page.url %}
 
-<nav>
-  <ul role="list">
-    {% for link in collections.pages %}
-      <li id="{{ link.data.title | lower }}">
-        {% if link.data.title === "contact" %}
-          <a href="mailto:{{ env.EMAIL_ADDRESS }}">{{ link.data.title }}</a>
-        {% else %}
-          <a href="{{ link.url }}">{{ link.data.title }}</a>
-        {% endif %}
-      </li>
-    {%- endfor %}
-  </ul>
+<nav class="corridor-box bg-tertiary">
+    <ul role="list" class="horizontal-run wide-box bg-light">
+        {% for link in collections.pages %}
+        <li id="{{ link.data.title | lower }}">
+            {% if link.data.title === "contact" %}
+            <a href="mailto:{{ env.EMAIL_ADDRESS }}">{{ link.data.title }}</a>
+            {% else %}
+            <a href="{{ link.url }}">{{ link.data.title }}</a>
+            {% endif %}
+        </li>
+        {%- endfor %}
+    </ul>
 </nav>

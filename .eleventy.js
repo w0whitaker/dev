@@ -1,6 +1,6 @@
 /** @format */
 
-const imagety = require('@11ty/eleventy-img');
+// const imagety = require('@11ty/eleventy-img');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
@@ -21,6 +21,11 @@ const { image, snippet } = require('./config/shortcodes/index.js');
 module.exports = function (eleventyConfig) {
 	// Load environment variables
 	eleventyConfig.addGlobalData('env', process.env);
+
+	// Passthrough copy
+	eleventyConfig.addPassthroughCopy('src/css/**/*.css');
+	eleventyConfig.addPassthroughCopy('src/assets/images/**/*');
+	eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
 
 	// Plugins
 	eleventyConfig.addPlugin(footnotes);
@@ -49,6 +54,10 @@ module.exports = function (eleventyConfig) {
 		excerpt: true,
 		excerpt_separator: '<!-- more -->',
 	});
+
+	// Watch targets
+	eleventyConfig.addWatchTarget('./src/assets/**/*.css');
+
 	// Set custom directories for input, output, includes, and data
 	return {
 		passthroughFileCopy: true,

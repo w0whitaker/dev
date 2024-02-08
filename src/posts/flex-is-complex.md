@@ -1,7 +1,7 @@
 ---
 title: Flex is complex.
 teaser: Solving a weird problem involving flexbox.
-date: 2023-11-05
+date: 2023-11-03
 ---
 ## The setup.
 An unordered list (`<ul>`) is given:
