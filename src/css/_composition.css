@@ -6,11 +6,14 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 */
 
 body {
-	padding-block-end: var(--space-s, 1.5rem);
+	--flow-space: var(--space-s);
+
+	padding-block: var(--space-s, 1.5rem);
 	padding-inline: var(--space-2xs, 0.75rem);
 }
 
 main {
+	--flow-space: var(--space-2xs);
 	padding-inline: var(--space-xs, 1rem);
 }
 
@@ -54,7 +57,7 @@ section a {
 
 .standard-box {
 	padding: var(--space-xs);
-	border: var(--step-1) solid;
+	border: 0 solid;
 	color: var(--color-dark);
 	background-color: var(--color-light);
 }
@@ -70,7 +73,7 @@ section a {
 
 .wide-box {
 	padding: var(--space-s);
-	border: 4px solid var(--color-dark);
+	border: 4px solid var(--color-dark, black);
 	outline: var(--border-thin) solid transparent;
 	outline-offset: calc(var(--border-thin) * -1);
 	color: var(--color-dark);
@@ -119,7 +122,7 @@ section a {
 	box-sizing: content-box;
 	margin-inline: auto;
 	max-inline-size: var(--measure, 60ch);
-	display:flex;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
