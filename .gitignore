@@ -27,3 +27,4 @@ src/main.css
 *.*-workspace
 .vscode/
 .idea/
+*.fig

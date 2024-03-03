@@ -22,14 +22,10 @@ templateEngineOverride: njk, md
     </section>
     <section class="flow">
       <h2>Thoughtables.</h2>
-      <p>A transformative web isn't about the latest
-        framework or design trend, and it certainly isn't
-        about monetizing eyeballs. Which, ew.</p>
-      <p>It's about reaching people, and that means a web
-        that is accessible to everyone no matter where they
-        are or what their circumstances are.</p>
-      <p>My focus is on creating websites and UI components
-        that are fast, lightweight, and universal.</p>
+      <div id="posts">
+        {% set postslist = collections.posts %}
+        {% include 'partials/postslist.njk' %}
+      </div>
     </section>
   </div>
   <div class="col-r">
