@@ -5,13 +5,11 @@ date: 2022-04-22
 ---
 
 <section>
-
 Imagine you have a dog. You'd like the dog to raise their paw and touch your hand whenever you say "shake". You'll have to teach the dog this behavior, but with enough patience (and treats!), eventually the dog will learn. You have now taught your dog (the target) to listen for a command (the event) and raise its paw (the action).
 
 That's essentially what an event listener is. Instead of all that training though, Javascript has a method, [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener), that provides an easy way to add all sorts of interactivity to web pages.
 
 I wanted to practice using event handlers, so I built a little [app](https://ephemeral-pattern-generator.netlify.app/) that adds SVG glyphs to the screen. Once added, the color of the glyphs can be changed by selecting one and clicking on a button. Not particularly useful, maybe, but kind of fun.
-
 </section>
 <!-- more -->
 <section>
@@ -24,10 +22,6 @@ The HTML is pretty straightforward, so I'll just run through it quickly. CSS is 
 
 There are two glyphs that the user can add to the screen.
 
-| ![glyph consisting of three diagonal lines tilting to the right](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5lpq3iwizvucbw3dvcw6.png) |     | ![glyph consisting of three diagonal lines tilting to the left](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uwnxge5dkasfg395ytr3.png) |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------: | --- | :------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                       glyphR                                                                        |     |                                                                       glyphL                                                                       |
-
 The first thing we need is a place to display the glyphs once they get added.
 
 ```html
@@ -38,33 +32,7 @@ The first thing we need is a place to display the glyphs once they get added.
 
 This is just an empty div for now, but as glyphs are added, it will get filled with `<svg>` elements.
 
-```html
-<div id="glyph-container">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62" class="glyph">
-    ...
-  </svg>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62" class="glyph">
-    ...
-  </svg>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62" class="glyph">
-    ...
-  </svg>
-  <!-- etc. -->
-</div>
-```
-
 Because I wanted the display area to be present visually with or without any glyphs, I gave it a fixed size and some other styling in the CSS.
-
-```css
-#output {
-  width: 400px;
-  min-height: 425px;
-  padding: 20px;
-  background-color: #0f0f0f;
-  border-radius: 5%;
-  margin: 10px auto;
-}
-```
 
 #### The buttons
 
@@ -88,9 +56,7 @@ Next up are some buttons to add glyphs and eventually change their color.
 
 {% assign screenreader_issue = "[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#accessibility_concerns) has a bit about buttons and accessibility, and there's a good [article](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/#basic-alternative-descriptions-using-the-svg-tag) by [Carrie Fisher](https://cariefisher.com/) on [Smashing Magazine](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/) that goes over some options for making SVGs more accessible as well." | md %}
 Nothing too special here, except that I use IDs so that I'll be able to reference the buttons easily in the Javascript. Note that for the "add" buttons, I'm using an SVG of the relevant glyph as the content of the button. While that may indicate visually what the button is for, it won't do much for people using screen readers. In practice, there should be something to describe what the button does that a screen reader will pick {% footnoteref "screenreader-issue" screenreader_issue %}up{% endfootnoteref %}.
-
 </section>
-
 <section>
 
 ### The Javascript
@@ -374,7 +340,6 @@ function colorButtons() {
   }
 }
 ```
-
 </section>
 <section>
 
@@ -478,5 +443,4 @@ window.addEventListener('load', () => {
 There are several features I'd like to add at some point, like the ability to delete glyphs, and limit the total number of glyphs to what fits in the display. Maybe even some animation! But that's for another day.
 
 Thanks for reading!
-
 </section>

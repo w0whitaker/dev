@@ -10,8 +10,6 @@ layout: page
           humanDate }}</time>
     </p>
   </hgroup>
-  <section class="flow">
-    {{ content | md | safe }}
-  </section>
+  {{ content | md | safe }}
   {% footnotes %}
 </article>

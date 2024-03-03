@@ -1,0 +1,11 @@
+pre {
+	white-space: pre-wrap;
+	overflow: auto;
+	background-color: var(--dark, black);
+	color: var(--special, limegreen);
+}
+
+code {
+	word-break: break-all;
+	word-spacing: 0.25ch;
+}
