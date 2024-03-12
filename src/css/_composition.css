@@ -7,19 +7,15 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 
 body {
 	--flow-space: var(--space-m,  1.5rem);
-
-	padding-block: var(--space-s, 1.5rem);
-	padding-inline: var(--space-xs,  1.5rem);
 }
 
 main {
 	--flow-space: var(--space-s,  1.5rem);
-	
-	padding-inline: var(--space-xs,  1.5rem);
 }
 
-article {
+article *:not(pre) {
 	--flow-space: var(--space-xs, 1.5rem);
+	padding-inline: var(--space-2xs);
 }
 
 section {
