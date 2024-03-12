@@ -4,7 +4,7 @@ teaser: 'Improving the performance of a WordPress site'
 date: 2024-03-12
 ---
 
-![a line rendering of the home page of the human service forum](../assets/images/hsf.jpg)
+![a line rendering of the home page of the human service forum](../assets/images/hsf.svg)
 
 ## The problem.
 The Human Service Forum is a small non-profit located in central Massachusetts. Hoping to expand their reach, they needed a website that could more reliably meet their members’ needs. After a recent redesign, they found the website’s performance disappointing (page load times were around 12 seconds) and needed help diagnosing the cause.
