@@ -15,7 +15,7 @@ main {
 
 article *:not(pre) {
 	--flow-space: var(--space-xs, 1.5rem);
-	padding-inline: var(--space-2xs);
+	padding-inline: var(--space-xs,  1.5rem);
 }
 
 section {
