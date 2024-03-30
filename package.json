@@ -6,11 +6,8 @@
     "scripts": {
         "clean": "rimraf _site",
         "dev:eleventy": "npx @11ty/eleventy --serve",
-        "dev:postcss": "npx postcss src/assets/css/bundle.css -o src/main.css --watch --verbose",
         "start": "run-s clean dev:eleventy",
         "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
-        "build:style-dictionary": "style-dictionary build -c .style-dictionary.config.json",
-        "build:postcss": "postcss src/assets/css/bundle.css -o src/main.css",
         "build:eleventy": "npx @11ty/eleventy",
         "build": "run-s clean build:*",
         "test": "echo \"Error: no test specified\" && exit 1",
