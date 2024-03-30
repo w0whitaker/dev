@@ -1,15 +1,12 @@
 {% set currentUrl = page.url %}
 
 <nav class="corridor-box bg-tertiary">
-    <ul role="list" class="horizontal-run wide-box bg-light">
-        {% for link in collections.pages %}
-        <li id="{{ link.data.title | lower }}">
-            {% if link.data.title === "contact" %}
-            <a href="mailto:{{ env.EMAIL_ADDRESS }}">{{ link.data.title }}</a>
-            {% else %}
-            <a href="{{ link.url }}">{{ link.data.title }}</a>
-            {% endif %}
-        </li>
-        {%- endfor %}
-    </ul>
+  <ul role="list" class="horizontal-run wide-box bg-light">
+    <li>
+      <a href="/">home</a>
+    </li>
+    <li>
+      <a href="mailto:{{ env.EMAIL_ADDRESS }}">contact</a>
+    </li>
+  </ul>
 </nav>
