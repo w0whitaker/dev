@@ -1,9 +1,11 @@
 <ol>
 {% for post in postslist %}
-  <li>
-    <a href="{{ post.url | url }}">
-      <h3>{{ post.data.title }}</h3>
-    </a>
-  </li>
+  {% if post.data.published %}
+    <li> 
+      <a href="{{ post.url | url }}">
+        <h3>{{ post.data.title }}</h3>
+      </a>
+    </li>
+  {% endif %}
 {% endfor %}
 </ol>

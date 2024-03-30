@@ -2,6 +2,7 @@
 title: 'Manipulating the DOM with event listeners'
 teaser: 'Working with event listeners in JavaScript to add and modify elements in the DOM.'
 date: 2022-04-22
+published: true
 ---
 
 <section>  
