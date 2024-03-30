@@ -5,15 +5,8 @@
     <li>
       <a href="/">home</a>
     </li>
-    {% for link in collections.pages %}
-      <li id="{{ link.data.title | lower }}">
-        {% if link.data.title === "contact" %}
-          <a
-            href="mailto:{{ env.EMAIL_ADDRESS }}">{{ link.data.title }}</a>
-        {% else %}
-          <a href="{{ link.url }}">{{ link.data.title }}</a>
-        {% endif %}
-      </li>
-    {%- endfor %}
+    <li>
+      <a href="mailto:{{ env.EMAIL_ADDRESS }}">contact</a>
+    </li>
   </ul>
 </nav>
