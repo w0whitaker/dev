@@ -15,6 +15,7 @@ main {
 
 article *:not(pre) {
 	--flow-space: var(--space-xs, 1.5rem);
+
 	padding-inline: var(--space-xs,  1.5rem);
 }
 
@@ -119,7 +120,7 @@ ul {
 	max-inline-size: var(--measure, 60ch);
 }
 
-.center__full {
+.center-full {
 	max-inline-size: none;
 }
 
@@ -135,12 +136,12 @@ ul {
 .switcher {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space-l);
+	gap: var(--space-s);
 }
 
 .switcher > * {
 	flex-grow: 1;
-	flex-basis: calc((40rem - 100%) * 999);
+	flex-basis: calc((20rem - 100%) * 999);
 }
 
 .switcher > :nth-last-child(n+ 4),
