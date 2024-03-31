@@ -151,6 +151,10 @@ ul {
 	flex-basis: 100%;
 }
 
-.col-l {
-	flex-grow: 2;
+.cluster {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space, 1ch);
+	justify-content: flex-start;
+	align-items: center;
 }
