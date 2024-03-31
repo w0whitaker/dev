@@ -13,8 +13,7 @@ body {
 }
 
 body > * {
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin-inline: auto auto;
 }
 
 ul,
