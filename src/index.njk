@@ -3,24 +3,26 @@ layout: page
 title: home
 templateEngineOverride: njk, md
 ---
-<article class="center__full switcher">
-  <div class="col-l flow">
-    <section class="flow">
+<article class="intrinsic-center">
+  <div class="flow">
+    <section class="flow standard-box">
       <h2>Introduction.</h2>
       <p>My name is William. Among other <a
           href="https://williamwhitaker.art">things</a>, I'm
         a front-end developer.</p>
-      <div class="center">
+      <div class="wide-box">
         <h3>Some competencies:</h3>
-        <ul role="list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>PHP</li>
-        </ul>
+        <div class="tight-box">
+          <ul role="list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+          </ul>
+        </div>
       </div>
     </section>
-    <section class="flow">
+    <section class="flow standard-box">
       <h2>Thoughtables.</h2>
       <div id="posts">
         {% set postslist = collections.posts %}
@@ -28,14 +30,13 @@ templateEngineOverride: njk, md
       </div>
     </section>
   </div>
-  <div class="col-r">
-    <section class="flow intrinsic-center">
-      <aside class="wide-box">
-        <h2>A call to action!</h2>
-        <p>Got a project you'd like help with?</p>
-        <p>Let's <a href="mailto:{{ env.EMAIL_ADDRESS }}">talk</a>!
-        </p>
-      </aside>
-    </section>
-  </div>
+  <section class="flow standard-box">
+    <aside class="wide-box">
+      <h2>A call to action!</h2>
+      <p>Got a project you'd like help with?</p>
+      <p>Let's <a
+          href="mailto:{{ env.EMAIL_ADDRESS }}">talk</a>!
+      </p>
+    </aside>
+  </section>
 </article>
