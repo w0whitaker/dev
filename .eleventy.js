@@ -1,8 +1,7 @@
-/** @format */
-
-// const imagety = require('@11ty/eleventy-img');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const footnotes = require('eleventy-plugin-footnotes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const markdownIt = require('markdown-it');
 
 require('dotenv').config();
 
@@ -13,10 +12,18 @@ const {
 } = require('./config/collections/index.js');
 
 // module import filters
-const { isoDate, humanDate, md, cssmin } = require('./config/filters/index.js');
+const {
+	isoDate,
+	humanDate,
+	md,
+	cssmin
+} = require('./config/filters/index.js');
 
 // module import shortcodes
-const { image, snippet } = require('./config/shortcodes/index.js');
+const {
+	image,
+	snippet
+} = require('./config/shortcodes/index.js');
 
 module.exports = function (eleventyConfig) {
 	// Load environment variables
@@ -30,6 +37,7 @@ module.exports = function (eleventyConfig) {
 	// Plugins
 	eleventyConfig.addPlugin(footnotes);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
+	eleventyConfig.addPlugin(syntaxHighlight);
 
 	// Custom collections
 	eleventyConfig.addCollection('pages', getAllPages);

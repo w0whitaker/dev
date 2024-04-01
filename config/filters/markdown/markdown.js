@@ -3,7 +3,8 @@ const markdownIt = require("markdown-it");
 const md = (content = "") => {
   return markdownIt({ 
     html: true,
-    typographer: true
+    typographer: false,
+		breaks: true
   }).render(content);
 };
 
