@@ -1,8 +1,5 @@
-pre {
-	white-space: pre-wrap;
-	overflow: auto;
-	background-color: var(--dark, black);
-	color: var(--special, limegreen);
+pre[class*="language-"] {
+	width: calc(100vw - (var(--space-xs) * 2));
 }
 
 code {
