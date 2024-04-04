@@ -9,15 +9,8 @@ require('dotenv').config();
 const {
 	isoDate,
 	humanDate,
-	md,
-	cssmin
+	md
 } = require('./config/filters/index.js');
-
-// module import shortcodes
-const {
-	image,
-	snippet
-} = require('./config/shortcodes/index.js');
 
 module.exports = function (eleventyConfig) {
 	// Load environment variables
@@ -33,19 +26,10 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
 
-	// Custom collections
-	// eleventyConfig.addCollection('pages', getAllPages);
-	// eleventyConfig.addCollection('projects', getAllProjects);
-
 	// Custom filters
 	eleventyConfig.addFilter('md', md);
 	eleventyConfig.addFilter('isoDate', isoDate);
 	eleventyConfig.addFilter('humanDate', humanDate);
-	eleventyConfig.addFilter('cssmin', cssmin);
-
-	// Custom shortcodes
-	eleventyConfig.addNunjucksAsyncShortcode('image', image);
-	eleventyConfig.addPairedShortcode('snippet', snippet);
 
 	eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
 	eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
