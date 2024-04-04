@@ -5,12 +5,6 @@ const markdownIt = require('markdown-it');
 
 require('dotenv').config();
 
-// module import collections
-const {
-	getAllProjects,
-	getAllPages,
-} = require('./config/collections/index.js');
-
 // module import filters
 const {
 	isoDate,
@@ -40,8 +34,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlight);
 
 	// Custom collections
-	eleventyConfig.addCollection('pages', getAllPages);
-	eleventyConfig.addCollection('projects', getAllProjects);
+	// eleventyConfig.addCollection('pages', getAllPages);
+	// eleventyConfig.addCollection('projects', getAllProjects);
 
 	// Custom filters
 	eleventyConfig.addFilter('md', md);
