@@ -1,20 +1,22 @@
-# EditorConfig is awesome: https://EditorConfig.org
+# https://github.com/11ty/11ty-website/blob/main/.editorconfig
 
-# top-most EditorConfig file
 root = true
 
 [*]
 indent_style = tab
 indent_size = 2
 end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = false
 insert_final_newline = false
+trim_trailing_whitespace = true
+charset = utf-8
 
-[*.njk]
-indent_style = space
-indent_size = 2
+[*.js]
+insert_final_newline = true
+indent_style = tab
 
-[*.md]
-indent_style = space
-indent_size = 2
+[*.json]
+indent_style = tab
+
+[*.css]
+insert_final_newline = true
+indent_style = tab
