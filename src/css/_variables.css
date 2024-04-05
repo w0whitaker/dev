@@ -4,14 +4,14 @@
  */
 
 :root {
-		/* Colors */
+	/* Colors */
 	--color-base-light: #fffff0;
 	--color-base-dark: #00000f;
 	--color-base-primary: #0099f7;
 	--color-base-secondary: #fd191a;
 	--color-base-tertiary: #0edd5a;
-	
-		/* Spacing */
+
+	/* Spacing */
 	--spacing-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
 	--spacing-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
 	--spacing-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
@@ -21,8 +21,8 @@
 	--spacing-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
 	--spacing-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
 	--spacing-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
-	
-		/* Spacing, pairs */
+
+	/* Spacing, pairs */
 	--pair-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vw, 0.625rem);
 	--pair-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
 	--pair-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
@@ -32,9 +32,11 @@
 	--pair-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
 	--pair-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
 	--pair-xs-l: clamp(0.875rem, 0.3098rem + 2.8261vw, 2.5rem);
-	
-		/* Typography */
-	--font-base-system: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+	/* Typography */
+	--font-base-system: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
+		"Helvetica", "Arial", "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
 	--font-base-sans: "Optima";
 	--font-base-serif: "Baskerville";
 

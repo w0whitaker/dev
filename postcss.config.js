@@ -1,6 +1,6 @@
 module.exports = {
-    plugins: {
-        'postcss-import-ext-glob': {},
-        'postcss-import': {}
-    }
-}
+	plugins: {
+		"postcss-import-ext-glob": {},
+		"postcss-import": {},
+	},
+};

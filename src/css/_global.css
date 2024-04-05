@@ -1,4 +1,3 @@
-
 :root {
 	/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
@@ -85,16 +84,16 @@
 
 	/* Space s-l: 18px → 40px */
 	--space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vi, 2.5rem);
-	
+
 	/* Colors */
 	--color-dark: #00000f;
 	--color-light: #fffff0;
 	--color-links: #230ec4;
-
 }
 
 body {
-	font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+	font-family: Superclarendon, "Bookman Old Style", "URW Bookman",
+		"URW Bookman L", "Georgia Pro", Georgia, serif;
 	font-weight: normal;
 	font-size: var(--step-0, 1.125rem);
 	background-color: var(--color-light);

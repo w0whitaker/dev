@@ -1,7 +1,7 @@
 /** @format */
 
-const markdownIt = require('markdown-it');
-const outdent = require('outdent');
+const markdownIt = require("markdown-it");
+const outdent = require("outdent");
 
 const snippet = (content) => {
 	return markdownIt({ html: true }).render(
