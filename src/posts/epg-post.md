@@ -2,14 +2,14 @@
 title: 'Manipulating the DOM with event listeners'
 teaser: 'Working with event listeners in JavaScript to add and modify elements in the DOM.'
 date: 2022-04-22
-published: true
+tags: 'published'
 ---
 
 Imagine you have a dog. You'd like the dog to raise their paw and touch your hand whenever you say "shake". You'll have to teach the dog this behavior, but with enough patience (and treats!), eventually the dog will learn. You have now taught your dog (the target) to listen for a command (the event) and raise its paw (the action).
 
 That's essentially what an event listener is. Instead of all that training though, Javascript has a method, [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener), that provides an easy way to add all sorts of interactivity to web pages.
 
-I wanted to practice using event handlers, so I built a little [app](https://ephemeral-pattern-generator.netlify.app/) that adds SVG glyphs to the screen. Once added, the color of the glyphs can be changed by selecting one and clicking on a button. Not particularly useful, maybe, but kind of fun.  
+I wanted to practice using event handlers, so I built a little [app](https://ephemeral-pattern-generator.netlify.app/) that adds SVG glyphs to the screen. Once added, the color of the glyphs can be changed by selecting one and clicking on a button. Not particularly useful, maybe, but kind of fun.
 
 <!-- more -->
 

@@ -2,7 +2,7 @@
 title: 'Case study - Human Service Forum'
 teaser: 'Improving the performance of a WordPress site'
 date: 2024-03-12
-published: true
+tags: 'published'
 ---
 
 ![a line rendering of the home page of the human service forum](../assets/images/hsf.svg)
@@ -14,7 +14,7 @@ At our initial meeting, we discussed the possible causes of the site’s issues.
 
 With that in mind, I offered to rebuild the theme from scratch, preserving the existing design. In follow-up conversations, we discussed adding a “news” page, and I agreed to do that.
 ## The process.
-My first step was to move the content written into the templates to the dashboard. I created custom blocks and post types using _Advanced Custom Fields_ and _Custom Post Type UI_. I then moved the code defining those into a custom plugin for the site. 
+My first step was to move the content written into the templates to the dashboard. I created custom blocks and post types using _Advanced Custom Fields_ and _Custom Post Type UI_. I then moved the code defining those into a custom plugin for the site.
 
 Using the existing design as a guide, I then proceeded to rewrite the site’s theme templates. I set up a modern workflow using `gulp` and `webpack`, and set to work creating a new theme. Following best practices, I made the markup more semantic for accessibility and organized the CSS to be more modular and maintainable in the future.
 ## Deployment.
