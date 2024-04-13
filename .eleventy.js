@@ -26,6 +26,10 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter("isoDate", isoDate);
 	eleventyConfig.addFilter("humanDate", humanDate);
 
+	// Collections
+	eleventyConfig.addCollection("posts", function (collectionApi) {
+		return collectionApi.getFilteredByTags("post", "published");
+	});
 	eleventyConfig.addLayoutAlias("base", "layouts/base.njk");
 	eleventyConfig.addLayoutAlias("page", "layouts/page.njk");
 	eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
