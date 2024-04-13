@@ -1,11 +1,10 @@
+{% set postslist = collections.posts %}
 <ol role="list" class="flow">
 {% for post in postslist %}
-  {% if post.data.published %}
-    <li> 
+    <li>
       <a href="{{ post.url | url }}">
         <h3>{{ post.data.title }}</h3>
       </a>
     </li>
-  {% endif %}
 {% endfor %}
 </ol>
