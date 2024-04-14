@@ -1,6 +1,6 @@
 {
 	"name": "williamwhitaker.dev",
-	"version": "0.4.1",
+	"version": "0.1.0",
 	"description": "This is the development portfolio site for William Whitaker.",
 	"main": ".eleventy.js",
 	"scripts": {
