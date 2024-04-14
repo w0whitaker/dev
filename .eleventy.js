@@ -19,11 +19,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(footnotes);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
-	eleventyConfig.addPlugin(pluginRss, {
-		posthtmlRenderOptions: {
-			closingSingleTag: "default",
-		},
-	});
+	eleventyConfig.addPlugin(pluginRss);
 	// Custom filters
 	eleventyConfig.addFilter("md", md);
 	eleventyConfig.addFilter("isoDate", isoDate);
