@@ -1,12 +1,12 @@
 {% set currentUrl = page.url %}
 
 <nav class="center">
-  <ul role="list" class="cluster">
-    <li class="box standard-box invert">
-      <a href="/">home</a>
-    </li>
-    <li class="box standard-box invert">
-      <a href="mailto:{{ env.EMAIL_ADDRESS }}">contact</a>
-    </li>
-  </ul>
+	<div class="cluster">
+		{% for link in siteNavigation %}
+		<a href="{{ link.target }}"
+			 class="box standard-box invert">
+			{{ link.content }}
+		</a>
+		{% endfor %}
+	</div>
 </nav>

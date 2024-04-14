@@ -1,0 +1,10 @@
+[
+	{
+		"content": "home",
+		"target": "/"
+	},
+	{
+		"content": "contact",
+		"target": "mailto:william@williamwhitaker.dev"
+	}
+]
