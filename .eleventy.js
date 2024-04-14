@@ -1,8 +1,7 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const footnotes = require("eleventy-plugin-footnotes");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-
-require("dotenv").config();
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 // module import filters
 const { isoDate, humanDate, md } = require("./config/filters/index.js");
@@ -20,7 +19,11 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(footnotes);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
-
+	eleventyConfig.addPlugin(pluginRss, {
+		posthtmlRenderOptions: {
+			closingSingleTag: "default",
+		},
+	});
 	// Custom filters
 	eleventyConfig.addFilter("md", md);
 	eleventyConfig.addFilter("isoDate", isoDate);
