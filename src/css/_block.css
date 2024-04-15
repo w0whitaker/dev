@@ -7,3 +7,9 @@ code {
 	word-break: break-all;
 	word-spacing: 0.25ch;
 }
+
+p:has(img) {
+	padding: var(--space-xs);
+	border: 0.5em dashed #41404f;
+	border-radius: 0.25em;
+}
