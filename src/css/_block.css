@@ -13,3 +13,9 @@ p:has(img) {
 	border: 0.5em dashed #41404f;
 	border-radius: 0.25em;
 }
+
+blockquote {
+	font-size: var(--step--1);
+	font-style: italic;
+	padding-inline: var(--space-xs);
+}
