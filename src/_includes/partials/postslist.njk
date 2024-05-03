@@ -1,10 +1,6 @@
-{% set postslist = collections.posts %}
-<ol role="list" class="flow">
-{% for post in postslist %}
-    <li>
-      <a href="{{ post.url | url }}">
-        <h3>{{ post.data.title }}</h3>
-      </a>
-    </li>
+<ul role="list" class="flow">
+{% for post in collections.posts %}
+	<li><a href="{{ post.url | url }}">{{ post.data.title }}</a>
+	</li>
 {% endfor %}
-</ol>
+</ul>

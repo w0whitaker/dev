@@ -4,7 +4,7 @@ const md = (content = "") => {
 	return markdownIt({
 		html: true,
 		typographer: false,
-		breaks: true,
+		breaks: false,
 	}).render(content);
 };
 
