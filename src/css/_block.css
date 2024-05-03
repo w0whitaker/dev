@@ -22,6 +22,14 @@ blockquote + p {
 	padding-inline-end: var(--space-l);
 }
 
-article {
-	--flow-space: var(--space-xl);
+header {
+	border-left: 0.5em solid #41404f;
+	margin-inline-start: var(--space-l);
+	padding-inline-start: var(--space-s);
+	padding-block-end: var(--space-m);
+}
+
+h1 {
+	background-color: #fffff0;
+	--measure: 16ch;
 }

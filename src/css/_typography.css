@@ -90,6 +90,12 @@ blockquote {
 	padding-inline: var(--space-xs);
 }
 
+.display-font {
+	font-family: Bahnschrift, "DIN Alternate", "Franklin Gothic Medium",
+		"Nimbus Sans Narrow", sans-serif-condensed, sans-serif;
+	font-weight: 600;
+}
+
 .diminutive {
 	font-size: 0.875em;
 	font-style: italic;

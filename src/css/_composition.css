@@ -13,6 +13,10 @@ main {
 	--flow-space: var(--space-s, 1.5rem);
 }
 
+article {
+	--flow-space: var(--space-xl);
+}
+
 article *:not(pre) {
 	--flow-space: var(--space-xs, 1.5rem);
 }
@@ -27,10 +31,6 @@ section:first-child {
 
 section a {
 	padding-inline: 0;
-}
-
-header {
-	text-align: center;
 }
 
 ul {
