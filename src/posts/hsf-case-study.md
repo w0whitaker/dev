@@ -23,4 +23,5 @@ When I had finished recoding the theme and plugins, I set up a staging site and 
 The work I did on the Human Service Forum’s website had been as a volunteer. They were pleased with the work I did and asked if I would continue working with them as a paid developer. I agreed, and since then have made tweaks to the design, managed updates, and troubleshooted problems as they come up.
 
 > William has been a wonderful asset to HSF. He is a very hard worker and very knowledgeable in the ways of website coding. He has made a HUGE difference on the back end of our website. It is much more user friendly for the staff as well as for people coming to use our site. William is the kind of person who puts his all into the work that he does and we could not be more grateful.
-> - Rebecca Coolong, director, Human Service Forum
+
+ \- Rebecca Coolong, director, Human Service Forum

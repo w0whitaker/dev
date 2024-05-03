@@ -14,8 +14,14 @@ p:has(img) {
 	border-radius: 0.25em;
 }
 
-blockquote {
+blockquote,
+blockquote + p {
 	font-size: var(--step--1);
 	font-style: italic;
-	padding-inline: var(--space-xs);
+	padding-inline-start: var(--space-s);
+	padding-inline-end: var(--space-l);
+}
+
+article {
+	--flow-space: var(--space-xl);
 }
