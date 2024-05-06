@@ -23,7 +23,7 @@ blockquote + p {
 }
 
 header {
-	border-left: 0.5em solid #41404f;
+	border-left: 0.5em solid var(--color-mid-dark);
 	margin-inline-start: var(--space-l);
 	padding-inline-start: var(--space-s);
 	padding-block-end: var(--space-m);
@@ -32,4 +32,8 @@ header {
 h1 {
 	background-color: #fffff0;
 	--measure: 16ch;
+}
+
+nav {
+	border-bottom: 0.5em solid var(--color-mid-dark);
 }
