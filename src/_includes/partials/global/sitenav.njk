@@ -1,13 +1,11 @@
 {% set currentUrl = page.url %}
 
-<nav>
-	<div class="cluster">
-		{% for link in siteNavigation %}
+<nav class="center-full">
+{% for link in siteNavigation %}
 			<div class="center">
-				<a href="{{ link.target }}" class="box standard-box">
-					{{ link.content }}
+				<a href="{{ link.target }}" class="box standard-box invert inline-border rounded-border">
+{{ link.content }}
 				</a>
 			</div>
-		{% endfor %}
-	</div>
+{% endfor %}
 </nav>

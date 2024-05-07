@@ -81,10 +81,6 @@ ul {
 	padding: 0;
 }
 
-.cover > * {
-	margin-block: 1rem;
-}
-
 .cover > :first-child:not(main) {
 	margin-block-start: 0;
 }

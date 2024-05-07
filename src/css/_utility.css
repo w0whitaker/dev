@@ -57,3 +57,17 @@
 .fg-tertiary {
 	color: var(--color-base-tertiary, #0edd5a);
 }
+
+.bottom-border {
+	border-bottom: 0.5em solid var(--color-mid-dark);
+}
+
+.inline-border {
+	border-style: solid;
+	border-inline-width: 0.5em;
+	border-color: var(--color-mid-dark);
+}
+
+.rounded-border {
+	border-radius: 0.5em;
+}

@@ -24,16 +24,23 @@ blockquote + p {
 
 header {
 	border-left: 0.5em solid var(--color-mid-dark);
-	margin-inline-start: var(--space-l);
+	border-bottom: 0.5em solid var(--color-mid-dark);
 	padding-inline-start: var(--space-s);
 	padding-block-end: var(--space-m);
 }
 
 h1 {
-	background-color: #fffff0;
+	color: white;
 	--measure: 16ch;
 }
 
 nav {
-	border-bottom: 0.5em solid var(--color-mid-dark);
+	--color-light: white;
+	display: flex;
+	justify-content: flex-start;
+	padding-block: var(--space-s);
+}
+
+main {
+	border-top: 0.5em solid var(--color-mid-dark);
 }
