@@ -94,6 +94,7 @@
 	--color-mid-dark: #41404f;
 	--color-light: #fffff0;
 	--color-links: #230ec4;
+	--color-mid-light: oklch(99.79% 0.0401 88.18);
 }
 
 body {
@@ -132,11 +133,4 @@ footer {
 
 a {
 	color: var(--color-links);
-}
-
-.display-font {
-	font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-		Arial, sans-serif;
-	font-weight: normal;
-	font-size: var(--step-3);
 }

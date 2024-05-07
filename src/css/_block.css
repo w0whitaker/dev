@@ -26,16 +26,14 @@ header {
 	border-left: 0.5em solid var(--color-mid-dark);
 	border-bottom: 0.5em solid var(--color-mid-dark);
 	padding-inline-start: var(--space-s);
-	padding-block-end: var(--space-m);
+	padding-block: var(--space-s);
 }
 
 h1 {
-	color: white;
 	--measure: 16ch;
 }
 
 nav {
-	--color-light: white;
 	display: flex;
 	justify-content: flex-start;
 	padding-block: var(--space-s);
