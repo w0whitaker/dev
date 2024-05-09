@@ -95,27 +95,11 @@
 	--color-light: #fffff0;
 	--color-links: #230ec4;
 	--color-mid-light: oklch(99.79% 0.0401 88.18);
-}
 
-body {
-	font-family: Superclarendon, "Bookman Old Style", "URW Bookman",
-		"URW Bookman L", "Georgia Pro", Georgia, serif;
-	font-weight: normal;
-	font-size: var(--step-0, 1.125rem);
-	background-color: var(--color-light);
-}
-
-h2 {
-	font-size: var(--step-2, 1.4238rem);
-}
-
-h3 {
-	font-size: var(--step-1, 1.2656rem);
-}
-
-:is(h4, h5, h6) {
-	font-size: var(--step-0, 1.125rem);
-	font-style: italic;
+	/* Fonts */
+	--display-font: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+	--body-font: Superclarendon, "Bookman Old Style", "URW Bookman",
+	"URW Bookman L", "Georgia Pro", Georgia, serif;
 }
 
 * {
@@ -129,6 +113,36 @@ main,
 div,
 footer {
 	max-inline-size: none;
+}
+
+
+body {
+	font-family: var(--body-font);
+	font-weight: normal;
+	font-size: var(--step-0, 1.125rem);
+	background-color: var(--color-light);
+}
+
+h1,
+h2,
+h3	{
+	font-family: var(--display-font);
+	font-weight: normal;
+}
+
+h2 {
+	font-size: var(--step-2, 1.4238rem);
+}
+
+h3 {
+	font-size: var(--step-1, 1.2656rem);
+}
+
+h4,
+h5,
+h6 {
+	font-size: var(--step-0, 1.125rem);
+	font-style: italic;
 }
 
 a {
