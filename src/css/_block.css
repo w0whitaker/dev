@@ -4,8 +4,20 @@ pre[class*="language-"] {
 
 code {
 	font-size: var(--step-0);
-	word-break: break-all;
-	word-spacing: 0.25ch;
+	word-break: keep-all;
+	/* word-spacing: 0.25ch; */
+	background-color: var(--color-mid-dark);
+	border-radius: 2px;
+	/* color: var(--color-mid-light); */
+	color: cyan;
+	padding-inline: 0.25em;
+	padding-block: 0.125em;
+}
+
+h1 > code,
+h2 > code,
+h3 > code {
+	font-size: inherit;
 }
 
 p:has(img) {
@@ -41,4 +53,32 @@ nav {
 
 main {
 	border-top: 0.5em solid var(--color-mid-dark);
+}
+
+table {
+	border: 0.5em solid var(--color-mid-dark);
+	width: 100%;
+}
+
+thead {
+	background-color: var(--color-mid-dark);
+	color: var(--color-mid-light);
+}
+
+th {
+	padding-block-start: var(--space-xs);
+	padding-block-end: var(--space-2xs);
+}
+
+td {
+	padding-block: 0.25rem;
+}
+
+th,
+td {
+	padding-inline: var(--space-3xs);
+}
+
+tbody > tr:nth-child(even) {
+	background-color: lightsteelblue;
 }

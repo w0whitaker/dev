@@ -16,7 +16,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
 	// Plugins
-	eleventyConfig.addPlugin(footnotes);
+	eleventyConfig.addPlugin(footnotes, { baseClass: "footnotes" });
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(pluginRss);

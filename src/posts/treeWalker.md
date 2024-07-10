@@ -7,15 +7,15 @@ tags: 'published'
 ---
 
 ## Nodes and their types.
-The tree-like Document Object Model (DOM) is comprised of nodes whose arrangement describes the structure of the document. There are nine types of nodes; which type a particular node is can be discovered  through its `nodeType` property. This will return a number corresponding to a type as follows[^5, 6, and 12 are deprecated]:
+The tree-like Document Object Model (DOM) is comprised of nodes whose arrangement describes the structure of the document. There are nine types of nodes; which type a particular node is can be discovered  through its `nodeType` property. This will return a number corresponding to a type as {% footnoteref "node-types", "5, 6, and 12 are deprecated" %} follows{% endfootnoteref %}:
 
 | Value | Type  |
 |:--|:--|
 | 1 | Element |
 | 2 | Attribute |
 | 3 | Text |
-| 4 | CDATA Section[^XML only] |
-| 7 | Processing Instruction[^XML only] |
+| 4 | {% footnoteref "cdata-section", "XML only." %}CDATA Section{% endfootnoteref  %} |
+| 7 | {% footnoteref, "processing-instruction", "XML only" %}Processing Instruction{% endfootnoteref %} |
 | 8 | Comment |
 | 9 | Document |
 | 10 | Document Type |

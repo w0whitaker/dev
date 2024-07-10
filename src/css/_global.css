@@ -121,6 +121,7 @@ body {
 	font-weight: normal;
 	font-size: var(--step-0, 1.125rem);
 	background-color: var(--color-light);
+	counter-reset: footnote;
 }
 
 h1,
@@ -156,6 +157,21 @@ h6 {
 
 a {
 	color: var(--color-links);
+}
+
+a.footnotes__ref {
+	text-decoration: underline dotted var(--color-mid-dark);
+	color: inherit;
+}
+
+.footnotes__ref::after {
+	position: relative;
+	top: -1ex;
+	padding: 0.125rem;
+	font-size: var(--step--2);
+	counter-increment: footnote;
+	content: counter(footnote);
+	color: crimson;
 }
 
 hgroup {
