@@ -97,9 +97,10 @@
 	--color-mid-light: oklch(99.79% 0.0401 88.18);
 
 	/* Fonts */
-	--display-font: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+	--display-font: Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif",
+		"Sitka Small", serif;
 	--body-font: Superclarendon, "Bookman Old Style", "URW Bookman",
-	"URW Bookman L", "Georgia Pro", Georgia, serif;
+		"URW Bookman L", "Georgia Pro", Georgia, serif;
 }
 
 * {
@@ -115,19 +116,28 @@ footer {
 	max-inline-size: none;
 }
 
-
 body {
 	font-family: var(--body-font);
 	font-weight: normal;
 	font-size: var(--step-0, 1.125rem);
 	background-color: var(--color-light);
+	counter-reset: footnote;
 }
 
 h1,
 h2,
-h3	{
+h3,
+.main-title {
 	font-family: var(--display-font);
 	font-weight: normal;
+}
+
+.main-title {
+	font-size: var(--step-4);
+}
+
+h1 {
+	font-size: var(--step-3);
 }
 
 h2 {
@@ -147,4 +157,30 @@ h6 {
 
 a {
 	color: var(--color-links);
+}
+
+a.footnotes__ref {
+	text-decoration: underline dotted var(--color-mid-dark);
+	color: inherit;
+}
+
+.footnotes__ref::after {
+	position: relative;
+	top: -1ex;
+	padding: 0.125rem;
+	font-size: var(--step--2);
+	counter-increment: footnote;
+	content: counter(footnote);
+	color: crimson;
+}
+
+hgroup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-block: var(--space-m);
+}
+
+hgroup time {
+	font-size: var(--step-1);
 }
