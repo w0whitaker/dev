@@ -6,8 +6,6 @@ date: 2024-07-09
 tags: 'published'
 ---
 
-# Walking the DOM.
-
 ## Nodes and their types.
 The tree-like Document Object Model (DOM) is comprised of nodes whose arrangement describes the structure of the document. There are nine types of nodes; which type a particular node is can be discovered  through its `nodeType` property. This will return a number corresponding to a type as follows[^5, 6, and 12 are deprecated]:
 

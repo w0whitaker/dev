@@ -36,12 +36,14 @@ body {
 }
 
 h1,
-h2 {
+h2,
+.main-title {
 	line-height: 1.1;
 	text-wrap: balance;
 }
 
-h1 {
+h1,
+.main-title {
 	font-size: var(--step-3);
 	max-width: 20ch;
 }

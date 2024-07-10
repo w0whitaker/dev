@@ -97,9 +97,10 @@
 	--color-mid-light: oklch(99.79% 0.0401 88.18);
 
 	/* Fonts */
-	--display-font: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+	--display-font: Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif",
+		"Sitka Small", serif;
 	--body-font: Superclarendon, "Bookman Old Style", "URW Bookman",
-	"URW Bookman L", "Georgia Pro", Georgia, serif;
+		"URW Bookman L", "Georgia Pro", Georgia, serif;
 }
 
 * {
@@ -115,7 +116,6 @@ footer {
 	max-inline-size: none;
 }
 
-
 body {
 	font-family: var(--body-font);
 	font-weight: normal;
@@ -125,9 +125,18 @@ body {
 
 h1,
 h2,
-h3	{
+h3,
+.main-title {
 	font-family: var(--display-font);
 	font-weight: normal;
+}
+
+.main-title {
+	font-size: var(--step-4);
+}
+
+h1 {
+	font-size: var(--step-3);
 }
 
 h2 {
@@ -147,4 +156,15 @@ h6 {
 
 a {
 	color: var(--color-links);
+}
+
+hgroup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-block: var(--space-m);
+}
+
+hgroup time {
+	font-size: var(--step-1);
 }
