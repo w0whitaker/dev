@@ -1,3 +1,39 @@
+h1,
+h2,
+h3,
+.main-title {
+	font-family: var(--display-font);
+	font-weight: normal;
+}
+
+.main-title {
+	font-size: var(--step-4);
+}
+
+h1 {
+	font-size: var(--step-3, 2rem);
+}
+
+h2 {
+	font-size: var(--step-2, 1.5rem);
+}
+
+h3 {
+	font-size: var(--step-1, 1.25rem);
+}
+
+h4,
+h5,
+h6 {
+	font-size: var(--step-0, 1.125rem);
+	font-style: italic;
+}
+
+a {
+	color: var(--color-links);
+}
+
+
 pre[class*="language-"] {
 	width: calc(100vw - (var(--space-xs) * 2));
 }
@@ -81,4 +117,30 @@ td {
 
 tbody > tr:nth-child(even) {
 	background-color: lightsteelblue;
+}
+
+a.footnotes__ref {
+	text-decoration: underline dotted var(--color-mid-dark);
+	color: inherit;
+}
+
+.footnotes__ref::after {
+	position: relative;
+	top: -1ex;
+	padding: 0.125rem;
+	font-size: var(--step--2);
+	counter-increment: footnote;
+	content: counter(footnote);
+	color: crimson;
+}
+
+hgroup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-block: var(--space-m);
+}
+
+hgroup time {
+	font-size: var(--step-1);
 }
