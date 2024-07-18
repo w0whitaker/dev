@@ -81,9 +81,10 @@
 	--space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vi, 7.5rem);
 
 	/* Custom pairs */
-
-	/* Space s-l: 18px → 40px */
-	--space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vi, 2.5rem);
+  --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+  --space-s-xl: clamp(1.125rem, 0.212rem + 4.5652vw, 3.75rem);
+  --space-s-2xl: clamp(1.125rem, -0.2228rem + 6.7391vw, 5rem);
+  --space-s-3xl: clamp(1.125rem, -1.0924rem + 11.087vw, 7.5rem);
 
 	/* Axioms */
 	/* https://every-layout.dev/rudiments/axioms/ */
@@ -131,21 +132,21 @@ h3,
 	font-family: var(--display-font);
 	font-weight: normal;
 }
-
+/* is there any reason to move this to another file? seems ok here, but maybe not global? */
 .main-title {
 	font-size: var(--step-4);
 }
 
 h1 {
-	font-size: var(--step-3);
+	font-size: var(--step-3, 2rem);
 }
 
 h2 {
-	font-size: var(--step-2, 1.4238rem);
+	font-size: var(--step-2, 1.5rem);
 }
 
 h3 {
-	font-size: var(--step-1, 1.2656rem);
+	font-size: var(--step-1, 1.25rem);
 }
 
 h4,
@@ -159,6 +160,7 @@ a {
 	color: var(--color-links);
 }
 
+/* again, should this move? it is global, but also kind of specific */
 a.footnotes__ref {
 	text-decoration: underline dotted var(--color-mid-dark);
 	color: inherit;
@@ -174,6 +176,7 @@ a.footnotes__ref {
 	color: crimson;
 }
 
+/* this is more of a block thing perhaps? */
 hgroup {
 	display: flex;
 	flex-direction: column;
