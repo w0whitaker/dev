@@ -4,8 +4,21 @@
 Composition rules are for defining layouts, interactions, and flow/rhythm.
 Composition rules are not for aesthetic elements such as fonts, colors, borders, shadows, etc.
 */
+header:has(h1) {
+	display: inline-block;
+	margin: var(--base-spacing-container-masthead);
+}
 
-.flow > * + * {
+header > * + * {
+	margin-block-start: var(--base-spacing-container-masthead);
+}
+
+nav > * + * {
+	display: inline-block;
+	padding-inline-start: var(--base-spacing-component-masthead);
+}
+
+/* .flow > * + * {
 	margin-block-start: var(--flow-space, 1.5em);
 }
 
@@ -44,4 +57,4 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	gap: var(--space, 1ch);
 	justify-content: flex-start;
 	align-items: center;
-}
+} */

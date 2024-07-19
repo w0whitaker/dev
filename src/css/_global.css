@@ -89,6 +89,12 @@
 	/* Axioms */
 	/* https://every-layout.dev/rudiments/axioms/ */
 	--measure: 60ch;
+	
+	/* Padding on containers should be avoided */
+	--base-spacing-container-masthead: var(--space-s-xl);
+	
+	/* Margins on components should be avoided */
+	--base-spacing-component-masthead: var(--space-s-xl);
 
 	/* Colors */
 	--color-dark: #00000f;
@@ -102,6 +108,11 @@
 		"Sitka Small", serif;
 	--body-font: Superclarendon, "Bookman Old Style", "URW Bookman",
 		"URW Bookman L", "Georgia Pro", Georgia, serif;
+}
+
+/* debug styles */
+[debug] {
+	background-color: hotpink;
 }
 
 * {
