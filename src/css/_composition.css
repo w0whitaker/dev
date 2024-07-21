@@ -24,6 +24,10 @@ main {
 	--flow-space: var(--base-spacing-container-feature);
 }
 
+section > *:not(h2, h3) {
+	padding-inline: var(--base-spacing-component-lede);
+}
+
 .flow > * + * {
 	margin-block-start: var(--flow-space, 1.5em);
 }

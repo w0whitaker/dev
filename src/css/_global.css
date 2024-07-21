@@ -96,6 +96,7 @@
 	
 	/* Margins on components should be avoided */
 	--base-spacing-component-masthead: var(--space-xs);
+	--base-spacing-component-lede: var(--space-s-l);
 
 	/* Colors */
 	/* pieton-blue */
