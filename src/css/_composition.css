@@ -5,6 +5,8 @@ Composition rules are for defining layouts, interactions, and flow/rhythm.
 Composition rules are not for aesthetic elements such as fonts, colors, borders, shadows, etc.
 */
 
+/* "Avoid margins on components and padding on containers" */
+
 header,
 main,
 footer {
@@ -12,8 +14,12 @@ footer {
 }
 
 /* This keeps the header to no more than the content width */
-header:has(h1) {
+header:has(h1){
 	display: inline-block;
+}
+
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1.5em);
 }
 
 header {
@@ -28,8 +34,23 @@ section > *:not(h2, h3) {
 	padding-inline: var(--base-spacing-component-lede);
 }
 
-.flow > * + * {
-	margin-block-start: var(--flow-space, 1.5em);
+aside ul[role="list"],
+footer ul[role="list"] {
+	margin-block-start: var(--space-3xs);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+aside ul[role="list"] li {
+	padding-block: var(--space-3xs);
+}
+
+aside p:first-of-type {
+	margin-block-start: var(--space-xs);
+}
+
+footer {
+	margin-block: var(--space-s-m);
 }
 
 /*
