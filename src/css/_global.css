@@ -85,13 +85,14 @@
   --space-s-xl: clamp(1.125rem, 0.212rem + 4.5652vw, 3.75rem);
   --space-s-2xl: clamp(1.125rem, -0.2228rem + 6.7391vw, 5rem);
   --space-s-3xl: clamp(1.125rem, -1.0924rem + 11.087vw, 7.5rem);
-
+	--space-3xs-3xl: clamp(0.3125rem, -2.1875rem + 12.5vw, 7.5rem);
 	/* Axioms */
 	/* https://every-layout.dev/rudiments/axioms/ */
 	--measure: 60ch;
 	
 	/* Padding on containers should be avoided */
 	--base-spacing-container-masthead: var(--space-xs);
+	--base-spacing-container-feature: var(--space-s-l);
 	
 	/* Margins on components should be avoided */
 	--base-spacing-component-masthead: var(--space-xs);
