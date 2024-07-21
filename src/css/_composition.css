@@ -30,6 +30,17 @@ main {
 	--flow-space: var(--base-spacing-container-feature);
 }
 
+nav {
+	display: flex;
+	gap: var(--space-2xs);
+}
+
+nav a {
+	display: block;
+	padding-block: var(--space-m);
+	padding-inline-end: var(--space-m);
+}
+
 section > *:not(h2, h3) {
 	padding-inline: var(--base-spacing-component-lede);
 }
