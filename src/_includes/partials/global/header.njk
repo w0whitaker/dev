@@ -2,7 +2,8 @@
 
 <div class="bottom-border conic-gradient masthead">
 	<header role="banner">
-		<h1 class="main-title">Com&shy;mend&shy;able develop&shy;ery!</h1>
+		<h1 class="main-title"><span id="url">document url</span></h1>
+		<script>document.getElementById("url").textContent = document.URL;</script>
 	{% include 'partials/global/sitenav.njk' %}
 	</header>
 </div>
