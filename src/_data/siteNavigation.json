@@ -10,5 +10,9 @@
 	{
 		"content": "rss",
 		"target": "/feed.xml"
+	},
+	{
+		"content": "design system",
+		"target": "/design-system.html"
 	}
 ]
