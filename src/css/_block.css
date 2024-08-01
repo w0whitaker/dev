@@ -15,6 +15,32 @@ h3 {
 	display: inline-block;
 }
 
+table {
+	border-collapse: collapse;
+	font-size: var(--step--1);
+}
+
+th,
+td {
+	border: 1px solid;
+}
+
+th,
+caption {
+	text-align: start;
+}
+
+thead th:not(:first-child),
+td {
+	text-align: end;
+}
+
+thead {
+	border-block-end: 2px solid;
+	background: var(--pieton-yellow-route);
+	color: var(--pieton-yellow-base);
+}
+
 /* .main-title {
 	font-size: var(--step-4);
 } */
@@ -41,7 +67,6 @@ h6 {
 /* a {
 	color: var(--color-links);
 } */
-
 
 /* pre[class*="language-"] {
 	width: calc(100vw - (var(--space-xs) * 2));
