@@ -28,3 +28,6 @@ src/main.css
 .vscode/
 .idea/
 *.fig
+
+# design files
+design/
