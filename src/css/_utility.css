@@ -81,15 +81,15 @@
 }
 
 .display-font {
-	font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-	Arial, sans-serif;
+	font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans',
+		Arial, sans-serif;
 	font-weight: normal;
 	font-size: var(--step-3);
 }
 
 .display-font-mini {
-	font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-	Arial, sans-serif;
+	font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans',
+		Arial, sans-serif;
 	font-weight: normal;
 	font-size: var(--step--1);
 }

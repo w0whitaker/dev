@@ -1,6 +1,6 @@
-import markdownIt from "markdown-it";
+import markdownIt from 'markdown-it';
 
-export const md = (content = "") => {
+export const md = (content = '') => {
 	return markdownIt({
 		html: true,
 		typographer: false,

@@ -2,18 +2,20 @@
 title: blog
 order: 2
 ---
+
 <ul role="list" class="flow">
-  {% for post in collections.posts %}
-  <li>
-    <article class="flow">
-      <h3>
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
-      </h3>
-      <time datetime="{{ post.data.date | isoDate }}">{{ 
-      post.data.date | humanDate }}</time>
-      <p>{{ post.data.page.excerpt | md | safe }}</p>
-      <p><a href="{{ post.url }}">more...</a></p>
-    </article>
-  </li>
-  {% endfor %}
+	{% for post in collections.posts %}
+		<li>
+			<article class="flow">
+				<h3>
+					<a href="{{ post.url }}">{{ post.data.title }}</a>
+				</h3>
+				<time datetime="{{ post.data.date | isoDate }}"
+					>{{ post.data.date | humanDate }}</time
+				>
+				<p>{{ post.data.page.excerpt | md | safe }}</p>
+				<p><a href="{{ post.url }}">more...</a></p>
+			</article>
+		</li>
+	{% endfor %}
 </ul>

@@ -1,15 +1,23 @@
 ---
 layout: page
 ---
+
 <article class="flow">
-  <hgroup>
-    <h1>{{ title }}</h1>
-    <p>
-      <time datetime="{{ page
-          .date | isoDate }}">{{ page.date | 
-          humanDate }}</time>
-    </p>
-  </hgroup>
-  {{ content | safe }}
-  {% footnotes %}
+	<hgroup>
+		<h1>{{ title }}</h1>
+		<p>
+			<time
+				datetime="{{
+					page
+					.date | isoDate
+				}}"
+				>{{
+					page.date |
+					humanDate
+				}}</time
+			>
+		</p>
+	</hgroup>
+	{{ content | safe }}
+	{% footnotes %}
 </article>

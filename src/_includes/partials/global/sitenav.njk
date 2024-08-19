@@ -1,9 +1,12 @@
 {% set currentUrl = page.url %}
 
 <nav class="center-full">
-{% for link in siteNavigation %}
-	<a href="{{ link.target }}" class="box standard-box inline-border rounded-border">
-{{ link.content }}
-				</a>
-{% endfor %}
+	{% for link in siteNavigation %}
+		<a
+			href="{{ link.target }}"
+			class="box standard-box inline-border rounded-border"
+		>
+			{{ link.content }}
+		</a>
+	{% endfor %}
 </nav>

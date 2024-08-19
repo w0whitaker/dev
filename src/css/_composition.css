@@ -46,14 +46,14 @@ section > *:not(h2, h3) {
 	padding-inline: var(--base-spacing-component-lede);
 }
 
-aside ul[role="list"],
-footer ul[role="list"] {
+aside ul[role='list'],
+footer ul[role='list'] {
 	margin-block-start: var(--space-3xs);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
-aside ul[role="list"] li {
+aside ul[role='list'] li {
 	padding-block: var(--space-3xs);
 }
 

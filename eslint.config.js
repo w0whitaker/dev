@@ -1,7 +1,7 @@
 module.exports = [
 	{
 		rules: {
-			"prefer-const": "error",
+			'prefer-const': 'error',
 		},
 	},
 ];
