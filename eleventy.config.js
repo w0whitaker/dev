@@ -4,7 +4,7 @@ import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
 import pluginRss from '@11ty/eleventy-plugin-rss';
 
 // Import filters.
-import {isoDate, humanDate, md} from './config/filters/index.js';
+import {isoDate, humanDate, md} from './src/_config/filters/index.js';
 
 export default function (eleventyConfig) {
 	// Load environment variables
