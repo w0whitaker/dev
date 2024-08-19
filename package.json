@@ -4,7 +4,7 @@
 	"description": "This is the development portfolio site for William Whitaker.",
 	"type": "module",
 	"scripts": {
-		"clean": "rimraf _site",
+		"clean": "rm -rf _site",
 		"dev:eleventy": "npx @11ty/eleventy --serve --quiet --incremental",
 		"start": "run-s clean dev:eleventy",
 		"start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
@@ -51,10 +51,6 @@
 		"postcss-cli": "^11.0.0",
 		"postcss-import": "^16.1.0",
 		"prettier": "^3.0.2",
-		"prettier-plugin-jinja-template": "^1.4.1",
-		"rimraf": "^5.0.1",
-		"style-dictionary": "^3.9.0",
-		"stylelint": "^16.3.1",
-		"stylelint-config-standard": "^36.0.0"
+		"prettier-plugin-jinja-template": "^1.4.1"
 	}
 }
