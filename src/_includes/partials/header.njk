@@ -1,0 +1,12 @@
+{% set currentUrl = page.url %}
+<div class="bottom-border conic-gradient masthead">
+  <header role="banner">
+    <h1 class="main-title">
+      <span id="url">document url</span>
+    </h1>
+    <script>
+      document.getElementById('url').textContent = document.URL;
+    </script>
+    {% include 'partials/sitenav.njk' %}
+  </header>
+</div>
