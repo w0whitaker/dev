@@ -1,4 +1,4 @@
-const humanDate = (value) => {
+export const humanDate = (value) => {
 	const options = {
 		month: "long",
 		day: "numeric",
@@ -9,5 +9,3 @@ const humanDate = (value) => {
 	date = new Intl.DateTimeFormat("en-US", options).format(value);
 	return date;
 };
-
-module.exports = humanDate;

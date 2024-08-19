@@ -2,6 +2,7 @@
 	"name": "williamwhitaker.dev",
 	"version": "0.7.0",
 	"description": "This is the development portfolio site for William Whitaker.",
+	"type": "module",
 	"scripts": {
 		"clean": "rimraf _site",
 		"dev:eleventy": "npx @11ty/eleventy --serve --quiet --incremental",

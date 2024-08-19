@@ -1,11 +1,9 @@
-const markdownIt = require("markdown-it");
+import markdownIt from "markdown-it";
 
-const md = (content = "") => {
+export const md = (content = "") => {
 	return markdownIt({
 		html: true,
 		typographer: false,
 		breaks: false,
 	}).render(content);
 };
-
-module.exports = md;

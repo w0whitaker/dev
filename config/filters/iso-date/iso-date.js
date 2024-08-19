@@ -1,5 +1,3 @@
-const isoDate = (value) => {
+export const isoDate = (value) => {
 	return value.toISOString();
 };
-
-module.exports = isoDate;

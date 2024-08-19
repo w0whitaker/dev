@@ -1,5 +1,5 @@
-const isoDate = require("./iso-date/iso-date.js");
-const humanDate = require("./human-date/human-date.js");
-const md = require("./markdown/markdown.js");
+import { isoDate } from "./iso-date/iso-date.js";
+import { humanDate } from "./human-date/human-date.js";
+import { md } from "./markdown/markdown.js";
 
-module.exports = { isoDate, humanDate, md };
+export { isoDate, humanDate, md };

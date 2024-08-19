@@ -1,12 +1,12 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const footnotes = require("eleventy-plugin-footnotes");
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxHighlight";
+import footnotes from "eleventy-plugin-footnotes";
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import pluginRss from "@11ty/eleventy-plugin-rss";
 
-// module import filters
-const { isoDate, humanDate, md } = require("./config/filters/index.js");
+// Import filters.
+import { isoDate, humanDate, md } from "./config/filters/index.js";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	// Load environment variables
 	eleventyConfig.addGlobalData("env", process.env);
 
@@ -53,4 +53,4 @@ module.exports = function (eleventyConfig) {
 			output: "_site",
 		},
 	};
-};
+}
