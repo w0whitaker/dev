@@ -1,0 +1,19 @@
+{
+	"useTabs": true,
+	"tabWidth": 4,
+	"singleQuote": true,
+	"semi": true,
+	"endOfLine": "lf",
+	"bracketSpacing": false,
+	"quoteProps": "consistent",
+	"printWidth": 80,
+	"plugins": ["prettier-plugin-jinja-template"],
+	"overrides": [
+		{
+			"files": "*.njk",
+			"options": {
+				"parser": "jinja-template"
+			}
+		}
+	]
+}
