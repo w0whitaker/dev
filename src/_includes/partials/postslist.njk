@@ -1,7 +1,9 @@
 <ul role="list" class="flow">
-  {% for post in collections.posts %}
-    <li>
-      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-    </li>
+  {% for post in collections.posts | reverse %}
+    {% if (post | isPublished) %}
+      <li>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>

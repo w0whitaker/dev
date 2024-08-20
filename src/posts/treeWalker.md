@@ -3,7 +3,7 @@ title: 'The TreeWalker.'
 eleventyExcludeFromCollections: false
 teaser: 'Exploring DOM nodes from the comfort of home.'
 date: 2024-07-09
-tags: 'published'
+published: true
 ---
 
 ## Nodes and their types.

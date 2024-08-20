@@ -2,7 +2,7 @@
 title: 'Manipulating the DOM with event listeners'
 teaser: 'Working with event listeners in JavaScript to add and modify elements in the DOM.'
 date: 2022-04-22
-tags: 'published'
+published: true
 ---
 
 Imagine you have a dog. You'd like the dog to raise their paw and touch your hand whenever you say "shake". You'll have to teach the dog this behavior, but with enough patience (and treats!), eventually the dog will learn. You have now taught your dog (the target) to listen for a command (the event) and raise its paw (the action).

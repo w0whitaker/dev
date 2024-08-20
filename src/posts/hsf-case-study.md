@@ -2,7 +2,7 @@
 title: 'Case study - Human Service Forum'
 teaser: 'Improving the performance of a WordPress site'
 date: 2024-03-12
-tags: 'published'
+published: true
 ---
 
 ![a line rendering of the home page of the human service forum](../assets/images/hsf.svg)
