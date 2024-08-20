@@ -37,7 +37,7 @@ export default function (eleventyConfig) {
 
 	// Collections
 	eleventyConfig.addCollection('posts', function (collectionApi) {
-		return collectionApi.getFilteredByTags('post', 'published');
+		return collectionApi.getFilteredByTags('post');
 	});
 	eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
 	eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
