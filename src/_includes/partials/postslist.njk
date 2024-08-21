@@ -1,9 +1,21 @@
-<ul role="list" class="flow">
-  {% for post in collections.posts | reverse %}
-    {% if (post | isPublished) %}
+<ul role="list" class="switcher ">
+  {%- for post in collections.posts | reverse -%}
+    {%- if (post | isPublished) -%}
       <li>
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+        <div class="card">
+          <h2>
+            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          </h2>
+          <div class="flow">
+            <p class="subheading">
+              {{ post.data.date | humanDate }}
+            </p>
+            <p>
+              {{ post.data.teaser }}
+            </p>
+          </div>
+        </div>
       </li>
-    {% endif %}
-  {% endfor %}
+    {%- endif -%}
+  {%- endfor -%}
 </ul>

@@ -65,6 +65,12 @@ footer {
 	margin-block: var(--space-s-m);
 }
 
+.card {
+	padding-inline: var(--space-s);
+	padding-block-start: var(--space-s);
+	padding-block-end: var(--space-m);
+}
+
 /*
 .cover {
 	display: flex;
@@ -78,6 +84,7 @@ footer {
 	margin-inline: auto;
 	max-inline-size: var(--measure, 60ch);
 }
+*/
 
 .switcher {
 	display: flex;
@@ -94,7 +101,7 @@ footer {
 .switcher > :nth-last-child(n + 4) ~ * {
 	flex-basis: 100%;
 }
-
+/**
 .cluster {
 	display: flex;
 	flex-wrap: wrap;

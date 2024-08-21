@@ -41,6 +41,28 @@ thead {
 	color: var(--pieton-yellow-base);
 }
 
+.card {
+	background-color: var(--pieton-blue-bridge);
+	color: var(--pieton-yellow-road);
+	font-family: var(--body-font);
+	height: 100%;
+}
+
+.card a {
+	color: var(--pieton-yellow-road);
+}
+
+.card h2 {
+	font-size: var(--step-3);
+	font-weight: 700;
+	font-family: var(--display-font);
+}
+
+.subheading {
+	font-size: var(--step--1);
+	font-family: var(--display-font);
+}
+
 /* .main-title {
 	font-size: var(--step-4);
 } */
