@@ -27,7 +27,7 @@ header {
 }
 
 main {
-	--flow-space: var(--base-spacing-container-feature);
+	--flow-space: 0;
 }
 
 nav {

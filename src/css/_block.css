@@ -7,12 +7,35 @@
 	color: var(--pieton-light-bridge);
 }
 
+.section-heading {
+	background-color: var(--pieton-yellow-base);
+	display: flex;
+	justify-content: flex-start;
+	border-bottom: solid 5px var(--pieton-yellow-route);
+	gap: var(--space-3xs);
+	padding: 0;
+}
+
+.section-heading h2 {
+	height: var(--step-3);
+	align-self: flex-end;
+}
+
+.plate {
+	background-color: var(--pieton-yellow-sidewalk);
+	flex: 0 1 var(--step-3);
+}
+
+.plate svg {
+	fill: var(--pieton-yellow-route);
+}
+
 h2,
 h3 {
 	font-family: var(--display-font);
 	font-weight: normal;
-	color: var(--pieton-yellow-path);
-	display: inline-block;
+	font-size: var(--step-3);
+	color: var(--pieton-light-bridge);
 }
 
 table {
