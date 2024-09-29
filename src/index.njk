@@ -33,9 +33,10 @@ templateEngineOverride: njk, md
         <a href="mailto:{{ env.EMAIL_ADDRESS }}">talk</a>!</p>
     </aside>
     <div>
-      <p>linkity</p>
-      {% for link in links.links %}
-        <p>{{ link.title }}</p>
+      {% for link in links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        <p>{{ link.excerpt }}</p>
+        <img src="{{ link.cover }}" alt=" "/>
       {% endfor %}
     </div>
   </section>

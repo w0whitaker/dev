@@ -16,9 +16,16 @@ module.exports = async function () {
 			},
 		});
 
-		return {
-			links: json.items,
-		};
+		let links = json.items.map((elem) => {
+			return {
+				title: elem.title,
+				url: elem.link,
+				excerpt: elem.excerpt,
+				cover: elem.cover,
+			};
+		});
+
+		return links;
 	} catch (e) {
 		console.error('fetch failed, returning 0');
 		return {

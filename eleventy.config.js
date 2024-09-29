@@ -26,6 +26,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(pluginRss);
+
 	// Custom filters
 	eleventyConfig.addFilter('md', md);
 	eleventyConfig.addFilter('isoDate', isoDate);
@@ -39,6 +40,8 @@ export default function (eleventyConfig) {
 	eleventyConfig.addCollection('posts', function (collectionApi) {
 		return collectionApi.getFilteredByTags('post');
 	});
+
+	// Layouts
 	eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
 	eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
 	eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
