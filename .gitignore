@@ -22,6 +22,9 @@ node_modules/
 _site/
 src/main.css
 
+# 11ty fetch cache
+.cache/
+
 # editor
 *.*-project
 *.*-workspace
