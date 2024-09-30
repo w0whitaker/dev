@@ -52,7 +52,7 @@ thead {
 	color: var(--pieton-yellow-road);
 }
 
-.card h2 {
+.card:is(h2, h3) {
 	font-size: var(--step-3);
 	font-weight: 700;
 	font-family: var(--display-font);
@@ -63,6 +63,10 @@ thead {
 	font-family: var(--display-font);
 }
 
+blockquote {
+	font-style: italic;
+	font-size: var(--step--1);
+}
 /* .main-title {
 	font-size: var(--step-4);
 } */

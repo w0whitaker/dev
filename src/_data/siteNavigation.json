@@ -4,11 +4,15 @@
 		"target": "/"
 	},
 	{
+		"content": "links",
+		"target": "/links/"
+	},
+	{
 		"content": "contact",
 		"target": "mailto:william@williamwhitaker.dev"
 	},
 	{
 		"content": "rss",
-		"target": "/feed.xml"
+		"target": "/feed.xml/"
 	}
 ]
