@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import footnotes from 'eleventy-plugin-footnotes';
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
