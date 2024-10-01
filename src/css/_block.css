@@ -30,12 +30,11 @@
 	fill: var(--pieton-yellow-route);
 }
 
-h2,
-h3 {
+:is(h2, h3) {
 	font-family: var(--display-font);
 	font-weight: normal;
 	font-size: var(--step-3);
-	color: var(--pieton-light-bridge);
+	color: var(--pieton-light-path);
 }
 
 table {
