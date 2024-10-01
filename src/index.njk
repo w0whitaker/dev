@@ -6,16 +6,10 @@ templateEngineOverride: njk, md
 
 <article class="flow">
   <section class="flow">
-    <div class="section-heading">
-      <div class="plate">
-        {%- include './assets/images/croppeeSelfee.svg' -%}
-      </div>
-      <h2>Introduction.</h2>
-    </div>
+    <h2>Introduction.</h2>
     <p>
       My name is William. Among other
-      <a href="https://williamwhitaker.art">things</a>, I'm a front-end
-                                                                        			developer.
+      <a href="https://williamwhitaker.art">things</a>, I'm a front-end developer.
     </p>
     <aside class="flow">
       <h3>Some competencies:</h3>
@@ -38,5 +32,12 @@ templateEngineOverride: njk, md
       <p>Let's
         <a href="mailto:{{ env.EMAIL_ADDRESS }}">talk</a>!</p>
     </aside>
+    <div>
+      {% for link in links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        <p>{{ link.excerpt }}</p>
+        <img src="{{ link.cover }}" alt=" "/>
+      {% endfor %}
+    </div>
   </section>
 </article>
