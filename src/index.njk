@@ -32,12 +32,5 @@ templateEngineOverride: njk, md
       <p>Let's
         <a href="mailto:{{ env.EMAIL_ADDRESS }}">talk</a>!</p>
     </aside>
-    <div>
-      {% for link in links %}
-        <a href="{{ link.url }}">{{ link.title }}</a>
-        <p>{{ link.excerpt }}</p>
-        <img src="{{ link.cover }}" alt=" "/>
-      {% endfor %}
-    </div>
   </section>
 </article>
