@@ -48,3 +48,4 @@ Next, a `do...while` loop is called that prints the `nodeName` of each node to t
 
 Finally, a quick note about using `do...while` to iterate over the `TreeWalker`  as opposed to `while`. Using `while (walker.nextNode())` will skip the `root` node.I found this confusing, because I thought that every node would print so long as that node had a node following it. However, it seems that `while` evaluates the expression and _then_ executes the code, whereas `do...while` executes the code and then evaluates the expression. Subtle!
 
+{% footnotes %}
