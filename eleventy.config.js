@@ -1,6 +1,5 @@
-import 'dotenv/config';
+import 'dotenv/config'; // allows for use of .env file
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
-import footnotes from 'eleventy-plugin-footnotes';
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
 import pluginRss from '@11ty/eleventy-plugin-rss';
 
@@ -23,7 +22,6 @@ export default function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
 
 	// Plugins
-	eleventyConfig.addPlugin(footnotes, {baseClass: 'footnotes'});
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(pluginRss);
