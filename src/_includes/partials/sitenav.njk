@@ -2,11 +2,8 @@
 
 <nav class="center-full">
 	{% for link in siteNavigation %}
-		<a
-			href="{{ link.target }}"
-			class="box standard-box inline-border rounded-border"
-		>
-			{{ link.content }}
+		<a href="{{ link.url }}">
+			{{ link.text }}
 		</a>
 	{% endfor %}
 </nav>
