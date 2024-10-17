@@ -33,7 +33,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addFilter('isPublished', isPublished);
 	eleventyConfig.addFilter('arePublished', arePublished);
 
-	eleventyConfig.setTemplateFormats(['html', 'md', 'njk']);
+	eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js']);
 
 	// Collections
 	eleventyConfig.addCollection('posts', function (collectionApi) {
