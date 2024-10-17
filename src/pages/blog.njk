@@ -1,6 +1,8 @@
----
-title: blog
-order: 2
+---js 
+{
+	title: 'blog',
+	order: 2
+}
 ---
 
 <ul role="list" class="flow">
@@ -14,7 +16,9 @@ order: 2
 					>{{ post.data.date | humanDate }}</time
 				>
 				<p>{{ post.data.page.excerpt | md | safe }}</p>
-				<p><a href="{{ post.url }}">more...</a></p>
+				<p>
+					<a href="{{ post.url }}">more...</a>
+				</p>
 			</article>
 		</li>
 	{% endfor %}
