@@ -1,9 +1,1 @@
-{% set currentUrl = page.url %}
-
-<nav class="center-full">
-	{% for link in navigation %}
-		<a href="{{ link.url }}">
-			{{ link.text }}
-		</a>
-	{% endfor %}
-</nav>
+{{ collections.pages| eleventyNavigation | eleventyNavigationToHtml | safe }}

@@ -4,4 +4,9 @@ export default {
 	permalink: function ({title}) {
 		return `${this.slugify(title)}.html`;
 	},
+	eleventyComputed: {
+		eleventyNavigation: {
+			key: (data) => data.title,
+		},
+	},
 };
