@@ -3,25 +3,21 @@
 	title: 'posts',
 	eleventyNavigation: {
 		order: 2
-	}
+	},
+	pagination: {
+		data: 'collections.posts',
+		size: 2,
+		alias: 'posts'
+	},
+	permalink: 'posts/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
+	
 }
 ---
 
 <ul role="list" class="flow">
-	{% for post in collections.posts %}
+	{% for post in posts %}
 		<li>
-			<article class="flow">
-				<h3>
-					<a href="{{ post.url }}">{{ post.data.title }}</a>
-				</h3>
-				<time datetime="{{ post.data.date | isoDate }}"
-					>{{ post.data.date | humanDate }}</time
-				>
-				<p>{{ post.data.page.excerpt | md | safe }}</p>
-				<p>
-					<a href="{{ post.url }}">more...</a>
-				</p>
-			</article>
+			<p>{{ post.data.title }}</p>
 		</li>
 	{% endfor %}
 </ul>
