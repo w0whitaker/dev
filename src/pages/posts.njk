@@ -6,7 +6,7 @@
 	},
 	pagination: {
 		data: 'collections.posts',
-		size: 2,
+		size: 5,
 		alias: 'posts'
 	},
 	permalink: 'posts/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
@@ -21,23 +21,15 @@
 		</li>
 	{% endfor %}
 </ul>
-<nav aria-labelledby="my-pagination">
-	<h2 id="my-pagination">This is my Pagination</h2>
-	<ol>
-		<li>
-			{% if pagination.href.previous %}
-				<a href="{{ pagination.href.previous }}">Previous</a>
-			{% else %}Previous{% endif %}
-		</li>
-		{%- for pageEntry in pagination.pages %}
-			<li>
-				<a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a>
-			</li>
-		{%- endfor %}
-		<li>
-			{% if pagination.href.next %}
-				<a href="{{ pagination.href.next }}">Next</a>
-			{% else %}Next{% endif %}
-		</li>
-	</ol>
+<nav aria-labelledby="posts-pagination">
+	<h2 id="posts-pagination">More posts.</h2>
+	{% if pagination.href.previous %}
+		<a href="{{ pagination.href.previous }}">Previous</a>
+	{% else %}Previous{% endif %}
+	{%- for pageEntry in pagination.pages %}
+		<a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a>
+	{%- endfor %}
+	{% if pagination.href.next %}
+		<a href="{{ pagination.href.next }}">Next</a>
+	{% else %}Next{% endif %}
 </nav>
