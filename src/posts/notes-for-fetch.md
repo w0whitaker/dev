@@ -103,7 +103,7 @@ module.exports = async function () {
 };
 ```
 
-The use of `.map()` to reformat the JSON fetched from the API is optional. The JSON response is structured in such a way that the info about the links themselves is an array, and in order to use it in the template, I had to do `{% for link in link.items %}`, not the worst thing, but it seemed cleaner to reformat it. 
+The use of `.map()` to reformat the JSON fetched from the API is optional. The JSON response is structured in such a way that the info about the links themselves is an array, and in order to use it in the template, I had to do `{% raw %}{% for link in link.items %}{% endraw %}`, not the worst thing, but it seemed cleaner to reformat it. 
 
 1. bit about being a green cowhand as analogy for how I deal with apis
 2. raindrop api

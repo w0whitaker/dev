@@ -2,5 +2,5 @@
 	"layout": "post",
 	"permalink": "/{{ page.fileSlug }}.html",
 	"tags": ["post"],
-	"templateEngineOverride": "md"
+	"templateEngineOverride": "njk,md"
 }

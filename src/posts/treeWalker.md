@@ -7,15 +7,15 @@ published: true
 ---
 
 ## Nodes and their types.
-The tree-like Document Object Model (DOM) is comprised of nodes whose arrangement describes the structure of the document. There are nine types of nodes; which type a particular node is can be discovered  through its `nodeType` property. This will return a number corresponding to a type as {% footnoteref "node-types", "5, 6, and 12 are deprecated" %} follows{% endfootnoteref %}:
+The tree-like Document Object Model (DOM) is comprised of nodes whose arrangement describes the structure of the document. There are nine types of nodes; which type a particular node is can be discovered  through its `nodeType` property. This will return a number corresponding to a type as {% raw %}{% footnoteref "node-types", "5, 6, and 12 are deprecated" %}{% raw %} follows{% raw %}{% endfootnoteref %}{% endraw %}:
 
 | Value | Type  |
 |:--|:--|
 | 1 | Element |
 | 2 | Attribute |
 | 3 | Text |
-| 4 | {% footnoteref "cdata-section", "XML only." %}CDATA Section{% endfootnoteref  %} |
-| 7 | {% footnoteref, "processing-instruction", "XML only" %}Processing Instruction{% endfootnoteref %} |
+| 4 | {% raw %}{% footnoteref "cdata-section", "XML only." %}{% endraw %}CDATA Section{% endraw %}{% endfootnoteref  %}{% endraw %} |
+| 7 | {% raw %}{% footnoteref, "processing-instruction", "XML only" %}{% endraw %}Processing Instruction{% raw %}{% endfootnoteref %}{% endraw %} |
 | 8 | Comment |
 | 9 | Document |
 | 10 | Document Type |
@@ -48,4 +48,4 @@ Next, a `do...while` loop is called that prints the `nodeName` of each node to t
 
 Finally, a quick note about using `do...while` to iterate over the `TreeWalker`  as opposed to `while`. Using `while (walker.nextNode())` will skip the `root` node.I found this confusing, because I thought that every node would print so long as that node had a node following it. However, it seems that `while` evaluates the expression and _then_ executes the code, whereas `do...while` executes the code and then evaluates the expression. Subtle!
 
-{% footnotes %}
+{% raw %}{% footnotes %}{% endraw %}
