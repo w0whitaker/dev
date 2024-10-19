@@ -12,6 +12,9 @@ import {
 	arePublished,
 } from './src/_config/filters/index.js';
 
+// Import shortcodes.
+import {htmlement} from './src/_config/shortcodes/htmlement.js';
+
 export default function (eleventyConfig) {
 	// Load environment variables
 	eleventyConfig.addGlobalData('env', process.env);
@@ -32,6 +35,9 @@ export default function (eleventyConfig) {
 	eleventyConfig.addFilter('humanDate', humanDate);
 	eleventyConfig.addFilter('isPublished', isPublished);
 	eleventyConfig.addFilter('arePublished', arePublished);
+
+	// Custom shortcodes
+	eleventyConfig.addPairedShortcode('htmlement', htmlement);
 
 	eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js']);
 
