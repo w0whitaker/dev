@@ -14,6 +14,7 @@ import {
 
 // Import shortcodes.
 import {htmlement} from './src/_config/shortcodes/htmlement.js';
+import {footnote} from './src/_config/shortcodes/footnote.js';
 
 export default function (eleventyConfig) {
 	// Load environment variables
@@ -38,6 +39,7 @@ export default function (eleventyConfig) {
 
 	// Custom shortcodes
 	eleventyConfig.addPairedShortcode('htmlement', htmlement);
+	eleventyConfig.addShortcode('footnote', footnote);
 
 	eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js']);
 
@@ -58,6 +60,7 @@ export default function (eleventyConfig) {
 
 	// Watch targets
 	eleventyConfig.addWatchTarget('./src/assets/**/*.css');
+	eleventyConfig.addWatchTarget('./src/posts/**/*.md');
 
 	// Set custom directories for input, output, includes, and data
 	return {
