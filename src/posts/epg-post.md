@@ -54,7 +54,7 @@ Next up are some buttons to add glyphs and eventually change their color.
 </div>
 ```
 
-Nothing too special here, except that I use IDs so that I'll be able to reference the buttons easily in the Javascript. Note that for the "add" buttons, I'm using an SVG of the relevant glyph as the content of the button. While that may indicate visually what the button is for, it won't do much for people using screen readers. In practice, there should be something to describe what the button does that a screen reader will pick {% htmlement 'details', 'footnote' %}{% htmlement 'summary', 'footnote' %}up{% endhtmlement %}[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#accessibility_concerns) has a bit about buttons and accessibility, and there's a good [article](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/#basic-alternative-descriptions-using-the-svg-tag) by [Carrie Fisher](https://cariefisher.com/) on [Smashing Magazine](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/) that goes over some options for making SVGs more accessible as well..{% endhtmlement %}
+Nothing too special here, except that I use IDs so that I'll be able to reference the buttons easily in the Javascript. Note that for the "add" buttons, I'm using an SVG of the relevant glyph as the content of the button. While that may indicate visually what the button is for, it won't do much for people using screen readers. In practice, there should be something to describe what the button does that a screen reader will pick up. {% ftntAnchor 'button-accessibility' %}
 
 ### The Javascript
 
@@ -78,7 +78,7 @@ const glyphR = '<svg class="glyph">...</svg>';
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 ```
 
-I use `document.getElementById()` to reference the "add" buttons and the `<div>` that will act as the display area for the glyphs. Because there will be more than one glyph on the screen, I can't use an ID, so I'm using {% htmlement 'details', 'footnote' %}{% htmlement 'summary', 'footnote' %} `document.getElementsByClassName()`{% endhtmlement %}There's an important difference between the two, in that `.getElementsByClassName()` returns an &#8220;[array-like object](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName)&#8221; rather than a single object. This makes sense, as it will be returning more than one element, and it will have implications later on when it comes time to add event listeners to the glyphs.{% endhtmlement %} to collect the glyphs.
+I use `document.getElementById()` to reference the "add" buttons and the `<div>` that will act as the display area for the glyphs. Because there will be more than one glyph on the screen, I can't use an ID, so I'm using `document.getElementsByClassName()` {% ftntAnchor 'get-elements' %} to collect the glyphs.
 
 Next, I declare a couple of variables for the glyphs themselves, which will make working with the (long, messy) SVG code easier.
 
@@ -86,7 +86,7 @@ Finally, I create an array that will hold the colors to be used. You may have no
 
 #### The `init()` function
 
-The code for the app's behavior will be wrapped in a function, which will be called once the page has {% htmlement 'details', 'footnote' %}{% htmlement 'summary', 'footnote' %}loaded{% endhtmlement %}It would also be possible to add this event listener to the `document` object, and listen for the `'DOMContentLoaded'` event, which fires as soon as the HTML is loaded. The `'load'` event, on the other hand, waits until _all_ of the page's resources have loaded. Given that this is a pretty minimal app, perhaps it doesn't make much difference which one is used. I've opted to use the `'load'` event, figuring that if for some reason the CSS were delayed, for example, it wouldn't make much sense for the user to start clicking things.{% endhtmlement %}.
+The code for the app's behavior will be wrapped in a function, which will be called once the page has loaded{% ftntAnchor 'event-listener' %}.
 
 ```javascript
 function init() {
@@ -436,3 +436,7 @@ window.addEventListener('load', () => {
 There are several features I'd like to add at some point, like the ability to delete glyphs, and limit the total number of glyphs to what fits in the display. Maybe even some animation! But that's for another day.
 
 Thanks for reading!
+
+{% ftntContent 'button-accessibility' %}[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#accessibility_concerns) has a bit about buttons and accessibility, and there's a good [article](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/#basic-alternative-descriptions-using-the-svg-tag) by [Carrie Fisher](https://cariefisher.com/) on [Smashing Magazine](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/) that goes over some options for making SVGs more accessible as well.{% ftntBacklink 'button-accessibility' %}{% endftntContent %}
+{% ftntContent 'get-elements' %}There's an important difference between the two, in that `.getElementsByClassName()` returns an &#8220;[array-like object](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName)&#8221; rather than a single object. This makes sense, as it will be returning more than one element, and it will have implications later on when it comes time to add event listeners to the glyphs.{% ftntBacklink 'get-elements' %}{% endftntContent %}
+{% ftntContent 'event-listener' %}It would also be possible to add this event listener to the `document` object, and listen for the `'DOMContentLoaded'` event, which fires as soon as the HTML is loaded. The `'load'` event, on the other hand, waits until _all_ of the page's resources have loaded. Given that this is a pretty minimal app, perhaps it doesn't make much difference which one is used. I've opted to use the `'load'` event, figuring that if for some reason the CSS were delayed, for example, it wouldn't make much sense for the user to start clicking things.{% ftntBacklink 'event-listener' %}{% endftntContent %}

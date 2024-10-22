@@ -7,15 +7,15 @@ published: true
 ---
 
 ## Nodes and their types.
-The tree-like Document Object Model (DOM) is comprised of nodes whose arrangement describes the structure of the document. There are nine types of nodes; which type a particular node is can be discovered  through its `nodeType` property. This will return a number corresponding to a type as {% htmlement 'details', 'footnote' %}{% htmlement 'summary', 'footnote' %}follows:{% endhtmlement %}node-types 5, 6, and 12 are deprecated.{% endhtmlement %}
+The tree-like Document Object Model (DOM) is comprised of nodes whose arrangement describes the structure of the document. There are nine types of nodes; which type a particular node is can be discovered  through its `nodeType` property. This will return a number corresponding to a type as follows{% ftntAnchor 'deprecated' %}:
 
 | Value | Type  |
 |:--|:--|
 | 1 | Element |
 | 2 | Attribute |
 | 3 | Text |
-| 4 | {% htmlement 'details', 'footnote' %}{% htmlement 'summary', 'footnote' %}CDATA Section{% endhtmlement %}XML only.{% endhtmlement %} |
-| 7 | {% htmlement 'details', 'footnote' %}{% htmlement 'summary', 'footnote' %}Processing Instruction{% endhtmlement %}XML only.{% endhtmlement %} |
+| 4 | CDATA Section {% ftntAnchor 'CDATA' %} |
+| 7 | Processing Instruction{% ftntAnchor 'processing-instruction' %} |
 | 8 | Comment |
 | 9 | Document |
 | 10 | Document Type |
@@ -47,3 +47,7 @@ Here, a new instance of `TreeWalker` is created with a `root` of `document`, whi
 Next, a `do...while` loop is called that prints the `nodeName` of each node to the console. Every node has several properties, such as `nodeType` , `nextSibling`, or `textContent`, that can be returned as well. If a text node only contains whitespace, the `textContent` property will print a blank line to the console. To show the whitespace characters, `String.replaceAll` can be used to substitute text such as "[tab]" or "[newline]" for the various types of whitespace.
 
 Finally, a quick note about using `do...while` to iterate over the `TreeWalker`  as opposed to `while`. Using `while (walker.nextNode())` will skip the `root` node.I found this confusing, because I thought that every node would print so long as that node had a node following it. However, it seems that `while` evaluates the expression and _then_ executes the code, whereas `do...while` executes the code and then evaluates the expression. Subtle!
+
+{% ftntContent 'deprecated' %}Node-types 5, 6, and 12 are deprecated.{% ftntBacklink 'deprecated' %}{% endftntContent %}
+{% ftntContent 'CDATA' %}XML only.{% ftntBacklink 'CDATA' %}{% endftntContent %}
+{% ftntContent 'processing-instruction' %}XML only.{% ftntBacklink 'processing-instruction' %}{% endftntContent %}

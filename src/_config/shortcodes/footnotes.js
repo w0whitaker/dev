@@ -7,16 +7,16 @@
 
 import {outdent} from 'outdent';
 
-const ftntAnchor = (ftntTitle, ftntRef) => {
-	return `<sup class="footnote-ref"><a href="#${ftntTitle}" id="fnref-${ftntTitle}">${ftntRef}</a></sup>`;
+const ftntAnchor = (ftntTitle) => {
+	return `<a href="#${ftntTitle}" id="fnref-${ftntTitle}">&rarrlp;</a>`;
 };
 
 const ftntBacklink = (ftntTitle) => {
-	return `<a href="#fnref-${ftntTitle}" class="footnote-backlink">back</a>`;
+	return `<a href="#fnref-${ftntTitle}" class="footnote-backlink">&larrlp;</a>`;
 };
 
 const ftntContent = (content, ftntTitle) => {
-	return outdent`
+	return `
 <div id="${ftntTitle}">
 
 ${content}
