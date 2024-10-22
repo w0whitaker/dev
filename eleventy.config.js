@@ -14,7 +14,11 @@ import {
 
 // Import shortcodes.
 import {htmlement} from './src/_config/shortcodes/htmlement.js';
-import {footnote} from './src/_config/shortcodes/footnote.js';
+import {
+	ftntAnchor,
+	ftntBacklink,
+	ftntContent,
+} from './src/_config/shortcodes/footnotes.js';
 
 export default function (eleventyConfig) {
 	// Load environment variables
@@ -39,7 +43,9 @@ export default function (eleventyConfig) {
 
 	// Custom shortcodes
 	eleventyConfig.addPairedShortcode('htmlement', htmlement);
-	eleventyConfig.addShortcode('footnote', footnote);
+	eleventyConfig.addShortcode('ftntAnchor', ftntAnchor);
+	eleventyConfig.addPairedShortcode('ftntContent', ftntContent);
+	eleventyConfig.addShortcode('ftntBacklink', ftntBacklink);
 
 	eleventyConfig.setTemplateFormats(['html', 'md', 'njk', '11ty.js']);
 
