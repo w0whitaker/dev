@@ -1,5 +1,5 @@
 export default {
-	layout: 'layouts/page.njk',
+	layout: 'layouts/post.njk',
 	tags: ['post'],
 	permalink: function ({title}) {
 		return `${this.slugify(title)}.html`;
