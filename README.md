@@ -1,13 +1,7 @@
 # williamwhitaker.dev
 
-## branches
-1. main
-2. develop
-_Rapid changes across scopes._
-3. feat
-4. style
-5. chore
-6. fix
-7. refactor
-8. perf
-9. docs
+## Overview
+This is the git repository for [williamwhitaker.dev](https://williamwhitaker.dev). This site serves as a portfolio, blog, and playground. Built with the 11ty static site generator, it is a continuous work-in-progress, and is subject to change at any time.
+
+## Acknowledgements
+I am indebted to the 11ty community at-large, which is astonishingly genorous with their knowledge and ideas. 
