@@ -1,3 +1,5 @@
+// Make dependencies, etc., available as references for use later in the file.
+// Import packages.
 import 'dotenv/config'; // allows for use of .env file
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
@@ -20,6 +22,7 @@ import {
 	ftntContent,
 } from './src/_config/shortcodes/footnotes.js';
 
+// Configuration options.
 export default function (eleventyConfig) {
 	// Load environment variables
 	eleventyConfig.addGlobalData('env', process.env);
