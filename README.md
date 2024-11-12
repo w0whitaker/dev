@@ -1,7 +1,7 @@
 # williamwhitaker.dev
 
 ## Overview
-This is the git repository for [williamwhitaker.dev](https://williamwhitaker.dev). This site serves as a portfolio, blog, and playground. Built with the 11ty static site generator, it is a continuous work-in-progress, and is subject to change at any time.
+This is the git repository for [williamwhitaker.dev](https://williamwhitaker.dev). This site serves as a portfolio, blog, and playground. Built with the 11ty static site generator, it is a continuous work-in-progress, and is likely to change frequently.
 
 ## Acknowledgements
 I am indebted to the 11ty community at-large, which is astonishingly generous with their knowledge and ideas. The authors of any code I've borrowed directly (hopefully) is credited either in code comments, or in a directory's `README.md`. If I have neglected to properly credit anyone else's work, it is unintentional and I am more than happy to correct the oversight.
