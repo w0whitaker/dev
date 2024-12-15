@@ -1,11 +1,11 @@
 export default {
-	title: "Eleventy Base Blog v9",
-	url: "https://example.com/",
+	title: "William Whitaker",
+	url: "https://williamwhitaker.dev/",
 	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	description: "The website of me.",
 	author: {
-		name: "Your Name Here",
-		email: "youremailaddress@example.com",
-		url: "https://example.com/about-me/"
-	}
-}
+		name: "William Whitaker",
+		email: "william@williamwhitaker.dev",
+		url: "https://williamwhitaker.dev/about-me/",
+	},
+};
