@@ -6,3 +6,13 @@ const eleventyNavigation = {
 
 const numberOfLatestPostsToShow = 3;
 ---
+<h2>Thoughtables.</h2>
+<ul>
+	{% for post in collections.posts %}
+		<li>
+			<a href="{{ post.url }}">
+				{{ post.data.title }}
+			</a>
+		</li>
+	{% endfor %}
+</ul>
