@@ -11,6 +11,13 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import pluginFilters from "./_config/filters.js";
 import { number } from "zod";
 
+import { htmlement } from "./_config/shortcodes/htmlement.js";
+import {
+	ftntAnchor,
+	ftntBacklink,
+	ftntContent,
+} from "./_config/shortcodes/footnotes.js";
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
@@ -43,6 +50,11 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addBundle("js", {
 		toFileDirectory: "dist",
 	});
+	// Adds the 'htmlement' paired shortcode
+	eleventyConfig.addPairedShortcode("htmlement", htmlement);
+	eleventyConfig.addShortcode("ftntAnchor", ftntAnchor);
+	eleventyConfig.addPairedShortcode("ftntContent", ftntContent);
+	eleventyConfig.addShortcode("ftntBacklink", ftntBacklink);
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
