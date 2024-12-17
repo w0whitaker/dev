@@ -3,6 +3,7 @@ title: 'Case study - Human Service Forum'
 teaser: 'Improving the performance of a WordPress site'
 date: 2024-03-12
 published: true
+tags: 'case study'
 ---
 
 ## The problem.
