@@ -1,7 +1,7 @@
 ---
 title: 'eleventy-fetchity'
-teaser: '...'
-date: 2024-09-29
+teaser: 'this is what the post is about'
+date: 2024-12-29
 published: false
 ---
 

@@ -7,18 +7,5 @@ const eleventyNavigation = {
 const numberOfLatestPostsToShow = 3;
 ---
 <h2>Thoughtables.</h2>
-<ul>
-	{% for post in collections.posts %}
-		<li>
-			<section>
-				<a href="{{ post.url }}">
-					<h3>{{ post.data.title }}</h3>
-				</a>
-				<p>
-					<time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("DDD") }}</time>
-				</p>
-				<p>{{ post.data.teaser }}</p>
-			</section>
-		</li>
-	{% endfor %}
-</ul>
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}
