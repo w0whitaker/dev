@@ -1,3 +1,4 @@
+import "dotenv/config"; // allows for use of .env file
 import {
 	IdAttributePlugin,
 	InputPathToUrlTransformPlugin,
