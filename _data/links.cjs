@@ -2,7 +2,7 @@ const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function () {
 	let url =
-		"https://api.raindrop.io/rest/v1/raindrops/0/?search=%23publish %23development";
+		"https://api.raindrop.io/rest/v1/raindrops/0/?search=%23publish %23development&page=0&perpage=5&sort=-created";
 	let token = process.env.RAINDROP_TOKEN;
 	try {
 		let json = await EleventyFetch(url, {

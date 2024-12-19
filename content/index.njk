@@ -6,6 +6,19 @@ const eleventyNavigation = {
 
 const numberOfLatestPostsToShow = 3;
 ---
-<h2>Thoughtables.</h2>
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+<article class="flow">
+	<h2>Thoughtables.</h2>
+	{% set postslist = collections.posts %}
+	{% include "postslist.njk" %}
+</article>
+<article class="flow">
+	<h2>Amalgamated linkages.</h2>
+	{% for link in links %}
+		<section class="card">
+			<h3>
+				<a href="{{ link.url }}">{{ link.title | safe }}</a>
+			</h3>
+			<blockquote>{{ link.excerpt }}</blockquote>
+		</section>
+	{% endfor %}
+</article>
