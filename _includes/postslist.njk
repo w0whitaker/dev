@@ -1,20 +1,18 @@
 {%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
 {%- for post in postslist | reverse %}
-	{% if post | isPublished %}
-		<section>
-			<h3>
-				<a href="{{ post.url }}">
-					{% if post.data.title %}{{ post.data.title }}
-					{% else %}
-						<code>{{ post.url }}</code>
-					{% endif %}
-				</a>
-			</h3>
-			<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("DDDD") }}</time>
-			{%- if post.data.teaser -%}
-				<p>{{ post.data.teaser }}</p>
-			{%- endif -%}
-		</section>
-	{% endif %}
+	<section>
+		<h3>
+			<a href="{{ post.url }}">
+				{% if post.data.title %}{{ post.data.title }}
+				{% else %}
+					<code>{{ post.url }}</code>
+				{% endif %}
+			</a>
+		</h3>
+		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("DDDD") }}</time>
+		{%- if post.data.teaser -%}
+			<p>{{ post.data.teaser }}</p>
+		{%- endif -%}
+	</section>
 {%- endfor %}
 </ol>

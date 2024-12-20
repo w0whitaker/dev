@@ -9,9 +9,10 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
-import pluginFilters from "./_config/filters.js";
 import { number } from "zod";
 
+// Custom filters, etc.
+import pluginFilters from "./_config/filters.js";
 import { htmlement } from "./_config/shortcodes/htmlement.js";
 import {
 	ftntAnchor,
