@@ -1,275 +1,157 @@
-/* Defaults */
-:root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
-}
+/* Reset */
+/* https://piccalil.li/blog/a-more-modern-css-reset/ */
 
-/* Theme colors */
-:root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
-
-	--background-color: #fff;
-
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
-
-	--syntax-tab-size: 2;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
-
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
-
-		--background-color: #15202b;
-	}
-}
-
-
-/* Global stylesheet */
-* {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 
-@view-transition {
-	navigation: auto;
-}
-
-html,
-body {
-	padding: 0;
-	margin: 0 auto;
-	font-family: var(--font-family);
-	color: var(--text-color);
-	background-color: var(--background-color);
-}
+/* Prevent font size inflation */
 html {
-	overflow-y: scroll;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 }
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+/* Set core body defaults */
 body {
-	max-width: 40em;
-}
-
-/* https://www.a11yproject.com/posts/how-to-hide-content/ */
-.visually-hidden {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
-}
-
-/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
-img {
-  max-width: 100%;
-}
-img[width][height] {
-  height: auto;
-}
-img[src$=".svg"] {
-  width: 100%;
-  height: auto;
-  max-width: none;
-}
-
-p:last-child {
-	margin-bottom: 0;
-}
-p {
+	min-height: 100vh;
 	line-height: 1.5;
 }
 
-li {
-	line-height: 1.5;
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
 }
 
-a[href] {
-	color: var(--text-color-link);
-}
-a[href]:visited {
-	color: var(--text-color-link-visited);
-}
-a[href]:hover,
-a[href]:active {
-	color: var(--text-color-link-active);
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
 }
 
-main,
-footer {
-	padding: 1rem;
-}
-main :first-child {
-	margin-top: 0;
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+	color: currentColor;
 }
 
-header {
-	border-bottom: 1px dashed var(--color-gray-20);
-}
-header:after {
-	content: "";
-	display: table;
-	clear: both;
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
 }
 
-.links-nextprev {
-	display: flex;
-	justify-content: space-between;
-	gap: .5em 1em;
-	list-style: "";
-	border-top: 1px dashed var(--color-gray-20);
-	padding: 1em 0;
-}
-.links-nextprev > * {
-	flex-grow: 1;
-}
-.links-nextprev-next {
-	text-align: right;
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
 }
 
-table {
-	margin: 1em 0;
-}
-table td,
-table th {
-	padding-right: 1em;
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em;
 }
 
-pre,
-code {
-	font-family: var(--font-family-monospace);
-}
-pre:not([class*="language-"]) {
-	margin: .5em 0;
-	line-height: 1.375; /* 22px /16 */
-	-moz-tab-size: var(--syntax-tab-size);
-	-o-tab-size: var(--syntax-tab-size);
-	tab-size: var(--syntax-tab-size);
-	-webkit-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	overflow-x: auto;
-}
-code {
-	word-break: break-all;
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+	scroll-margin-block: 5ex;
 }
 
-/* Header */
-header {
-	display: flex;
-	gap: 1em .5em;
-	flex-wrap: wrap;
-	align-items: center;
-	padding: 1em;
-}
-.home-link {
-	font-size: 1em; /* 16px /16 */
-	font-weight: 700;
-	margin-right: 2em;
-}
-.home-link:link:not(:hover) {
-	text-decoration: none;
+/* Global */
+:root {
+	--color-dark: #00000f;
+	--color-light: #fffff0;
+	--color-primary: #0071bb;
+	/* @link https://utopia.fyi/type/calculator?c=320,18,1.667,1240,20,1.667,2,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+	--step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+	--step-1: clamp(1.8754rem, 1.8029rem + 0.3624vw, 2.0838rem);
+	--step-2: clamp(3.1263rem, 3.0054rem + 0.6041vw, 3.4736rem);
+	/* @link https://utopia.fyi/space/calculator?c=320,18,1.667,1240,20,1.667,2,0,&s=,1.5|2,s-l&g=s,l,xl,12 */
+	--space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+	--space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+	--space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
 }
 
-/* Nav */
-.nav {
-	display: flex;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-.nav-item {
-	display: inline-block;
-	margin-right: 1em;
-}
-.nav-item a[href]:not(:hover) {
-	text-decoration: none;
-}
-.nav a[href][aria-current="page"] {
-	text-decoration: underline;
+body {
+	background: var(--color-light);
+	color: var(--color-dark);
+	padding: 2em;
+	font-family: system-ui, sans-serif;
+	font-size: var(--step-0);
+	line-height: 1.7;
 }
 
-/* Posts list */
-.postlist {
-	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
-}
-.postlist-item {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: baseline;
-	counter-increment: start-from -1;
-	margin-bottom: 1em;
-}
-.postlist-item:before {
-	display: inline-block;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
-}
-.postlist-date,
-.postlist-item:before {
-	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-90);
-}
-.postlist-date {
-	word-spacing: -0.5px;
-}
-.postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
-	font-weight: 700;
-	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
-	text-underline-position: from-font;
-	text-underline-offset: 0;
-	text-decoration-thickness: 1px;
-}
-.postlist-item-active .postlist-link {
-	font-weight: bold;
+:is(h1, h2, h3) {
+	font-family: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+	font-weight: 800;
+	--flow-space: var(--space-l);
+	line-height: 1.1;
 }
 
-/* Tags */
-.post-tag {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	text-transform: capitalize;
-	font-style: italic;
-}
-.postlist-item > .post-tag {
-	align-self: center;
+h1 {
+	font-size: calc(var(--step-2) * 1.5);
+	max-width: 18ch;
 }
 
-/* Tags list */
-.post-metadata {
-	display: inline-flex;
-	flex-wrap: wrap;
-	gap: .5em;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-.post-metadata time {
-	margin-right: 1em;
+h2 {
+	font-size: var(--step-1);
 }
 
+article {
+	max-width: 80ch;
+}
+
+:is(ul, ol) {
+	padding-inline-start: 1em;
+}
+
+blockquote {
+	padding-inline-start: 1em;
+	border-inline-start: 0.3em solid;
+}
+
+a {
+	color: currentColor;
+	text-decoration-color: var(--color-primary);
+	text-decoration-thickness: 0.3ex;
+	text-underline-offset: 0.3ex;
+}
+
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1em);
+}

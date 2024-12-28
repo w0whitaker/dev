@@ -26,11 +26,9 @@
 		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
 
 		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
-		{#-
 		<style>
 			{% getBundle "css" %}
 		</style>
-		-#}
 
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
@@ -38,7 +36,7 @@
 		{#- Add the heading-anchors web component to the JavaScript bundle #}
 		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
 	</head>
-	<body>
+	<body class="flow">
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header>
@@ -54,9 +52,7 @@
 		</header>
 
 		<main id="skip">
-			<heading-anchors>
-				{{ content | safe }}
-			</heading-anchors>
+			{{ content | safe }}
 		</main>
 
 		<footer>
