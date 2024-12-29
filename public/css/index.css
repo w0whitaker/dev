@@ -92,6 +92,10 @@ textarea:not([rows]) {
 	scroll-margin-block: 5ex;
 }
 
+:is(body, main, article, section) {
+	padding: 0;
+}
+
 /* Global */
 :root {
 	--color-dark: #00000f;
@@ -110,7 +114,7 @@ textarea:not([rows]) {
 body {
 	background: var(--color-light);
 	color: var(--color-dark);
-	padding: 2em;
+	margin: var(--space-s);
 	font-family: system-ui, sans-serif;
 	font-size: var(--step-0);
 	line-height: 1.7;
@@ -124,7 +128,7 @@ body {
 }
 
 h1 {
-	font-size: calc(var(--step-2) * 1.5);
+	font-size: var(--step-2);
 	max-width: 18ch;
 }
 
