@@ -156,6 +156,19 @@ a {
 	text-underline-offset: 0.3ex;
 }
 
+aside {
+	color: var(--color-light);
+	background-color: var(--color-dark);
+	margin: var(--space-l);
+	padding: 0;
+	max-width: fit-content;
+}
+
+aside > * {
+	margin: 0;
+	padding: var(--space-s);
+}
+
 .flow > * + * {
 	margin-block-start: var(--flow-space, 1em);
 }
