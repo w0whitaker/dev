@@ -30,9 +30,12 @@
 	}
 
 	/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+	/* My note: the reasoning for this is that Safari will remove semantics from lists that have had default styling removed, and VoiceOver will not announce them as lists. This rule acts as a safeguard to ensure that a role has been assigned to lists by automatically removing the default styling. I suppose the takeaway is that lists should always be given a role of "list". */
 	ul[role="list"],
 	ol[role="list"] {
 		list-style: none;
+		/* My addition: remove padding as well. */
+		padding: 0;
 	}
 
 	/* Set core body defaults */
@@ -60,7 +63,7 @@
 		text-wrap: balance;
 	}
 
-	/* A elements that don't have a class get default styles */
+	/* A[nchor] elements that don't have a class get default styles */
 	a:not([class]) {
 		text-decoration-skip-ink: auto;
 		color: currentColor;
@@ -154,10 +157,6 @@ article {
 	max-width: 80ch;
 }
 
-:is(ul, ol) {
-	padding-inline-start: 1em;
-}
-
 blockquote {
 	padding-inline-start: 1em;
 	border-inline-start: 0.3em solid;
@@ -185,4 +184,9 @@ aside > * {
 
 .flow > * + * {
 	margin-block-start: var(--flow-space, 1em);
+}
+
+.nav {
+	display: inline-flex;
+	gap: var(--space-m);
 }
