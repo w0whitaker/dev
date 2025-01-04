@@ -32,5 +32,6 @@ src/main.css
 .idea/
 *.fig
 
-# design files
+# misc. files
 design/
+scratch/
