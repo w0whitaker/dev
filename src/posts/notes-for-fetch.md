@@ -1,6 +1,8 @@
 ---
 title: 'eleventy-fetchity'
 teaser: '...'
+eleventyNavigation:
+  parent: 'posts'
 date: 2024-09-29
 published: false
 ---

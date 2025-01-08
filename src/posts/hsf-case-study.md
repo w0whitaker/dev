@@ -1,6 +1,8 @@
 ---
 title: 'Case study - Human Service Forum'
 teaser: 'Improving the performance of a WordPress site'
+eleventyNavigation:
+  parent: 'posts'
 date: 2024-03-12
 published: true
 ---

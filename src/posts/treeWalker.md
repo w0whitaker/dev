@@ -2,6 +2,8 @@
 title: 'The TreeWalker.'
 eleventyExcludeFromCollections: false
 teaser: 'Exploring DOM nodes from the comfort of home.'
+eleventyNavigation:
+  parent: 'posts'
 date: 2024-07-09
 published: true
 ---

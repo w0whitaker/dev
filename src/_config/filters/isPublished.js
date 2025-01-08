@@ -1,7 +1,6 @@
 import {epoch, nowEpoch} from '../helpers/epoch.js';
 
 // https://chrisburnell.com/article/some-eleventy-filters/#published
-
 export const isPublished = (item) => {
 	if ('data' in item) {
 		// Check for 'draft: true' in the post's frontmatter and exit if found.
