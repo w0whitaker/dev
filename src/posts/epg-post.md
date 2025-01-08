@@ -11,9 +11,9 @@ Imagine you have a dog. You'd like the dog to raise their paw and touch your han
 
 That's essentially what an event listener is. Instead of all that training though, Javascript has a method, [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener), that provides an easy way to add all sorts of interactivity to web pages.
 
-I wanted to practice using event handlers, so I built a little [app](https://ephemeral-pattern-generator.netlify.app/) that adds SVG glyphs to the screen. Once added, the color of the glyphs can be changed by selecting one and clicking on a button. Not particularly useful, maybe, but kind of fun.
-
 <!-- more -->
+
+I wanted to practice using event handlers, so I built a little [app](https://ephemeral-pattern-generator.netlify.app/) that adds SVG glyphs to the screen. Once added, the color of the glyphs can be changed by selecting one and clicking on a button. Not particularly useful, maybe, but kind of fun.
 
 ### The HTML
 

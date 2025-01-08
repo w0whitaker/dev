@@ -8,8 +8,12 @@ date: 2024-07-09
 published: true
 ---
 
+Should you ever find yourself in need of a simple way to get a list of the nodes in your DOM, here's one way: JavaScript's `TreeWalker`. 
+
+<!-- more -->
+
 ## Nodes and their types.
-The tree-like Document Object Model (DOM) is comprised of nodes whose arrangement describes the structure of the document. There are nine types of nodes; which type a particular node is can be discovered  through its `nodeType` property. This will return a number corresponding to a type as follows{% ftntAnchor 'deprecated' %}:
+The tree-like Document Object Model (DOM) is comprised of nodes whose arrangement describes the structure of the document. There are nine types of nodes; which type a particular node is can be discovered through its `nodeType` property. This will return a number corresponding to a type as follows{% ftntAnchor 'deprecated' %}:
 
 | Value | Type  |
 |:--|:--|

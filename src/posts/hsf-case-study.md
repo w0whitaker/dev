@@ -7,8 +7,9 @@ date: 2024-03-12
 published: true
 ---
 
-## The problem.
 The Human Service Forum is a small non-profit located in central Massachusetts. Hoping to expand their reach, they needed a website that could more reliably meet their members’ needs. After a recent redesign, they found the website’s performance disappointing (page load times were around 12 seconds) and needed help diagnosing the cause.
+
+<!-- more -->
 
 ## The diagnosis.
 At our initial meeting, we discussed the possible causes of the site’s issues. I proposed creating a local copy of their site to run tests measuring the effect of disabling various plugins. There were a few that were no longer needed, but disabling them had a minimal impact on page load times.The only one that did have a significant impact was related to a site builder ([_Avada_](https://avada.com/)) that had been used in the site’s first iteration. Disabling it broke the site, and I realized that the theme currently in use was a child of a child theme of that original theme. This was causing a lot of unfulfilled calls to resources (scripts and stylesheets) that were no longer present or needed. What’s more, much of the site’s content had been written into template files and could not be changed from the dashboard.
