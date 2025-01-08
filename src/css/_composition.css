@@ -46,7 +46,6 @@ section > *:not(h2, h3) {
 	padding-inline: var(--base-spacing-component-lede);
 }
 
-aside ul[role='list'],
 footer ul[role='list'] {
 	margin-block-start: var(--space-3xs);
 	display: grid;
@@ -101,11 +100,11 @@ footer {
 .switcher > :nth-last-child(n + 4) ~ * {
 	flex-basis: 100%;
 }
-/**
+
 .cluster {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--space, 1ch);
 	justify-content: flex-start;
 	align-items: center;
-} */
+}

@@ -17,7 +17,7 @@
 <h2>Posts.</h2>
 <ul role="list" class="flow">
 	{% for post in posts | arePublished %}
-		<li>
+		<li class="card">
 			<h3>
 				<a href="{{ post.url }}">{{ post.data.title }}</a>
 			</h3>
