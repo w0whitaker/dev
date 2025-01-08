@@ -32,6 +32,6 @@ src/main.css
 .idea/
 *.fig
 
-# miscellaneous development files
+# misc. files
 design/
 scratch/
