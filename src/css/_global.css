@@ -92,7 +92,7 @@
 
 	/* Padding on containers should be avoided */
 	--base-spacing-container-masthead: var(--space-xs);
-	--base-spacing-container-feature: var(--space-s-l);
+	--base-spacing-container-feature: var(--space-m-l);
 
 	/* Margins on components should be avoided */
 	--base-spacing-component-masthead: var(--space-xs);
