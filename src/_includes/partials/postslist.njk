@@ -3,17 +3,17 @@
     {%- if (post | isPublished) -%}
       <li>
         <div class="card">
-          <h2>
-            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-          </h2>
-          <div class="flow">
+          <hgroup>
+            <h2>
+              <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+            </h2>
             <p class="subheading">
               {{ post.data.date | humanDate }}
             </p>
-            <p>
-              {{ post.data.teaser }}
-            </p>
-          </div>
+          </hgroup>
+          <p>
+            {{ post.data.teaser }}
+          </p>
         </div>
       </li>
     {%- endif -%}
