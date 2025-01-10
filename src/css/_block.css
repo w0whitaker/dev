@@ -1,10 +1,5 @@
 .masthead {
-	background-color: var(--pieton-blue-path);
-	color: var(--pieton-blue-bridge);
-}
-
-.masthead a {
-	color: var(--pieton-light-bridge);
+	border-inline-start: var(--space-2xs) solid var(--pieton-blue-500);
 }
 
 .section-heading {
@@ -34,7 +29,7 @@
 	font-family: var(--display-font);
 	font-weight: normal;
 	font-size: var(--step-3);
-	color: var(--pieton-light-path);
+	color: var(--pieton-dark-900);
 }
 
 table {
@@ -64,20 +59,20 @@ thead {
 }
 
 .card {
-	background-color: var(--pieton-blue-bridge);
-	color: var(--pieton-yellow-road);
+	background-color: var(--pieton-blue-500);
+	color: var(--pieton-light-125);
 	font-family: var(--body-font);
 	height: 100%;
-}
-
-.card a {
-	color: var(--pieton-yellow-road);
 }
 
 .card:is(h2, h3) {
 	font-size: var(--step-3);
 	font-weight: 700;
 	font-family: var(--display-font);
+}
+
+.card a {
+	color: var(--pieton-yellow-125);
 }
 
 .subheading {
@@ -89,9 +84,10 @@ blockquote {
 	font-style: italic;
 	font-size: var(--step--1);
 }
-/* .main-title {
-	font-size: var(--step-4);
-} */
+
+.main-title {
+	color: var(--pieton-blue-900);
+}
 
 /* h1 {
 	font-size: var(--step-3, 2rem);

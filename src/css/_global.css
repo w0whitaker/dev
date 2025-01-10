@@ -160,18 +160,21 @@ body {
 }
 
 a {
-	color: var(--pieton-blue-sidewalk);
+	color: var(--pieton-blue-500);
 }
 
 header {
-	background-color: var(--pieton-blue-500);
+	background-color: var(--pieton-light-125);
 }
 
-nav {
-	background-color: var(--pieton-dark-500);
+:is(nav, main) {
+	border-block-start: var(--space-3xs) solid var(--pieton-blue-125);
+}
+
+section:has(blockquote) {
+	border-block-start: var(--space-3xs) solid var(--pieton-blue-125);
 }
 
 nav > ul > li {
-	background-color: var(--pieton-dark-900);
-	color: var(--pieton-light-125);
+	box-shadow: inset calc(var(--space-3xs) * -1) 0 0 0 var(--pieton-blue-125);
 }
