@@ -1,12 +1,36 @@
-.masthead {
-	border-inline-start: var(--space-2xs) solid var(--pieton-blue-500);
+.primary-color-region {
+	--region-color: var(--pieton-blue-500);
+	--region-color-light: var(--pieton-blue-125);
+	--region-color-dark: var(--pieton-blue-900);
+}
+
+.secondary-color-region {
+	--region-color: var(--pieton-red-500);
+	--region-color-light: var(--pieton-red-125);
+	--region-color-dark: var(--pieton-red-900);
+}
+
+.tertiary-color-region {
+	--region-color: var(--pieton-yellow-500);
+	--region-color-light: var(--pieton-yellow-125);
+	--region-color-dark: var(--pieton-yellow-900);
+}
+
+.dark-color-region {
+	--region-color: var(--pieton-dark);
+	--region-color-light: var(--pieton-light-gray);
+	--region-color-dark: var(--pieton-dark-gray);
+}
+
+.light-color-region {
+	--region-color: var(--pieton-light);
+	--region-color-light: var(--pieton-light-gray);
+	--region-color-dark: var(--pieton-dark-gray);
 }
 
 .section-heading {
-	background-color: var(--pieton-yellow-base);
 	display: flex;
 	justify-content: flex-start;
-	border-bottom: solid 5px var(--pieton-yellow-route);
 	gap: var(--space-3xs);
 	padding: 0;
 }
@@ -29,7 +53,7 @@
 	font-family: var(--display-font);
 	font-weight: normal;
 	font-size: var(--step-3);
-	color: var(--pieton-dark-900);
+	color: var(--region-color, black);
 }
 
 table {
@@ -60,7 +84,7 @@ thead {
 
 .card {
 	background-color: var(--pieton-blue-500);
-	color: var(--pieton-light-125);
+	color: var(--pieton-light);
 	font-family: var(--body-font);
 	height: 100%;
 }
@@ -69,6 +93,10 @@ thead {
 	font-size: var(--step-3);
 	font-weight: 700;
 	font-family: var(--display-font);
+}
+
+.card a {
+	background-color: var(--region-color-light, var(--pieton-blue-125));
 }
 
 .subheading {
@@ -81,8 +109,13 @@ blockquote {
 	font-size: var(--step--1);
 }
 
-.main-title {
-	color: var(--pieton-blue-900);
+:is(nav, main) {
+	border-block-start: 1px solid var(--region-color, black);
+}
+
+nav > ul > li {
+	padding-block-start: var(--base-spacing-component-masthead);
+	box-shadow: inset -1px 0 0 0 var(--region-color, black);
 }
 
 /* h1 {
