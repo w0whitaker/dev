@@ -1,17 +1,36 @@
-.masthead {
-	background-color: var(--pieton-blue-path);
-	color: var(--pieton-blue-bridge);
+.primary-color-region {
+	--region-color: var(--pieton-blue-500);
+	--region-color-light: var(--pieton-blue-125);
+	--region-color-dark: var(--pieton-blue-900);
 }
 
-.masthead a {
-	color: var(--pieton-light-bridge);
+.secondary-color-region {
+	--region-color: var(--pieton-red-500);
+	--region-color-light: var(--pieton-red-125);
+	--region-color-dark: var(--pieton-red-900);
+}
+
+.tertiary-color-region {
+	--region-color: var(--pieton-yellow-500);
+	--region-color-light: var(--pieton-yellow-125);
+	--region-color-dark: var(--pieton-yellow-900);
+}
+
+.dark-color-region {
+	--region-color: var(--pieton-dark);
+	--region-color-light: var(--pieton-light-gray);
+	--region-color-dark: var(--pieton-dark-gray);
+}
+
+.light-color-region {
+	--region-color: var(--pieton-light);
+	--region-color-light: var(--pieton-light-gray);
+	--region-color-dark: var(--pieton-dark-gray);
 }
 
 .section-heading {
-	background-color: var(--pieton-yellow-base);
 	display: flex;
 	justify-content: flex-start;
-	border-bottom: solid 5px var(--pieton-yellow-route);
 	gap: var(--space-3xs);
 	padding: 0;
 }
@@ -34,7 +53,7 @@
 	font-family: var(--display-font);
 	font-weight: normal;
 	font-size: var(--step-3);
-	color: var(--pieton-light-path);
+	color: var(--region-color, black);
 }
 
 table {
@@ -64,20 +83,20 @@ thead {
 }
 
 .card {
-	background-color: var(--pieton-blue-bridge);
-	color: var(--pieton-yellow-road);
+	background-color: var(--pieton-blue-500);
+	color: var(--pieton-light);
 	font-family: var(--body-font);
 	height: 100%;
-}
-
-.card a {
-	color: var(--pieton-yellow-road);
 }
 
 .card:is(h2, h3) {
 	font-size: var(--step-3);
 	font-weight: 700;
 	font-family: var(--display-font);
+}
+
+.card a {
+	background-color: var(--region-color-light, var(--pieton-blue-125));
 }
 
 .subheading {
@@ -89,9 +108,15 @@ blockquote {
 	font-style: italic;
 	font-size: var(--step--1);
 }
-/* .main-title {
-	font-size: var(--step-4);
-} */
+
+:is(nav, main) {
+	border-block-start: 1px solid var(--region-color, black);
+}
+
+nav > ul > li {
+	padding-block-start: var(--base-spacing-component-masthead);
+	box-shadow: inset -1px 0 0 0 var(--region-color, black);
+}
 
 /* h1 {
 	font-size: var(--step-3, 2rem);

@@ -92,7 +92,7 @@
 
 	/* Padding on containers should be avoided */
 	--base-spacing-container-masthead: var(--space-xs);
-	--base-spacing-container-feature: var(--space-s-l);
+	--base-spacing-container-feature: var(--space-m-l);
 
 	/* Margins on components should be avoided */
 	--base-spacing-component-masthead: var(--space-xs);
@@ -100,68 +100,31 @@
 
 	/* Colors */
 	/* pieton-blue */
-	--pieton-blue-road: oklch(10% 0.023 247.67);
-	--pieton-blue-route: oklch(16% 0.039 247.73);
-	--pieton-blue-path: oklch(25.6% 0.068 247.73);
-	--pieton-blue-sidewalk: oklch(40% 0.139 256.54);
-	--pieton-blue-base: oklch(53.52% 0.1432 247.73);
-	--pieton-blue-bridge: oklch(88% 0.056 247.73);
+	--pieton-blue-125: oklch(88% 0.056 247.73);
+	--pieton-blue-500: oklch(53.52% 0.1432 247.74);
+	--pieton-blue-900: oklch(10% 0.023 247.67);
 
 	/* pieton-red */
-	--pieton-red-road: oklch(10% 0.033 27.42);
-	--pieton-red-route: oklch(16% 0.058 27.42);
-	--pieton-red-path: oklch(25.6% 0.099 27.42);
-	--pieton-red-sidewalk: oklch(40% 0.156 27.42);
-	--pieton-red-base: oklch(63.23% 0.2427 27.42);
-	--pieton-red-bridge: oklch(88% 0.055 27.42);
+	--pieton-red-125: oklch(88% 0.057 26.74);
+	--pieton-red-500: oklch(49.83% 0.2029 26.74);
+	--pieton-red-900: oklch(10% 0.035 26.74);
 
 	/* pieton-yellow */
-	--pieton-yellow-road: oklch(10% 0.018 89.1);
-	--pieton-yellow-route: oklch(16% 0.032 89.1);
-	--pieton-yellow-path: oklch(25.6% 0.052 89.1);
-	--pieton-yellow-sidewalk: oklch(40% 0.081 89.1);
-	--pieton-yellow-base: oklch(63% 0.128 89.1);
-	--pieton-yellow-bridge: oklch(86.26% 0.1646 89.1);
-
-	/* Danger */
-	--danger-road: oklch(10% 0.032 24.68);
-	--danger-route: oklch(16% 0.055 24.68);
-	--danger-path: oklch(25.6% 0.094 24.68);
-	--danger-sidewalk: oklch(40% 0.147 24.68);
-	--danger-base: oklch(58.51% 0.2154 24.68);
-	--danger-bridge: oklch(88% 0.051 24.68);
-
-	/* Caution */
-	--caution-road: oklch(10% 0.019 94.45);
-	--caution-route: oklch(16% 0.032 94.45);
-	--caution-path: oklch(25.6% 0.052 94.45);
-	--caution-sidewalk: oklch(40% 0.082 94.45);
-	--caution-base: oklch(63% 0.129 94.45);
-	--caution-bridge: oklch(84.48% 0.1703 94.45);
-
-	/* Success */
-	--success-road: oklch(10% 0.032 142.15);
-	--success-route: oklch(16% 0.054 142.15);
-	--success-path: oklch(25.6% 0.086 142.15);
-	--success-sidewalk: oklch(40% 0.135 142.15);
-	--success-base: oklch(63% 0.212 142.15);
-	--success-bridge: oklch(86.53% 0.2918 142.15);
+	--pieton-yellow-125: oklch(86.25% 0.1646 89.1);
+	--pieton-yellow-500: oklch(72.55% 0.1515 101.25);
+	--pieton-yellow-900: oklch(10% 0.018 89.1);
 
 	/* pieton-dark */
-	--pieton-dark-road: oklch(10% 0.003 286.14);
-	--pieton-dark-route: oklch(15% 0.0021 286.14);
-	--pieton-dark-path: oklch(25.6% 0.002 286.14);
-	--pieton-dark-sidewalk: oklch(40% 0.004 286.14);
-	--pieton-dark-base: oklch(63% 0.004 286.14);
-	--pieton-dark-bridge: oklch(88% 0.001 286.14);
+	--pieton-dark: oklch(7.61% 0.0528 264.05);
+
+	/* pieton-dark-gray */
+	--pieton-dark-gray: oklch(41.35% 0.0033 286.25);
+
+	/* pieton-light-gray */
+	--pieton-light-gray: oklch(72.25% 0.0081 186.81);
 
 	/* pieton-light */
-	--pieton-light-road: oklch(10% 0.048 319.45);
-	--pieton-light-route: oklch(16% 0.057 319.45);
-	--pieton-light-path: oklch(25.6% 0.052 319.45);
-	--pieton-light-sidewalk: oklch(40% 0.123 319.45);
-	--pieton-light-base: oklch(63% 0.185 319.45);
-	--pieton-light-bridge: oklch(97.92% 0.0156 319.45);
+	--pieton-light: oklch(99.6% 0.0196 106.75);
 
 	/* Fonts */
 	--display-font: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif',
@@ -172,7 +135,7 @@
 
 /* debug styles */
 [debug] {
-	background-color: var(--caution-bridge);
+	background-color: hotpink;
 }
 
 * {
@@ -193,11 +156,24 @@ body {
 	font-family: var(--body-font);
 	font-weight: normal;
 	font-size: var(--step-0, 1.125rem);
-	background-color: var(--pieton-light-bridge);
-	color: var(--pieton-dark-road);
+	background-color: var(--pieton-light);
+	color: var(--pieton-dark);
 	counter-reset: footnote;
 }
 
 a {
-	color: var(--pieton-blue-sidewalk);
+	color: var(--region-color-dark, var(--pieton-blue-900));
+	text-underline-offset: var(--space-3xs);
+	text-decoration-color: var(--region-color, var(--pieton-blue-500));
+	text-decoration-thickness: 0.125em;
+	text-decoration-style: dotted;
+}
+
+header {
+	color: var(--region-color, black);
+	background-color: var(--pieton-light);
+}
+
+section:has(blockquote) {
+	border-block-start: var(--space-3xs) solid var(--pieton-blue-125);
 }

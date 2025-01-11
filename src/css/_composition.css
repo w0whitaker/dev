@@ -26,20 +26,15 @@ header {
 	--flow-space: var(--base-spacing-container-masthead);
 }
 
-main {
+:is(main, article) {
 	--flow-space: var(--base-spacing-container-feature);
 }
 
 nav > ul {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--space-2xs);
-}
-
-nav a {
-	display: block;
-	padding-block: var(--space-m);
-	padding-inline-end: var(--space-m);
+	/* https://gridbyexample.com/patterns/header-asmany-footer/ */
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	column-gap: var(--space-2xs);
 }
 
 section > *:not(h2, h3) {
