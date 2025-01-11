@@ -71,10 +71,6 @@ thead {
 	font-family: var(--display-font);
 }
 
-.card a {
-	color: var(--pieton-yellow-125);
-}
-
 .subheading {
 	font-size: var(--step--1);
 	font-family: var(--display-font);

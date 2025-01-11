@@ -160,7 +160,12 @@ body {
 }
 
 a {
-	color: var(--pieton-blue-500);
+	color: var(--pieton-blue-900);
+	background-color: var(--pieton-blue-125);
+	text-underline-offset: var(--space-3xs);
+	text-decoration-color: var(--pieton-blue-500);
+	text-decoration-thickness: 0.125em;
+	text-decoration-style: dotted;
 }
 
 header {
