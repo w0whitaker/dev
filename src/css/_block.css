@@ -51,7 +51,6 @@
 
 :is(h2, h3) {
 	font-family: var(--display-font);
-	font-weight: normal;
 	font-size: var(--step-3);
 	color: var(--region-color, black);
 }

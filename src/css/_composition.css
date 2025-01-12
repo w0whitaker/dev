@@ -13,21 +13,30 @@ footer {
 	margin-inline: var(--space-3xs-3xl);
 }
 
+.container > * + * {
+	margin-block-start: var(--flow-space, 1.5em);
+}
+
+article {
+	--flow-space: var(--space-m);
+}
+
+section {
+	--flow-space: var(--space-s);
+}
+
+aside {
+	--flow-space: var(--space-3xs);
+}
+
 /* This keeps the header to no more than the content width */
 header:has(h1) {
 	word-wrap: break-word;
 }
 
-.flow > * + * {
-	margin-block-start: var(--flow-space, 1.5em);
-}
-
-header {
-	--flow-space: var(--base-spacing-container-masthead);
-}
-
-:is(main, article) {
-	--flow-space: var(--base-spacing-container-feature);
+h2 {
+	padding-block-start: var(--space-s);
+	padding-block-end: 0;
 }
 
 nav > ul {
