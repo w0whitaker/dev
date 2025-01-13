@@ -16,12 +16,14 @@
 ---
 <article class="container">
 	<section class="container">
-		<h2>Posts.</h2>
-		<ul role="list" class="flow">
+		<h2>
+			<span class="heading-bg">Posts.</span></h2>
+		<ul role="list" class="component">
 			{% for post in posts | arePublished %}
 				<li>
 					<h3>
-						<a href="{{ post.url }}">{{ post.data.title }}</a>
+						<a href="{{ post.url }}">
+							<span class="heading-bg">{{ post.data.title }}</span></a>
 					</h3>
 					<div class="flow">{{ post.page.excerpt | md | safe }}</div>
 				</li>

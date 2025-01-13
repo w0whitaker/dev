@@ -13,7 +13,7 @@ footer {
 	margin-inline: var(--space-3xs-3xl);
 }
 
-.container {
+main {
 	margin-block-start: var(--space-m);
 }
 
@@ -21,12 +21,16 @@ footer {
 	margin-block-start: var(--flow-space, 1.5em);
 }
 
+.component > * + * {
+	padding-block-start: var(--flow-space, 1.5em);
+}
+
 article {
 	--flow-space: var(--space-m);
 }
 
 section {
-	--flow-space: var(--space-s);
+	--flow-space: var(--space-l);
 }
 
 aside {
