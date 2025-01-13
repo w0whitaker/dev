@@ -13,6 +13,10 @@ footer {
 	margin-inline: var(--space-3xs-3xl);
 }
 
+.container {
+	margin-block-start: var(--space-m);
+}
+
 .container > * + * {
 	margin-block-start: var(--flow-space, 1.5em);
 }

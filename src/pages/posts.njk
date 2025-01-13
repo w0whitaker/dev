@@ -14,18 +14,20 @@
 	
 }
 ---
-<article>
-	<h2>Posts.</h2>
-	<ul role="list" class="flow">
-		{% for post in posts | arePublished %}
-			<li>
-				<h3>
-					<a href="{{ post.url }}">{{ post.data.title }}</a>
-				</h3>
-				<div class="flow">{{ post.page.excerpt | md | safe }}</div>
-			</li>
-		{% endfor %}
-	</ul>
+<article class="container">
+	<section class="container">
+		<h2>Posts.</h2>
+		<ul role="list" class="flow">
+			{% for post in posts | arePublished %}
+				<li>
+					<h3>
+						<a href="{{ post.url }}">{{ post.data.title }}</a>
+					</h3>
+					<div class="flow">{{ post.page.excerpt | md | safe }}</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
 	{% if pagination.pages.length > 1 %}
 		<nav aria-labelledby="posts-pagination">
 			<h2 id="posts-pagination">More posts.</h2>
