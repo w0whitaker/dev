@@ -55,6 +55,11 @@
 	color: var(--region-color, black);
 }
 
+.heading-bg {
+	background-color: var(--region-color-light);
+	color: var(--region-color-dark, black);
+}
+
 table {
 	border-collapse: collapse;
 	font-size: var(--step--1);
