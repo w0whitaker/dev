@@ -27,6 +27,7 @@ main {
 
 article {
 	--flow-space: var(--space-m);
+	margin: initial;
 }
 
 section {
