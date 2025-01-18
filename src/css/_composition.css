@@ -8,15 +8,11 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 @layer composition {
 	/* "Avoid margins on components and padding on containers" */
 
-	/* containers - no padding! */
+	/* Containers - no padding! */
 	:is(body, main, article, section, aside, ul) {
 		padding: 0;
 		margin: var(--space-3xs);
 	}
-
-	/* :is(body, main, article, section, aside, ul) > * + * {
-		margin-block-start: var(--flow-space, 0px);
-	} */
 
 	.flow > * + * {
 		margin-block-start: var(--flow-space, 0px);
@@ -35,6 +31,13 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 		--flow-space: var(--space-xs);
 	}
 
+	/* Components - no margins! */
+	:is(h1, h2) {
+		padding-block-start: var(--space-m);
+		padding-block-end: var(--space-s);
+	}
+
+	/* General layouts */
 	.grid {
 		display: grid;
 		grid-gap: var(--space-3xs);
