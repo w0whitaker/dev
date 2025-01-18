@@ -19,21 +19,23 @@
     <link rel="manifest" href="/assets/images/site.webmanifest"/>
   </head>
   <body class="cover">
-    <div class="secondary-color-region">
+    <div class="with-sidebar">
       <header role="banner">
-        <h1 class="main-title">
-          <span id="url">document url</span>
-        </h1>
-        {# having this script here seems awkward #}
-        <script>
-          document
-            .getElementById('url')
-            .textContent = document.URL;
-        </script>
-        {% include 'partials/sitenav.njk' %}
+        <div class="secondary-color-region">
+          <h1 class="main-title">
+            <span id="url">document url</span>
+          </h1>
+          {# having this script here seems awkward #}
+          <script>
+            document
+              .getElementById('url')
+              .textContent = document.URL;
+          </script>
+          {% include 'partials/sitenav.njk' %}
+        </div>
       </header>
+      {{ content | safe }}
     </div>
-    {{ content | safe }}
     <footer>
       <div class="tertiary-color-region">
         <ul role="list">
