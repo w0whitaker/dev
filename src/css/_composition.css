@@ -34,4 +34,18 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	ul {
 		--flow-space: var(--space-xs);
 	}
+
+	.grid {
+		display: grid;
+		grid-gap: var(--space-3xs);
+	}
+
+	@supports (width: min(8ch, 100%)) {
+		.grid {
+			grid-template-columns: repeat(
+				auto-fit,
+				minmax(min(8ch, 100%), 1fr)
+			);
+		}
+	}
 }

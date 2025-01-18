@@ -122,11 +122,6 @@
 		border-block-start: 1px solid var(--region-color, black);
 	}
 
-	nav > ul > li {
-		padding-block-start: var(--base-spacing-component-masthead);
-		box-shadow: inset -1px 0 0 0 var(--region-color, black);
-	}
-
 	/* h1 {
 	font-size: var(--step-3, 2rem);
 } */
