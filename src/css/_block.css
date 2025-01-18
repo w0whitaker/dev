@@ -122,6 +122,14 @@
 		border-block-start: 1px solid var(--region-color, black);
 	}
 
+	nav {
+		--grid-min: 8ch;
+	}
+
+	aside {
+		--grid-min: 12ch;
+	}
+
 	/* h1 {
 	font-size: var(--step-3, 2rem);
 } */

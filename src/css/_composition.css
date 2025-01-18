@@ -37,18 +37,31 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 		padding-block-end: var(--space-s);
 	}
 
+	li {
+		padding-block-start: var(--space-s);
+		padding-block-end: var(--space-3xs);
+	}
+
 	/* General layouts */
 	.grid {
 		display: grid;
 		grid-gap: var(--space-3xs);
 	}
 
-	@supports (width: min(8ch, 100%)) {
+	@supports (width: min(var(--grid-min, 200px), 100%)) {
 		.grid {
 			grid-template-columns: repeat(
 				auto-fit,
-				minmax(min(8ch, 100%), 1fr)
+				minmax(min(var(--grid-min, 200px), 100%), 1fr)
 			);
 		}
+	}
+
+	.cluster {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space, 1rem);
+		justify-content: flex-start;
+		align-items: center;
 	}
 }
