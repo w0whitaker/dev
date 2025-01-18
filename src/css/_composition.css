@@ -31,21 +31,31 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 		--flow-space: var(--space-xs);
 	}
 
+	aside {
+		margin-inline: var(--space-s-3xl);
+	}
+
 	/* Components - no margins! */
 	:is(h1, h2) {
+		padding-block-start: var(--space-m-l);
+		padding-block-end: var(--space-xs-s);
+	}
+
+	p {
 		padding-block-start: var(--space-m);
 		padding-block-end: var(--space-s);
+		padding-inline: 1ch;
 	}
 
 	li {
-		padding-block-start: var(--space-s);
+		padding-block-start: var(--space-xs);
 		padding-block-end: var(--space-3xs);
 	}
 
 	/* General layouts */
 	.grid {
 		display: grid;
-		grid-gap: var(--space-3xs);
+		grid-gap: var(--grid-gap, var(--space-3xs));
 	}
 
 	@supports (width: min(var(--grid-min, 200px), 100%)) {
@@ -63,5 +73,22 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 		gap: var(--space, 1rem);
 		justify-content: flex-start;
 		align-items: center;
+	}
+
+	.with-sidebar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-xs);
+	}
+
+	.with-sidebar > :first-child {
+		flex-basis: 10ch;
+		flex-grow: 1;
+	}
+
+	.with-sidebar > :last-child {
+		flex-basis: 0;
+		flex-grow: 999;
+		min-inline-size: 50%;
 	}
 }

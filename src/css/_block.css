@@ -127,7 +127,8 @@
 	}
 
 	aside {
-		--grid-min: 12ch;
+		--grid-min: 10ch;
+		--grid-gap: var(--space-3xs-2xs);
 	}
 
 	/* h1 {
