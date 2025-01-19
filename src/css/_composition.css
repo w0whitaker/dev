@@ -25,6 +25,8 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 
 	article {
 		--flow-space: var(--space-l);
+		container-name: article;
+		container-type: inline-size;
 	}
 
 	ul {
@@ -32,13 +34,19 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	}
 
 	aside {
-		margin-inline: var(--space-s-3xl);
+		margin-inline: auto;
+	}
+
+	@container article (width > 20rem) {
+		aside {
+			max-width: 72cqw;
+		}
 	}
 
 	aside[data-name='skills'] {
 		container-name: skills;
 		container-type: inline-size;
-		--grid-min: 9ch;
+		--grid-min: 10ch;
 		--grid-gap: var(--space-xs);
 	}
 
@@ -48,14 +56,7 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 
 	@container skills (width > 20rem) {
 		.grid {
-			margin-inline-end: 12cqw;
-		}
-	}
-
-	@container skills (width > 30rem) {
-		.grid {
-			margin-inline-end: 30cqw;
-			--grid-min: 10ch;
+			max-width: 84cqw;
 		}
 	}
 
@@ -105,7 +106,7 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	}
 
 	.with-sidebar > :first-child {
-		flex-basis: 10ch;
+		flex-basis: 32rem;
 		flex-grow: 1;
 	}
 
