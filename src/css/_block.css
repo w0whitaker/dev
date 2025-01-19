@@ -126,10 +126,10 @@
 		--grid-min: 8ch;
 	}
 
-	aside {
+	/* aside {
 		--grid-min: 10ch;
 		--grid-gap: var(--space-3xs-2xs);
-	}
+	} */
 
 	/* h1 {
 	font-size: var(--step-3, 2rem);

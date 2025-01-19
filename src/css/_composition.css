@@ -35,6 +35,30 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 		margin-inline: var(--space-s-3xl);
 	}
 
+	aside[data-name='skills'] {
+		container-name: skills;
+		container-type: inline-size;
+		--grid-min: 9ch;
+		--grid-gap: var(--space-xs);
+	}
+
+	aside[data-name='skills'] ul {
+		margin-inline-start: 0;
+	}
+
+	@container skills (width > 20rem) {
+		.grid {
+			margin-inline-end: 12cqw;
+		}
+	}
+
+	@container skills (width > 30rem) {
+		.grid {
+			margin-inline-end: 30cqw;
+			--grid-min: 10ch;
+		}
+	}
+
 	/* Components - no margins! */
 	:is(h1, h2) {
 		padding-block-start: var(--space-m-l);
