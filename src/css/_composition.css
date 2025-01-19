@@ -68,7 +68,6 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	p {
 		padding-block-start: var(--space-m);
 		padding-block-end: var(--space-s);
-		padding-inline: 1ch;
 	}
 
 	li {
