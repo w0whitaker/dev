@@ -120,10 +120,6 @@
 		border-block-start: 1px solid var(--region-color, black);
 	}
 
-	nav {
-		--grid-min: 8ch;
-	}
-
 	/* aside {
 		--grid-min: 10ch;
 		--grid-gap: var(--space-3xs-2xs);

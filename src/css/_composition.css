@@ -9,7 +9,7 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	/* "Avoid margins on components and padding on containers" */
 
 	/* Containers - no padding! */
-	:is(body, main, article, section, ul, header) {
+	:is(body, main, article, section, ul, header, footer) {
 		padding: 0;
 		margin: var(--space-3xs);
 	}
@@ -23,6 +23,10 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 		margin-inline: auto;
 	}
 
+	footer {
+		margin-block-start: var(--space-m);
+	}
+
 	article {
 		--flow-space: var(--space-l);
 		container-name: article;
@@ -33,6 +37,10 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 
 	ul {
 		--flow-space: var(--space-xs);
+	}
+
+	nav ul {
+		--grid-min: 8ch;
 	}
 
 	aside {
@@ -77,6 +85,10 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	li {
 		padding-block-start: var(--space-xs);
 		padding-block-end: var(--space-3xs);
+	}
+
+	footer {
+		--sidebar-gap: var(--space-s);
 	}
 
 	/* General layouts */
@@ -127,11 +139,11 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	.with-sidebar {
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--space-xs);
+		gap: var(--sidebar-gap, var(--space-xs));
 	}
 
 	.with-sidebar > :first-child {
-		flex-basis: 10rem;
+		flex-basis: var(--sidebar-size, 20rem);
 		flex-grow: 1;
 	}
 
