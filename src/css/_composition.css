@@ -39,7 +39,14 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 
 	@container article (width > 20rem) {
 		aside {
-			max-width: 72cqw;
+			max-width: 82cqw;
+		}
+	}
+
+	@container article (width > 30rem) {
+		aside {
+			max-width: 50cqw;
+			margin-inline-start: var(--space-m);
 		}
 	}
 
@@ -52,12 +59,6 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 
 	aside[data-name='skills'] ul {
 		margin-inline-start: 0;
-	}
-
-	@container skills (width > 20rem) {
-		.grid {
-			max-width: 84cqw;
-		}
 	}
 
 	/* Components - no margins! */
@@ -106,7 +107,7 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	}
 
 	.with-sidebar > :first-child {
-		flex-basis: 32rem;
+		flex-basis: 10rem;
 		flex-grow: 1;
 	}
 

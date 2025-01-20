@@ -173,7 +173,6 @@
 		font-family: inherit;
 		font-size: 1em;
 		color: var(--region-color-dark);
-		outline: 2px solid var(--region-color);
 		line-height: 1.8;
 	}
 }
