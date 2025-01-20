@@ -1,8 +1,8 @@
-<ul role="list" class="switcher ">
+<ul role="list" class="grid">
   {%- for post in collections.posts | reverse -%}
     {%- if (post | isPublished) -%}
       <li>
-        <div class="card">
+        <div class="card box">
           <hgroup>
             <h3>
               <a href="{{ post.url | url }}">{{ post.data.title }}</a>

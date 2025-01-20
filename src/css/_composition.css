@@ -9,7 +9,7 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	/* "Avoid margins on components and padding on containers" */
 
 	/* Containers - no padding! */
-	:is(body, main, article, section, aside, ul, header) {
+	:is(body, main, article, section, ul, header) {
 		padding: 0;
 		margin: var(--space-3xs);
 	}
@@ -27,6 +27,8 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 		--flow-space: var(--space-l);
 		container-name: article;
 		container-type: inline-size;
+		--grid-min: 24ch;
+		--grid-gap: var(--space-m);
 	}
 
 	ul {
@@ -78,6 +80,28 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	}
 
 	/* General layouts */
+
+	.box {
+		font-family: var(--display-font);
+		padding: var(--space-s);
+		--color-light: var(--pieton-light);
+		--color-dark: var(--pieton-dark);
+		border: 0 solid;
+		outline: 1px solid var(--region-color);
+		outline-offset: calc(var(--border-thin) * -1);
+		color: var(--color-dark);
+		background-color: var(--color-light);
+	}
+
+	.box * {
+		color: inherit;
+	}
+
+	.box.invert {
+		color: var(--color-light);
+		background-color: var(--color-dark);
+	}
+
 	.grid {
 		display: grid;
 		grid-gap: var(--grid-gap, var(--space-3xs));
@@ -115,5 +139,21 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 		flex-basis: 0;
 		flex-grow: 999;
 		min-inline-size: 50%;
+	}
+
+	.switcher {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-xs);
+	}
+
+	.switcher > * {
+		flex-grow: 1;
+		flex-basis: calc((30rem - 100%) * 999);
+	}
+
+	.switcher > :nth-last-child(n + 5),
+	.switcher > :nth-last-child(n + 5) ~ * {
+		flex-basis: 100%;
 	}
 }
