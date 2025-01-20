@@ -9,7 +9,7 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	/* "Avoid margins on components and padding on containers" */
 
 	/* Containers - no padding! */
-	:is(body, main, article, section, aside, ul) {
+	:is(body, main, article, section, aside, ul, header) {
 		padding: 0;
 		margin: var(--space-3xs);
 	}
