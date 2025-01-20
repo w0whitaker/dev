@@ -19,50 +19,6 @@
     <link rel="manifest" href="/assets/images/site.webmanifest"/>
   </head>
   <body class="cover">
-    <div class="with-sidebar">
-      <header role="banner">
-        <div class="secondary-color-region">
-          <h1 class="main-title">
-            <span id="url">document url</span>
-          </h1>
-          {# having this script here seems awkward #}
-          <script>
-            document
-              .getElementById('url')
-              .textContent = document.URL;
-          </script>
-          {% include 'partials/sitenav.njk' %}
-        </div>
-      </header>
-      {{ content | safe }}
-    </div>
-    <footer>
-      <div class="tertiary-color-region">
-        <ul role="list">
-          <li>
-            <a href="https://github.com/w0whitaker" rel="me">github</a>
-          </li>
-          <li>
-            <a href="https://codepen.io/w0whitaker">codepen</a>
-          </li>
-        </ul>
-        <p>all content &#169; William Whitaker</p>
-        <p style="font-size: 0.75em">built with <a href="https://www.11ty.dev/">
-            <span style="color: red">t</span>
-            <span style="color: orange">t</span>
-            <span style="color: yellow">t</span>
-            <span style="color: darkslategray">t</span>
-            <span style="color: darkslategray">t</span>
-            <span style="color: green">t</span>
-            <span style="color: darkslategray">t</span>
-            <span style="color: darkslategray">t</span>
-            <span style="color: blue">t</span>
-            <span style="color: indigo">t</span>
-            <span style="color: violet">t</span>
-          </a>
-        </p>
-      </div>
-    </footer>
-
+    {{ content | safe }}
   </body>
 </html>
