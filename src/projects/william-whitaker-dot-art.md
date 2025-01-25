@@ -5,6 +5,7 @@ link: 'https://williamwhitaker.art'
 screenshot: '/images/art.png'
 alt: 'A list view of some of my paintings.'
 order: 5
+eleventyExcludeFromCollections: true
 ---
 
 True story: at the beginning of the pandemic, I decided that I was going to focus on making art, and not on making a website for that art. That lasted maybe a month&#8212;first I tried a managed site, got frustrated that I couldn't style it the way I wanted to, then tried a premium WordPress theme. That was fine, but kind of slow. So I ended up making this, the first custom WordPress theme that I _finished_.
