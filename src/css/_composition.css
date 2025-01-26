@@ -19,7 +19,7 @@ Composition rules are not for aesthetic elements such as fonts, colors, borders,
 	}
 
 	main {
-		margin-block-start: var(--space-m);
+		margin-block-start: 0;
 		margin-inline: auto;
 	}
 

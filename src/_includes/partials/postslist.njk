@@ -1,21 +1,23 @@
-<ul role="list" class="grid">
-  {%- for post in collections.posts | reverse -%}
-    {%- if (post | isPublished) -%}
-      <li>
-        <div class="card box">
-          <hgroup>
-            <h3>
-              <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-            </h3>
-            <p class="subheading">
-              {{ post.data.date | humanDate }}
+<div class="secondary-color-region">
+  <ul role="list" class="grid">
+    {%- for post in collections.posts | reverse -%}
+      {%- if (post | isPublished) -%}
+        <li>
+          <div class="card box">
+            <hgroup>
+              <h3>
+                <a href="{{ post.url | url }}" class="heading-bg">{{ post.data.title }}</a>
+              </h3>
+              <p class="subheading">
+                {{ post.data.date | humanDate }}
+              </p>
+            </hgroup>
+            <p>
+              {{ post.data.teaser }}
             </p>
-          </hgroup>
-          <p>
-            {{ post.data.teaser }}
-          </p>
-        </div>
-      </li>
-    {%- endif -%}
-  {%- endfor -%}
-</ul>
+          </div>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</div>
