@@ -1,0 +1,9 @@
+<h1 class="main-title">
+  {# if JS is available, the script below will overwrite this text. #}
+  <span id="url">{{ title }}</span>
+</h1>
+<script>
+  document
+    .getElementById('url')
+    .textContent = document.URL;
+</script>

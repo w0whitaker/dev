@@ -8,16 +8,8 @@
   <div class="with-sidebar">
     <div class="secondary-color-region">
       <header>
-        <h1 class="main-title">
-          <span id="url">document url</span>
-        </h1>
-        {# having this script here seems awkward #}
-        <script>
-          document
-            .getElementById('url')
-            .textContent = document.URL;
-        </script>
-        {% include 'partials/sitenav.njk' %}
+        {%- include 'partials/_page-title.njk' -%}
+        {%- include 'partials/sitenav.njk' -%}
       </div>
     </header>
     <!-- no max-inline-size -->
