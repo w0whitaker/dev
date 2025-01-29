@@ -1,8 +1,11 @@
 ---js
 { layout: 'layouts/base.njk' }
 ---
-<header role="banner" class="tertiary-color-region">
-  <p>William Whitaker <span class="site-logo">{%- include "logo.svg" -%}</span></p>
+<header role="banner" class="primary-color-region">
+  <p class="masthead">
+    <span class="site-logo">{%- include "logo.svg" -%}</span>
+    <span class="site-title">{{ metadata.author.name }}</span>
+  </p>
 </header>
 <main>
   <div class="with-sidebar">
