@@ -66,7 +66,11 @@
 		padding: var(--space-3xs);
 		clip-path: circle(40% at 55% 50%);
 		display: inline-block;
-		background-color: var(--region-color-light);
+		background: radial-gradient(
+			circle at 80% 70%,
+			var(--region-color-light),
+			transparent 75%
+		);
 	}
 
 	.site-logo > svg path {
@@ -103,7 +107,7 @@
 	.heading-bg {
 		background-color: var(--region-color-light);
 		color: var(--region-color-dark, black);
-		box-shadow: 0px 3px 24px -12px var(--region-color-dark);
+		/* box-shadow: 0px 3px 24px -12px var(--region-color-dark); */
 	}
 
 	table {
