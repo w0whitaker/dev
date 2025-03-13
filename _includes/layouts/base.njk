@@ -38,28 +38,30 @@
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
-		<header>
-			<nav>
-				<ul class="nav" role="list">
-					{%- for entry in collections.all | eleventyNavigation %}
-						<li class="nav-item">
-							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-						</li>
-					{%- endfor %}
-				</ul>
-			</nav>
-		</header>
-
-		<main id="skip">
-			{{ content | safe }}
-		</main>
-
-		<footer>
-			<p>
-				<em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a>, most recently on {{ humanBuildDate }}.
-				</em>
-			</p>
-		</footer>
+		<div class="cover">
+			<header>
+				<div class="center">
+					<nav>
+						<ul role="list" class="nav" >
+							{%- for entry in collections.all | eleventyNavigation %}
+								<li class="nav-item">
+									<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+								</li>
+							{%- endfor %}
+						</ul>
+					</nav>
+				</div>
+			</header>
+			<main id="skip" class="flow center">
+				{{ content | safe }}
+			</main>
+			<footer>
+				<p>
+					<em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a>, most recently on {{ humanBuildDate }}.
+					</em>
+				</p>
+			</footer>
+		</div>
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
 		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
