@@ -142,6 +142,28 @@
 	}
 }
 
+.visually-hidden {
+	display: inline-block;
+	color: var(--color-primary);
+	font-size: var(--step-0);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+a:focus {
+	outline: 0.3ex solid var(--color-primary);
+	border-radius: 3px;
+	padding: 0.3ex;
+}
+
 :is(h1, h2, h3) {
 	font-family: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
 	font-weight: 800;
