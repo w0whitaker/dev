@@ -1,6 +1,6 @@
-/* Reset */
-/* https://piccalil.li/blog/a-more-modern-css-reset/ */
 @layer reset {
+	/* Reset */
+	/* https://piccalil.li/blog/a-more-modern-css-reset/ */
 	/* Box sizing rules */
 	*,
 	*::before,
@@ -96,8 +96,8 @@
 	}
 }
 
-/* Global */
 @layer global {
+	/* Global */
 	:root {
 		/* Variables: */
 		/* Color */
@@ -127,86 +127,154 @@
 		--space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
 	}
 
+	* {
+		max-inline-size: var(--measure, 60ch);
+	}
+
+	html,
+	body,
+	div,
+	header,
+	nav,
+	main,
+	footer {
+		max-inline-size: none;
+	}
+
 	body {
-		--flow-space: var(--space-s-m);
 		background: var(--color-light);
 		color: var(--color-dark);
-		margin: var(--space-s);
 		font-family: system-ui, sans-serif;
 		font-size: var(--step-0);
 		line-height: 1.7;
+		margin-inline: var(--space-xs-s);
+	}
+
+	a {
+		color: currentColor;
+		text-decoration-color: var(--color-primary);
+		text-decoration-thickness: 0.3ex;
+		text-underline-offset: 0.3ex;
+	}
+
+	a:focus {
+		outline: 0.3ex solid var(--color-primary);
+		border-radius: 3px;
+		padding-inline: 0.3ex;
+		padding-block-end: 0.3ex;
+	}
+
+	:is(h1, h2, h3) {
+		font-family: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+		font-weight: 800;
+	}
+
+	h1 {
+		font-size: var(--step-2);
+		max-width: 18ch;
+	}
+
+	h2 {
+		font-size: var(--step-1);
+	}
+
+	article {
+		--flow-space: var(--space-s-m);
+	}
+
+	blockquote {
+		padding-inline-start: 1em;
+		border-inline-start: 0.3em solid;
+	}
+
+	aside {
+		margin-block-start: calc(var(--flow-space) + 3.5em);
+		color: var(--color-light);
+		background-color: var(--color-dark);
+		/* max-width: fit-content; */
+	}
+
+	aside > * {
+		--measure: 33ch;
+		padding: var(--space-s);
+	}
+
+	footer:has(> *) {
+		border-block-start: 0.3ex solid var(--color-dark);
+		padding-block-start: var(--space-l-xl);
+	}
+}
+
+@layer composition {
+	.container {
+		container-name: var(--container-name, genericContainer);
+		container-type: inline-size;
+	}
+
+	.cover {
+		display: flex;
+		flex-direction: column;
+		min-block-size: 100vh;
+		padding: 0;
+	}
+
+	.cover > * {
+		margin-block: var(--space-l-xl);
+	}
+
+	.cover > :first-child:not(main) {
+		margin-block-start: 0;
+	}
+
+	.cover > :last-child:not(main) {
+		margin-block-end: 0;
+	}
+
+	.cover > main {
+		margin-block: auto;
+	}
+
+	.flow {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.flow > * {
+		margin-block: 0;
 	}
 
 	.flow > * + * {
 		margin-block-start: var(--flow-space, 1em);
 	}
+
+	.center {
+		box-sizing: content-box;
+		margin-inline: auto;
+		max-inline-size: var(--measure, 60ch);
+	}
+
+	main {
+		--flow-space: var(--space-xl);
+	}
 }
 
-.visually-hidden {
-	display: inline-block;
-	color: var(--color-primary);
-	font-size: var(--step-0);
-}
+@layer utility {
+	.visually-hidden {
+		display: inline-block;
+		color: var(--color-primary);
+		font-size: var(--step-0);
+	}
 
-.visually-hidden:not(:focus):not(:active) {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
-}
-
-a:focus {
-	outline: 0.3ex solid var(--color-primary);
-	border-radius: 3px;
-	padding: 0.3ex;
-}
-
-:is(h1, h2, h3) {
-	font-family: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
-	font-weight: 800;
-	--flow-space: var(--space-l);
-}
-
-h1 {
-	font-size: var(--step-2);
-	max-width: 18ch;
-}
-
-h2 {
-	font-size: var(--step-1);
-}
-
-article {
-	max-width: 80ch;
-}
-
-blockquote {
-	padding-inline-start: 1em;
-	border-inline-start: 0.3em solid;
-}
-
-a {
-	color: currentColor;
-	text-decoration-color: var(--color-primary);
-	text-decoration-thickness: 0.3ex;
-	text-underline-offset: 0.3ex;
-}
-
-aside {
-	margin-block-start: calc(var(--flow-space) + 3.5em);
-	color: var(--color-light);
-	background-color: var(--color-dark);
-	margin: var(--space-l);
-	padding: 0;
-	max-width: fit-content;
-}
-
-aside > * {
-	margin: 0;
-	padding: var(--space-s);
+	.visually-hidden:not(:focus):not(:active) {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
 }
 
 .nav {
