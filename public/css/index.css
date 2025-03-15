@@ -259,7 +259,7 @@
 	}
 }
 
-@layer utility {
+@layer block {
 	.visually-hidden {
 		display: inline-block;
 		color: var(--color-primary);
@@ -275,9 +275,31 @@
 		white-space: nowrap;
 		width: 1px;
 	}
-}
 
-.nav {
-	display: inline-flex;
-	gap: var(--space-m);
+	.nav {
+		display: inline-flex;
+		gap: var(--space-s-m);
+		flex-wrap: wrap;
+	}
+
+	.strong-verb > em {
+		font-style: normal;
+		font-weight: 700;
+	}
+
+	.resume-block h2,
+	.experience-block hgroup {
+		border-block-end: 0.3ex solid var(--color-dark);
+		padding-block-end: 0.3ex;
+	}
+
+	hgroup {
+		max-width: fit-content;
+		--flow-space: var(--space-s);
+	}
+
+	hgroup p {
+		padding-inline-end: var(--space-xl);
+		font-size: 0.9em;
+	}
 }
