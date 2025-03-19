@@ -78,7 +78,11 @@ const glyphR = '<svg class="glyph">...</svg>';
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 ```
 
-I use `document.getElementById()` to reference the "add" buttons and the `<div>` that will act as the display area for the glyphs. Because there will be more than one glyph on the screen, I can't use an ID, so I'm using `document.getElementsByClassName()` {% ftntAnchor 'get-elements' %} to collect the glyphs.
+I use `document.getElementById()` to reference the "add" buttons and the `<div>` that will act as the display area for the glyphs. Because there will be more than one glyph on the screen, I can't use an ID, so I'm using 
+```javascript
+document.getElementsByClassName()
+```
+{% ftntAnchor 'get-elements' %} to collect the glyphs.
 
 Next, I declare a couple of variables for the glyphs themselves, which will make working with the (long, messy) SVG code easier.
 

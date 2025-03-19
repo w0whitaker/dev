@@ -10,10 +10,14 @@ draft: true
 
 ## Acknowledgements
 A lot of inspiration and useful code came from the following sources:
+
 - Rob O'Leary's [post](https://www.roboleary.net/webdev/2024/02/07/eleventy-fetch.html) about using eleventy-fetch and github.
+
 - Sophie Koonin's [post](https://localghost.dev/blog/automated-weekly-links-posts-with-raindrop-io-and-eleventy/) about using eleventy-fetch and raindrop.
+
 - Both of which I found by way of [11tybundle.dev](11tybundle.dev), which is always a good place to start.
-- And of course, the [docs](https://www.11ty.dev/docs/). In particular, this: https://www.11ty.dev/docs/quicktips/cache-api-requests/
+
+- And of course, the [docs](https://www.11ty.dev/docs/). In particular, this [quicktip](https://www.11ty.dev/docs/quicktips/cache-api-requests/).
 
 The following tools were used in this project:
 - [raindrop.io](https://raindrop.io)
@@ -28,16 +32,20 @@ Raindrop.io is a bookmarking service with an API that allows developers to acces
 ### Authentication.
 The first step is to generate a token that will allow to access a user's data. Again, mine is a pretty simple use-case, and the Raindrop [docs](https://developer.raindrop.io/v1/authentication) cover that process well, so I won't go into it here.
 One thing worth mentioning is that the token must be sent in the request [headers]( https://httpwg.org/specs/rfc9110.html#rfc.section.6.3) in the following format:
-```
+
+```markup
 Authorization: Bearer actual-token-goes-here
 ```
+
 How to add that to the request will be covered below, in the section on 'eleventy-fetch'.
 
 ### The endpoint.
 The API [endpoint](https://developer.raindrop.io/v1/raindrops/multiple#get-raindrops) that has the data I want is:
-```
+
+```markup
 https://api.raindrop.io/rest/v1/raindrops/0
 ```
+
 The 'raindrops' after `/rest/v1/` indicates that we are requesting individual bookmarks (not collections, etc.), and the '0' at the very end tells the API that we are looking for 'raindrops' (aka bookmarks) from _all_ collections.
 
 ### The parameters.
@@ -46,7 +54,8 @@ In order to limit the results to just those tags I want to include on my site, a
 The Raindrop API has a search parameter that can specify what kind of bookmarks should be returned. To use it, `?search=` is added to the endpoint address, followed by the search terms. (The `%23` before 'publish' and 'development' represents the `#` character.)
 
 This was the end result:
-```
+
+```markup
 https://api.raindrop.io/rest/v1/raindrops/0/?search=%23publish %23development
 ```
 
@@ -62,7 +71,7 @@ Additionally, it is possible to pass options to the underlying `fetch()` method.
 I put the code for the fetch logic in a file in the global data directory. What is exported from this file will be available in Eleventy's data cascade. (In truth, there is really only one template that will ever access this data, so maybe it doesn't need to be in the global data directory, but that's where it is for now.) 
 
 Here's what the code looks like:
-```
+```javascript
 // src/_data/links.cjs
 const EleventyFetch = require('@11ty/eleventy-fetch');
 
@@ -136,7 +145,7 @@ I'm trying (and failing miserably) to get out of the habit of keeping a million 
 ## Getting started.
 I bookmark pretty much every website I might want to come back to, including a lot of things that wouldn't be relevant here, so I add tags to the bookmarks I want to add to this site. The first thought I had was to put all those links into a collection in Raindrop, then export it and use that data to populate a list in 11ty. But Raindrop also has an API, and through that, it's possible to get a nice JSON object of all the links that meet certain criteria.
 To use the Raindrop API, you first have to generate a unique authentication token. (The [docs](https://developer.raindrop.io/v1/authentication/token) explain how to do this.) The first thing I got hung up on was how to include that token in the request headers, but luckily the ever-handy [Postman](https://web.postman.co/) makes assembling the request more intuitive. The request ended up looking like this:
-```
+```markup
 https://api.raindrop.io/rest/v1/raindrops/0/?search=%23publish %23development
 ```
 The '0' right after 'raindrops' tells the API to return results from all collections, and the search parameters are the tags I want to include, 'publish' and 'development'. 
@@ -155,7 +164,7 @@ The data I needed from Raindrop was a list of links with certain tags; in my cas
 In order to get that data, a `GET` request has to be sent to the proper endpoint with: a) the authentication token, and b) the search parameters.
 
 The ever-handy [Postman](https://web.postman.co/) was a big help in putting together and testing the HTTP request, which ended up looking like this:
-```
+```markup
 https://api.raindrop.io/rest/v1/raindrops/0/?search=%23publish %23development
 ```
 
@@ -165,13 +174,13 @@ The '0' right after 'raindrops' tells the API to return results from all collect
 
 The `eleventy-fetch` plugin ([documentation](https://www.11ty.dev/docs/plugins/fetch/)) caches the response from an API as a JSON object that is then available to templates via Eleventy's data cascade. It can be installed with your package manager of choice from `@11ty/eleventy-fetch`.
 
-```
+```markup
 npm install @11/eleventy-fetch
 ```
 
 I opted to put the fetching logic in a dedicated file: `src/_data/links.cjs`. (I'm in the process of switching over to ES6 modules so my `package.json` is set to "type":"module", hence the CommonJS extension.) At the top of this file, I import the plugin.
 
-```
+```javascript
 const EleventyFetch = require('@11ty/eleventy-fetch');
 ```
 
