@@ -302,4 +302,9 @@
 		padding-inline-end: var(--space-xl);
 		font-size: 0.9em;
 	}
+
+	article.post-body ul {
+		padding-inline-start: var(--space-xs);
+		margin: 0;
+	}
 }
