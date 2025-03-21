@@ -17,7 +17,7 @@ A lot of inspiration and useful code came from the following sources:
 
 - Both of which I found by way of [11tybundle.dev](11tybundle.dev), which is always a good place to start.
 
-- And of course, the [docs](https://www.11ty.dev/docs/). In particular, this [quicktip](https://www.11ty.dev/docs/quicktips/cache-api-requests/).
+- And of course, the [docs](https://www.11ty.dev/docs/). In particular: {% longUrl "https://www.11ty.dev/docs/quicktips/cache-api-requests/" %}.
 
 The following tools were used in this project:
 - [raindrop.io](https://raindrop.io)

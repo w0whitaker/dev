@@ -19,6 +19,7 @@ import {
 	ftntBacklink,
 	ftntContent,
 } from "./_config/shortcodes/footnotes.js";
+import { longUrl } from "./_config/shortcodes/longUrl.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
@@ -57,6 +58,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addShortcode("ftntAnchor", ftntAnchor);
 	eleventyConfig.addPairedShortcode("ftntContent", ftntContent);
 	eleventyConfig.addShortcode("ftntBacklink", ftntBacklink);
+	eleventyConfig.addShortcode("longUrl", longUrl);
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
