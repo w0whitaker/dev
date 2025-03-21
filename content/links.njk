@@ -1,0 +1,18 @@
+---js
+const eleventyNavigation = {
+  key: "Links",
+  order: 4
+};
+---
+
+<article class="flow">
+  <h2>Some links I've saved recently.</h2>
+  {% for link in links %}
+    <section>
+      <h3>
+        <a href="{{ link.url }}">{{ link.title | safe }}</a>
+      </h3>
+      <blockquote>{{ link.excerpt }}</blockquote>
+    </section>
+  {% endfor %}
+</article>
