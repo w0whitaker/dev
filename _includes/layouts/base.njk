@@ -40,17 +40,15 @@
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 		<div class="cover">
 			<header>
-				<div class="center">
-					<nav>
-						<ul role="list" class="nav" >
-							{%- for entry in collections.all | eleventyNavigation %}
-								<li class="nav-item">
-									<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-								</li>
-							{%- endfor %}
-						</ul>
-					</nav>
-				</div>
+				<nav>
+					<ul role="list" class="nav" >
+						{%- for entry in collections.all | eleventyNavigation %}
+							<li class="nav-item">
+								<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+							</li>
+						{%- endfor %}
+					</ul>
+				</nav>
 			</header>
 			<main id="skip" class="flow">
 				{{ content | safe }}
