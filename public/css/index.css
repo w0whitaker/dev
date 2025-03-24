@@ -314,7 +314,7 @@
 		margin: 0;
 	}
 
-	.link-summary {
+	.summary {
 		--flow-space: var(--space-s-m);
 	}
 }

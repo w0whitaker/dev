@@ -1,7 +1,7 @@
 {%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
 {%- for post in postslist | reverse %}
 	<section>
-		<div class="flow post-summary">
+		<div class="flow summary">
 			<h3>
 				<a href="{{ post.url }}">
 					{% if post.data.title %}{{ post.data.title }}

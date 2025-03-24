@@ -5,18 +5,20 @@ const eleventyNavigation = {
 };
 ---
 
-<article class="flow">
-  <h1>Some links.</h1>
-  {% for link in links %}
-    <section>
-      <div class="flow link-summary">
-        <h2>
-          <a href="{{ link.url }}">{{ link.title | safe }}</a>
-        </h2>
-        <blockquote>
-          {{ link.excerpt }}
-        </blockquote>
-      </div>
-    </section>
-  {% endfor %}
+<article>
+  <div class="flow">
+    <h1>Some links.</h1>
+    {% for link in links %}
+      <section>
+        <div class="flow summary">
+          <h2>
+            <a href="{{ link.url }}">{{ link.title | safe }}</a>
+          </h2>
+          <blockquote>
+            {{ link.excerpt }}
+          </blockquote>
+        </div>
+      </section>
+    {% endfor %}
+  </div>
 </article>

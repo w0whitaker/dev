@@ -1,6 +1,6 @@
 ---
 title: 'eleventy-fetchity'
-teaser: 'this is what the post is about'
+teaser: ''
 date: 2024-12-29
 published: false
 draft: true
