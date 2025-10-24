@@ -327,15 +327,18 @@
 	}
 
 	.callout {
-		display: grid;
-		gap: 1.5lh;
-		grid-template-columns: 1ch 1fr;
-		align-items: center;
 		outline: 3px solid var(--color-primary);
 		border-radius: 5px;
 		padding-inline: var(--space-l);
 		padding-block-start: var(--space-xs);
 		padding-block-end: var(--space-l);
+	}
+
+	.callout:has(svg) {
+		display: grid;
+		gap: 1.5lh;
+		grid-template-columns: 1ch 1fr;
+		align-items: center;
 	}
 
 	.callout p:first-of-type {
